@@ -14,9 +14,11 @@
 ### In Progress 🔄
 
 - Azure Static Website Hosting
-  - Installing and configuring Azure CLI
-  - Setting up Azure Storage Account
-  - Configuring static website hosting
+  - ✅ Installing and configuring Azure CLI
+  - ✅ Azure CLI authentication completed
+  - ✅ Resource Group created in Qatar (qatarcentral)
+  - 🔄 Troubleshooting subscription access
+  - ⏳ Setting up Azure Storage Account
 
 ### Next Steps ⏳
 
