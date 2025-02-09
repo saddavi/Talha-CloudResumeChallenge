@@ -1,4 +1,4 @@
-# Cloud Resume Challenge - Azure
+# Talha-CloudResumeChallenge
 
 ## Current Progress
 
