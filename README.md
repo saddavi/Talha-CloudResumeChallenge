@@ -96,6 +96,57 @@ az --version
 az login
 ```
 
+## Azure Storage Configuration
+
+### Storage Account Details
+
+```bash
+# Naming Convention
+- Format: [name][project][date]
+- Example: talhacrc0210
+
+# Configuration
+- Type: Static Website
+- Tier: Standard_LRS
+- Security: HTTPS-only, TLS 1.2
+- Location: Qatar Central
+
+# Website Settings
+- Index document: index.html
+- Error document: error.html
+```
+
+## Azure Cloud Shell
+
+### Setup and Usage
+
+```bash
+# Access Methods
+1. Visit portal.azure.com
+2. Click the Cloud Shell icon (>_) in the top navigation bar
+3. Choose "Bash" or "PowerShell" environment
+
+# Features
+- Pre-authenticated
+- Pre-installed Azure CLI
+- 5 GB persistent storage
+- Built-in code editor
+- Supports both Bash and PowerShell
+```
+
+### First-Time Setup
+
+1. Select subscription for storage account
+2. Create storage for Cloud Shell
+3. Mount storage share
+
+### Advantages
+
+- No local installation needed
+- Always up-to-date tools
+- Works from any browser
+- Built-in VS Code editor
+
 ## Cross-Platform Development Guide
 
 ### Best Practices
