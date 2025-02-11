@@ -17,8 +17,24 @@
   - ✅ Installing and configuring Azure CLI
   - ✅ Azure CLI authentication completed
   - ✅ Resource Group created in Qatar (qatarcentral)
-  - 🔄 Troubleshooting subscription access
-  - ⏳ Setting up Azure Storage Account
+  - ✅ Budget controls implemented ($20 monthly cap)
+    - Alert at 50% ($10)
+    - Alert at 80% ($16)
+    - Alert at 90% ($18)
+  - ✅ Storage Account created (Standard, LRS, StorageV2)
+  - 🔄 Configuring static website hosting
+    - Setting index document
+    - Setting error document
+    - Enabling blob access
+    - ✅ Storage account key secured
+    - ✅ Static website enabled
+    - 🔄 Preparing file upload to $web container
+    - ⏳ Testing website endpoint
+  - 🔄 Implementing secure static website hosting
+    - ✅ Storage account key secured (principle of least privilege)
+    - ✅ Static website enabled (isolated in $web container)
+    - 🔄 Preparing secure file upload process
+    - ⏳ Testing website endpoint
 
 ### Next Steps ⏳
 
