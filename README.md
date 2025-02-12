@@ -55,7 +55,7 @@ Welcome to the Talha-CloudResumeChallenge repository! This project is part of th
 
 ### Azure Resources Configuration ✅
 
-```bash
+````bash
 # Storage Account Details
 - Name: talhacrc0210
 - Resource Group: rg-cloudresume
@@ -66,7 +66,34 @@ Welcome to the Talha-CloudResumeChallenge repository! This project is part of th
 ✅ Primary Endpoint Active
 ✅ $web Container Configured
 ✅ Static Website Enabled
-```
+
+# CDN Configuration Attempt ⚠️
+- Status: Failed
+- Error: Argument --origin expected at least one argument
+- Attempted Commands:
+  ```powershell
+  $RESOURCE_GROUP="rg-cloudresume"
+  $CDN_PROFILE="cdn-talha-resume"
+  $CDN_ENDPOINT="cdn-talha-endpoint"
+  $STORAGE_ACCOUNT="talhacrc0210"
+
+  # CDN endpoint creation failed
+  az cdn endpoint create `
+      --resource-group $RESOURCE_GROUP `
+      --name $CDN_ENDPOINT `
+      --profile-name $CDN_PROFILE `
+      --origin $STORAGE_ACCOUNT.z1.web.core.windows.net `
+      --origin-host-header $STORAGE_ACCOUNT.z1.web.core.windows.net `
+      --enable-compression
+````
+
+# Next Troubleshooting Steps
+
+- Verify variable values are being set correctly
+- Confirm storage account endpoint is accessible
+- Check Azure CLI version compatibility
+
+````
 
 ### Next Steps ⏳
 
@@ -88,7 +115,7 @@ cloud-resume/
 ├── css/
 │   └── styles.css     # Separated CSS styles
 └── README.md          # Project documentation
-```
+````
 
 ## Local Development
 
