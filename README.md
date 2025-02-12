@@ -23,13 +23,11 @@
     - Alert at 90% ($18)
   - ✅ Storage Account created (Standard, LRS, StorageV2)
   - 🔄 Configuring static website hosting
-    - Setting index document
-    - Setting error document
-    - Enabling blob access
-    - ✅ Storage account key secured
-    - ✅ Static website enabled
-    - 🔄 Preparing file upload to $web container
-    - ⏳ Testing website endpoint
+    - ✅ Index document set (index.html)
+    - ✅ Error document set (error.html)
+    - ✅ Blob service properties verified
+    - ✅ Files uploaded to $web container
+    - ✅ Testing website endpoint
   - 🔄 Implementing secure static website hosting
     - ✅ Storage account key secured (principle of least privilege)
     - ✅ Static website enabled (isolated in $web container)
