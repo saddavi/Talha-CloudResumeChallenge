@@ -22,7 +22,7 @@ Essential setup steps and prerequisites.
 
 | Resource   | URL/Status                               |
 | ---------- | ---------------------------------------- |
-| Live Site  | https://cdn-talha-endpoint.azureedge.net |
+| Live Site  | talharesume.com |
 | Status     | 🔄 In Development                        |
 | CDN Status | ✅ Implemented                           |
 
