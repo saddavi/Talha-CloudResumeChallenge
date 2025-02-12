@@ -1,4 +1,4 @@
-# Talha-CloudResumeChallenge
+Welcome to the Talha-CloudResumeChallenge repository! This project is part of the Cloud Resume Challenge, which aims to showcase the integration of cloud technologies through the implementation of a personal resume website. The challenge involves using various cloud services to host, deploy, and manage a static resume site, while also incorporating additional features such as a visitor counter, custom domain setup, and continuous integration/continuous deployment (CI/CD) pipelines. This repository documents the progress, setup instructions, and future goals for the project.
 
 ## Current Progress
 
