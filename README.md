@@ -1,3 +1,68 @@
+# Cloud Resume Challenge
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Quick Start](#quick-start)
+- [Current Status](#current-status)
+- [Architecture](#architecture)
+- [Documentation](#documentation)
+- [Performance Metrics](#performance-metrics)
+- [Development](#development)
+
+## Project Overview
+
+Brief description of your project and its goals.
+
+## Quick Start
+
+Essential setup steps and prerequisites.
+
+## Quick Reference
+
+| Resource   | URL/Status                               |
+| ---------- | ---------------------------------------- |
+| Live Site  | https://cdn-talha-endpoint.azureedge.net |
+| Status     | 🔄 In Development                        |
+| CDN Status | ✅ Implemented                           |
+
+## Current Status
+
+### Completed ✅
+
+- [Frontend Setup](docs/frontend/static-hosting.md)
+- [CDN Implementation](docs/frontend/cdn-setup.md)
+
+### In Progress 🔄
+
+- Visitor Counter
+- Custom Domain Setup
+- CI/CD Pipeline
+
+## Architecture
+
+```mermaid
+graph TD
+    A[Static Website] --> B[Azure CDN]
+    B --> C[Azure Functions]
+    C --> D[CosmosDB]
+```
+
+## Documentation
+
+- [Frontend Documentation](docs/frontend/)
+- [Backend Services](docs/backend/)
+- [Infrastructure](docs/infrastructure/)
+- [Setup Guide](docs/setup/)
+
+## Performance Metrics
+
+[Your existing metrics]
+
+## Development
+
+See [Local Development Guide](docs/setup/local-development.md)
+
 Welcome to the Talha-CloudResumeChallenge repository! This project is part of the Cloud Resume Challenge, which aims to showcase the integration of cloud technologies through the implementation of a personal resume website. The challenge involves using various cloud services to host, deploy, and manage a static resume site, while also incorporating additional features such as a visitor counter, custom domain setup, and continuous integration/continuous deployment (CI/CD) pipelines. This repository documents the progress, setup instructions, and future goals for the project.
 
 ## Current Progress
@@ -110,6 +175,9 @@ CDN URL: https://cdn-talha-endpoint.azureedge.net
 
 ### CDN Performance Analysis ⚡
 
+<details>
+<summary>CDN Performance Details</summary>
+
 ```bash
 # Response Time Comparison
 1. Storage Account (Origin):
@@ -124,6 +192,8 @@ CDN URL: https://cdn-talha-endpoint.azureedge.net
 - Speed Increase: ~33% faster
 - CDN Status: TCP_HIT (content served from cache)
 ```
+
+</details>
 
 ### Why Initial CDN Access Might Be Slower
 
