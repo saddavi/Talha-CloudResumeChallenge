@@ -55,7 +55,7 @@ Welcome to the Talha-CloudResumeChallenge repository! This project is part of th
 
 ### Azure Resources Configuration ✅
 
-````bash
+```bash
 # Storage Account Details
 - Name: talhacrc0210
 - Resource Group: rg-cloudresume
@@ -66,36 +66,85 @@ Welcome to the Talha-CloudResumeChallenge repository! This project is part of th
 ✅ Primary Endpoint Active
 ✅ $web Container Configured
 ✅ Static Website Enabled
+```
 
-# CDN Configuration Attempt ⚠️
-- Status: Failed
-- Error: Argument --origin expected at least one argument
-- Attempted Commands:
-  ```powershell
-  $RESOURCE_GROUP="rg-cloudresume"
-  $CDN_PROFILE="cdn-talha-resume"
-  $CDN_ENDPOINT="cdn-talha-endpoint"
-  $STORAGE_ACCOUNT="talhacrc0210"
+### CDN Implementation 🔄
 
-  # CDN endpoint creation failed
-  az cdn endpoint create `
-      --resource-group $RESOURCE_GROUP `
-      --name $CDN_ENDPOINT `
-      --profile-name $CDN_PROFILE `
-      --origin $STORAGE_ACCOUNT.z1.web.core.windows.net `
-      --origin-host-header $STORAGE_ACCOUNT.z1.web.core.windows.net `
-      --enable-compression
-````
+```bash
+# Current Status
+- ✅ CDN Profile Created: cdn-talha-resume
+```
 
-# Next Troubleshooting Steps
+### CDN Implementation Status ✅
 
-- Verify variable values are being set correctly
-- Confirm storage account endpoint is accessible
-- Check Azure CLI version compatibility
+```bash
+# CDN Configuration
+- ✅ CDN Profile: cdn-talha-resume
+- ✅ CDN Endpoint: cdn-talha-endpoint
+- ✅ Origin: talhacrc0210.z1.web.core.windows.net
+- ✅ Compression: Enabled
 
-````
+# Testing Results
+1. Original URL: https://talhacrc0210.z1.web.core.windows.net/
+2. CDN URL: [Your-CDN-Endpoint-URL]
+3. Verification:
+   - ✅ Content matches original
+   - ✅ CSS loads correctly
+   - ✅ Quick response time
+   - ✅ Compression enabled
+```
 
-### Next Steps ⏳
+### CDN Testing Results
+
+```bash
+# Performance Metrics
+Original URL: https://talhacrc0210.z1.web.core.windows.net/
+CDN URL: https://cdn-talha-endpoint.azureedge.net
+
+# Benefits
+✅ Faster loading times
+✅ Global availability
+✅ Reduced origin load
+✅ HTTPS enabled
+```
+
+### CDN Performance Analysis ⚡
+
+```bash
+# Response Time Comparison
+1. Storage Account (Origin):
+   - URL: https://talhacrc0210.z1.web.core.windows.net/
+   - Time: 0.152 total
+
+2. CDN Endpoint:
+   - URL: https://cdn-talha-endpoint.azureedge.net
+   - Time: 0.101 total
+
+# Performance Improvement
+- Speed Increase: ~33% faster
+- CDN Status: TCP_HIT (content served from cache)
+```
+
+### Why Initial CDN Access Might Be Slower
+
+1. First-time content caching
+2. CDN node initialization
+3. SSL/TLS handshake setup
+
+### Benefits Demonstrated ✅
+
+- Faster subsequent access (0.101s vs 0.152s)
+- Content caching working (TCP_HIT)
+- Compression enabled
+- HTTPS properly configured
+
+### Next Steps 🔄
+
+1. Remove redundant CDN profile (cdn-profile-cloudresume)
+2. Set up monitoring for CDN performance
+3. Configure custom domain
+4. Implement visitor counter
+5. Set up CI/CD pipeline
 
 - HTTPS/Azure CDN Configuration
 - Custom Domain Setup
@@ -107,6 +156,34 @@ Welcome to the Talha-CloudResumeChallenge repository! This project is part of th
 - Infrastructure as Code (IaC)
 - CI/CD Pipeline Setup
 
+### Project Milestones
+
+```bash
+# Completed ✅
+- Azure CLI Setup and Authentication
+- Resource Group Creation (Qatar Central)
+- Storage Account Configuration
+- Static Website Hosting
+- CDN Implementation
+- Performance Testing
+
+# In Progress 🔄
+- Visitor Counter Implementation
+- Custom Domain Setup
+- CI/CD Pipeline
+
+# Verified Resources
+- Resource Group: rg-cloudresume
+- Storage Account: talhacrc0210
+- CDN Profile: cdn-talha-resume
+- CDN Endpoint: cdn-talha-endpoint.azureedge.net
+
+# Performance Metrics
+- Original Load Time: 0.152s
+- CDN Load Time: 0.101s
+- Improvement: 33% faster
+```
+
 ## Project Structure
 
 ```plaintext
@@ -115,7 +192,7 @@ cloud-resume/
 ├── css/
 │   └── styles.css     # Separated CSS styles
 └── README.md          # Project documentation
-````
+```
 
 ## Local Development
 
