@@ -25,10 +25,9 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
 - 🔄 Backend Services
 - 🔄 CI/CD Pipeline
 
-<details>
-<summary><b>📋 Detailed Implementation Status</b> (Click to expand)</summary>
+### Detailed Implementation Status
 
-### Completed Components ✅
+#### Completed Components ✅
 - **Azure Static Website Hosting**
   - Storage account created and configured (talhacrc0210)
   - Static website enabled with proper endpoints
@@ -44,16 +43,15 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
   - DNS configuration verified
   - HTTPS enforced
 
-### In Progress 🔄
-- Backend Development
+#### In Progress 🔄
+- **Backend Development**
   - Visitor counter implementation
   - CosmosDB setup
   - Azure Functions API
-- CI/CD Pipeline
+- **CI/CD Pipeline**
   - GitHub Actions workflow
   - Automated testing
   - Deployment automation
-</details>
 
 ## System Architecture
 
@@ -65,9 +63,7 @@ graph TD
     E[CI/CD] -->|Deploy| A
 ```
 
-<details>
-<summary><b>🔍 Detailed Architecture Diagram</b> (Click to expand)</summary>
-
+### Detailed Architecture Diagram
 ```mermaid
 flowchart TD
     classDef securityLayer fill:#f9f,stroke:#333,stroke-width:2px
@@ -129,7 +125,6 @@ flowchart TD
     class Backend apiLayer
     class Monitoring monitoringLayer
 ```
-</details>
 
 ## Performance & Controls
 
@@ -138,10 +133,9 @@ flowchart TD
 - Cache Hit Ratio: >95%
 - Global Availability: 99.99%
 
-<details>
-<summary><b>📊 Detailed Performance Analysis</b> (Click to expand)</summary>
+### Detailed Performance Analysis
 
-### CDN Performance Analysis
+#### CDN Performance Analysis
 ```mermaid
 graph LR
     A[Original: 152ms] -->|33% Faster| B[CDN: 101ms]
@@ -149,22 +143,21 @@ graph LR
     style B fill:#99ff99
 ```
 
-### Detailed Metrics
-| Metric | Original | With CDN | Status |
-|--------|----------|----------|---------|
-| Response Time | 152ms | 101ms | ✅ 33% Faster |
-| Cache Status | N/A | TCP_HIT | ✅ Caching Active |
-| Layer 1 Cache | N/A | L1_T2 | ✅ Optimized |
-| SSL/TLS | Enabled | Enabled | ✅ Secure |
+#### Detailed Metrics
+| Metric         | Original | With CDN | Status            |
+|----------------|----------|----------|-------------------|
+| Response Time  | 152ms    | 101ms    | ✅ 33% Faster     |
+| Cache Status   | N/A      | TCP_HIT  | ✅ Caching Active |
+| Layer 1 Cache  | N/A      | L1_T2    | ✅ Optimized      |
+| SSL/TLS        | Enabled  | Enabled  | ✅ Secure         |
 
-### Resource Management
+#### Resource Management
 - Region: Qatar Central
 - Monthly Budget: $20
 - Alert Thresholds:
   - 50% ($10)
   - 80% ($16)
   - 90% ($18)
-</details>
 
 ## Development Setup
 
@@ -175,10 +168,9 @@ cd Talha-CloudResumeChallenge
 npm install
 ```
 
-<details>
-<summary><b>🛠️ Detailed Development Setup</b> (Click to expand)</summary>
+### Detailed Development Setup
 
-### Prerequisites
+#### Prerequisites
 ```bash
 # Required Tools
 - Azure CLI
@@ -199,19 +191,19 @@ brew update && brew install azure-cli
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ```
 
-### VS Code Extensions
+#### VS Code Extensions
 - Azure Account
 - Azure Static Web Apps
 - Azure Resources
 - Azure Storage
 
-### Azure Cloud Shell Setup
+#### Azure Cloud Shell Setup
 - Pre-authenticated environment
 - 5 GB persistent storage
 - Built-in code editor
 - Supports both Bash and PowerShell
 
-### Project Structure
+#### Project Structure
 ```plaintext
 cloud-resume/
 ├── frontend/
@@ -228,7 +220,6 @@ cloud-resume/
 └── .github/
     └── workflows/         # CI/CD pipelines
 ```
-</details>
 
 ## Security Implementation
 
@@ -237,10 +228,9 @@ cloud-resume/
 - Secured storage access
 - Automated security updates
 
-<details>
-<summary><b>🔒 Detailed Security Configuration</b> (Click to expand)</summary>
+### Detailed Security Configuration
 
-### Security Measures
+#### Security Measures
 - Principle of least privilege implementation
 - Isolated web container configuration
 - Azure Firewall rules
@@ -248,24 +238,22 @@ cloud-resume/
 - DDoS protection
 - Regular security audits
 
-### SSL/TLS Configuration
+#### SSL/TLS Configuration
 - Protocol: TLS 1.2+
 - Cipher suites: Modern only
 - HSTS enabled
 - Certificate auto-renewal
-</details>
 
 ## Future Enhancements
 
-1. **Performance Optimization**
-   - Implement Azure Front Door
-   - Enable HTTP/3
-   - Optimize asset delivery
+### Performance Optimization
+- Implement Azure Front Door
+- Enable HTTP/3
+- Optimize asset delivery
 
-<details>
-<summary><b>🎯 Detailed Enhancement Plans</b> (Click to expand)</summary>
+### Detailed Enhancement Plans
 
-### Planned Improvements
+#### Planned Improvements
 
 1. **Performance Optimization**
    - Azure Front Door implementation
@@ -287,7 +275,6 @@ cloud-resume/
    - Interactive elements
    - Analytics dashboard
    - Performance monitoring tools
-</details>
 
 ## Additional Resources
 
