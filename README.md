@@ -23,7 +23,7 @@ Essential setup steps and prerequisites.
 | Resource   | URL/Status                                                           |
 | ---------- | -------------------------------------------------------------------- |
 | Live Site  | [https://www.talharesume.com](<[url](https://www.talharesume.com/)>) |
-| Status     | 🔄 In Development                                                    |
+| Status     | ✅ In Development                                                    |
 | CDN Status | ✅ Implemented                                                       |
 
 ## Current Status
