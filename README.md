@@ -1,5 +1,34 @@
 # Cloud Resume Challenge
 
+
+# Cloud Resume Challenge
+
+## Project Summary 🎯
+
+Welcome to my Cloud Resume Challenge project! This project showcases my resume website hosted in Azure, integrating various cloud services to create a secure, scalable, and high-performing solution.
+
+- **Completed ✅:**
+  - **Static Website Hosting:**  
+    - Azure Storage Account configured and deployed.
+  - **CDN Implementation:**  
+    - CDN endpoints set up with improved performance.
+  - **Custom Domain Setup:**  
+    - Domain www.talharesume.com is active with proper SSL/TLS configuration.
+
+- **In Progress 🔄:**
+  - **Backend Development:**  
+    - Implementing a visitor counter using JavaScript.
+    - Setting up CosmosDB and Azure Functions API.
+  - **CI/CD Pipeline:**  
+    - Configuring GitHub Actions for automated testing and deployment.
+
+- **Next Steps ⏳:**
+  - Verify custom domain access and monitor performance.
+  - Enhance backend functionality.
+  - Finalize and optimize the CI/CD workflows.
+
+This summary provides an at-a-glance view of where I stand and what lies ahead.
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -62,8 +91,6 @@ graph TD
 ## Development
 
 See [Local Development Guide](docs/setup/local-development.md)
-
-Welcome to the Talha-CloudResumeChallenge repository! This project is part of the Cloud Resume Challenge, which aims to showcase the integration of cloud technologies through the implementation of a personal resume website. The challenge involves using various cloud services to host, deploy, and manage a static resume site, while also incorporating additional features such as a visitor counter, custom domain setup, and continuous integration/continuous deployment (CI/CD) pipelines. This repository documents the progress, setup instructions, and future goals for the project.
 
 ## Current Progress
 
