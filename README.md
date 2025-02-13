@@ -20,11 +20,11 @@ Essential setup steps and prerequisites.
 
 ## Quick Reference
 
-| Resource   | URL/Status                               |
-| ---------- | ---------------------------------------- |
-| Live Site  | [https://www.talharesume.com]([url](https://www.talharesume.com/))|
-| Status     | 🔄 In Development                        |
-| CDN Status | ✅ Implemented                           |
+| Resource   | URL/Status                                                           |
+| ---------- | -------------------------------------------------------------------- |
+| Live Site  | [https://www.talharesume.com](<[url](https://www.talharesume.com/)>) |
+| Status     | 🔄 In Development                                                    |
+| CDN Status | ✅ Implemented                                                       |
 
 ## Current Status
 
@@ -32,12 +32,12 @@ Essential setup steps and prerequisites.
 
 - [Frontend Setup](docs/frontend/static-hosting.md)
 - [CDN Implementation](docs/frontend/cdn-setup.md)
+- [Custom Domain Setup](docs/frontend/domain-setup.md)
 
 ### In Progress 🔄
 
-- Visitor Counter
-- Custom Domain Setup
-- CI/CD Pipeline
+- Visitor Counter Implementation
+- CI/CD Pipeline Setup
 
 ## Architecture
 
