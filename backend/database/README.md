@@ -2,23 +2,16 @@
 
 ## Configuration
 
-- Instance Name: talha-resume-db-2025-v3
-- Resource Group: rg-cloudresume
+- Instance: talha-resume-db-2025-v3
+- API: MongoDB
 - Region: UAE North
-- API Type: MongoDB
 - Mode: Serverless
+- Created: 2024-02-15
 
-## Database Structure
+## Technical Details
 
-- Database: visitordb
-- Collection: visitors
-- Shard Key: id (Hash)
-- Indexed Fields: \_id
+[Content from TECHNICAL.md]
 
-## Implementation Details
+## Implementation Steps
 
-[Move from TECHNICAL.md]
-
-## Setup Steps
-
-[Move from setup-notes.md]
+[Content from setup-notes.md]
