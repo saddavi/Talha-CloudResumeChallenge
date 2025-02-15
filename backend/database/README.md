@@ -1,47 +1,24 @@
-# Database Implementation
+# CosmosDB Implementation
 
 ## Configuration
 
-- Instance: talha-resume-db-2025-v3
-- API: MongoDB
+- Instance Name: talha-resume-db-2025-v3
+- Resource Group: rg-cloudresume
 - Region: UAE North
+- API Type: MongoDB
 - Mode: Serverless
 
-## Technical Details
+## Database Structure
 
-- **Consistency**: Session
+- Database: visitordb
+- Collection: visitors
+- Shard Key: id (Hash)
+- Indexed Fields: \_id
 
-### Database Structure
+## Implementation Details
 
-- Database Name: visitordb
-- Collection Name: visitors
-- Shard Key: id
+[Move from TECHNICAL.md]
 
-### Connection Details
+## Setup Steps
 
-- Connection Type: MongoDB API
-- Version: 4.0
-- Connection String Location: Azure Key Vault (planned)
-
-### Cost Optimization
-
-- Serverless capacity mode
-- Automatic scaling based on usage
-- Estimated monthly cost: < $1 for expected traffic
-
-### Security Configuration
-
-- Network access: Azure Functions only (planned)
-- Authentication: Azure AD integration (planned)
-- RBAC: Minimum required permissions
-
-### Monitoring
-
-- Metrics tracked:
-  - Request Units (RU) consumption
-  - Storage usage
-  - Response time
-
-## Implementation Steps
-
-[Move content from setup-notes.md here]
+[Move from setup-notes.md]
