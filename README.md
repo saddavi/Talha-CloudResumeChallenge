@@ -10,6 +10,7 @@
 ![Author](https://img.shields.io/badge/author-saddavi-purple)
 
 ### Live Demo
+
 🔗 [www.talharesume.com](https://www.talharesume.com)
 
 ## Overview
@@ -19,6 +20,7 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
 ## Implementation Status
 
 ### High-Level Progress
+
 - ✅ Frontend Infrastructure
 - ✅ CDN Implementation
 - ✅ Custom Domain Setup
@@ -28,6 +30,7 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
 ### Detailed Implementation Status
 
 #### Completed Components ✅
+
 - **Azure Static Website Hosting**
   - Storage account created and configured (talhacrc0210)
   - Static website enabled with proper endpoints
@@ -42,11 +45,17 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
   - SSL/TLS configuration complete
   - DNS configuration verified
   - HTTPS enforced
+- **Database Setup**
+  - CosmosDB instance created (talha-resume-db-2025-v2)
+  - MongoDB API enabled
+  - Location: UAE North
+  - Optimized throughput: 100 RU/s
+  - Eventual consistency configured
 
 #### In Progress 🔄
+
 - **Backend Development**
   - Visitor counter implementation
-  - CosmosDB setup
   - Azure Functions API
 - **CI/CD Pipeline**
   - GitHub Actions workflow
@@ -56,6 +65,7 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
 ## System Architecture
 
 ### High-Level Overview
+
 ```mermaid
 graph TD
     A[Static Website] -->|CDN| B[Users]
@@ -64,6 +74,7 @@ graph TD
 ```
 
 ### Detailed Architecture Diagram
+
 ```mermaid
 flowchart TD
     classDef securityLayer fill:#f9f,stroke:#333,stroke-width:2px
@@ -129,6 +140,7 @@ flowchart TD
 ## Performance & Controls
 
 ### Key Metrics
+
 - Page Load Time: 101ms (CDN-optimized)
 - Cache Hit Ratio: >95%
 - Global Availability: 99.99%
@@ -136,6 +148,7 @@ flowchart TD
 ### Detailed Performance Analysis
 
 #### CDN Performance Analysis
+
 ```mermaid
 graph LR
     A[Original: 152ms] -->|33% Faster| B[CDN: 101ms]
@@ -144,14 +157,16 @@ graph LR
 ```
 
 #### Detailed Metrics
-| Metric         | Original | With CDN | Status            |
-|----------------|----------|----------|-------------------|
-| Response Time  | 152ms    | 101ms    | ✅ 33% Faster     |
-| Cache Status   | N/A      | TCP_HIT  | ✅ Caching Active |
-| Layer 1 Cache  | N/A      | L1_T2    | ✅ Optimized      |
-| SSL/TLS        | Enabled  | Enabled  | ✅ Secure         |
+
+| Metric        | Original | With CDN | Status            |
+| ------------- | -------- | -------- | ----------------- |
+| Response Time | 152ms    | 101ms    | ✅ 33% Faster     |
+| Cache Status  | N/A      | TCP_HIT  | ✅ Caching Active |
+| Layer 1 Cache | N/A      | L1_T2    | ✅ Optimized      |
+| SSL/TLS       | Enabled  | Enabled  | ✅ Secure         |
 
 #### Resource Management
+
 - Region: Qatar Central
 - Monthly Budget: $20
 - Alert Thresholds:
@@ -162,6 +177,7 @@ graph LR
 ## Development Setup
 
 ### Quick Start
+
 ```bash
 git clone https://github.com/saddavi/Talha-CloudResumeChallenge.git
 cd Talha-CloudResumeChallenge
@@ -171,6 +187,7 @@ npm install
 ### Detailed Development Setup
 
 #### Prerequisites
+
 ```bash
 # Required Tools
 - Azure CLI
@@ -192,18 +209,21 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ```
 
 #### VS Code Extensions
+
 - Azure Account
 - Azure Static Web Apps
 - Azure Resources
 - Azure Storage
 
 #### Azure Cloud Shell Setup
+
 - Pre-authenticated environment
 - 5 GB persistent storage
 - Built-in code editor
 - Supports both Bash and PowerShell
 
 #### Project Structure
+
 ```plaintext
 cloud-resume/
 ├── frontend/
@@ -224,6 +244,7 @@ cloud-resume/
 ## Security Implementation
 
 ### Key Features
+
 - SSL/TLS encryption
 - Secured storage access
 - Automated security updates
@@ -231,6 +252,7 @@ cloud-resume/
 ### Detailed Security Configuration
 
 #### Security Measures
+
 - Principle of least privilege implementation
 - Isolated web container configuration
 - Azure Firewall rules
@@ -239,6 +261,7 @@ cloud-resume/
 - Regular security audits
 
 #### SSL/TLS Configuration
+
 - Protocol: TLS 1.2+
 - Cipher suites: Modern only
 - HSTS enabled
@@ -247,6 +270,7 @@ cloud-resume/
 ## Future Enhancements
 
 ### Performance Optimization
+
 - Implement Azure Front Door
 - Enable HTTP/3
 - Optimize asset delivery
@@ -256,6 +280,7 @@ cloud-resume/
 #### Planned Improvements
 
 1. **Performance Optimization**
+
    - Azure Front Door implementation
    - HTTP/3 enablement
    - Asset delivery optimization
@@ -263,6 +288,7 @@ cloud-resume/
    - CDN rule refinement
 
 2. **Security Enhancements**
+
    - WAF protection
    - Enhanced rate limiting
    - Security monitoring improvements
@@ -284,6 +310,6 @@ cloud-resume/
 
 ---
 
-*Last updated: 2025-02-13 16:57:00 UTC by @saddavi*
+_Last updated: 2025-02-13 16:57:00 UTC by @saddavi_
 
-*This project is part of the Cloud Resume Challenge, demonstrating practical cloud engineering skills and best practices.*
+_This project is part of the Cloud Resume Challenge, demonstrating practical cloud engineering skills and best practices._
