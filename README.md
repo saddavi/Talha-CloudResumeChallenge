@@ -53,6 +53,9 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
   - Session consistency configured
   - Database: visitordb
   - Collection: visitors
+    - Indexed on: \_id
+    - Shard key: id (Hash)
+    - Type: MongoDB collection
 
 #### In Progress 🔄
 
@@ -268,6 +271,31 @@ cloud-resume/
 - Cipher suites: Modern only
 - HSTS enabled
 - Certificate auto-renewal
+
+## Database Documentation Update
+
+### Changes Made
+
+- Updated CosmosDB configuration details
+- Documented MongoDB API implementation
+- Added serverless capacity mode specifics
+- Updated region information to UAE North
+
+### Verified Components
+
+- [x] CosmosDB account creation
+- [x] MongoDB API configuration
+- [x] Database creation
+- [x] Collection setup
+- [x] Serverless mode enablement
+
+### Related Issues
+
+Closes #[Issue number] - Database setup documentation
+
+### Screenshots
+
+![CosmosDB Configuration](link-to-screenshot) <!-- Optional -->
 
 ## Future Enhancements
 
