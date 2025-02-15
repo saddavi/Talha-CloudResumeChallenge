@@ -62,8 +62,12 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
     - Indexed on: \_id
     - Shard key: id (Hash)
     - Type: MongoDB collection
-- **Database Setup**
-  ✅ CosmosDB Implementation (Details: [backend/database/README.md](backend/database/README.md))
+- **Database Setup** (2024-02-15)
+  - CosmosDB with MongoDB API
+  - UAE North region
+  - Serverless configuration
+  - [Full Details](backend/database/README.md)
+    ✅ CosmosDB Implementation (Details: [backend/database/README.md](backend/database/README.md))
 
 #### In Progress 🔄
 
