@@ -46,11 +46,13 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
   - DNS configuration verified
   - HTTPS enforced
 - **Database Setup**
-  - CosmosDB instance created (talha-resume-db-2025-v2)
+  - CosmosDB instance created (talha-resume-db-2025-v3)
   - MongoDB API enabled
   - Location: UAE North
-  - Optimized throughput: 100 RU/s
-  - Eventual consistency configured
+  - Serverless capacity mode
+  - Session consistency configured
+  - Database: visitordb
+  - Collection: visitors
 
 #### In Progress 🔄
 
