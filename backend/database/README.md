@@ -32,3 +32,4 @@
   - Request Units (RU) consumption
   - Storage usage
   - Response time
+  

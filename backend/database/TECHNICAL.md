@@ -1,5 +1,13 @@
 # CosmosDB Technical Documentation
 
+## Implementation Details
+
+- **Date Implemented**: February 15, 2024
+- **Last Updated**: February 15, 2024
+- **Status**: Active
+
+## Configuration
+
 ## Verified Configuration
 
 - **Account Name**: talha-resume-db-2025-v3
@@ -26,6 +34,39 @@
   }
 }
 ```
+
+## Verification Steps
+
+1. Database Creation:
+
+```powershell
+az cosmosdb mongodb database list `
+    --account-name talha-resume-db-2025-v3 `
+    --resource-group rg-cloudresume `
+    --output table
+```
+
+2. Collection Setup:
+
+```powershell
+az cosmosdb mongodb collection list `
+    --account-name talha-resume-db-2025-v3 `
+    --resource-group rg-cloudresume `
+    --database-name visitordb `
+    --output table
+```
+
+## Testing Procedures
+
+1. Connection Test
+2. CRUD Operations
+3. Performance Metrics
+
+## Monitoring
+
+- Request Units (RU) consumption
+- Storage metrics
+- Response times
 
 ## Verification Commands
 
