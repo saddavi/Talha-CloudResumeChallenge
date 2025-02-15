@@ -1,0 +1,7 @@
+{
+    "databaseName": "VisitorDB",
+    "containerName": "VisitorCounter",
+    "partitionKey": "/id",
+    "location": "qatarcentral",
+    "consistencyLevel": "Eventual"
+}
