@@ -290,6 +290,13 @@ cloud-resume/
 - HSTS enabled
 - Certificate auto-renewal
 
+### Security Best Practices
+
+- ⚠️ Never commit connection strings or secrets
+- ✅ Use Azure Key Vault for production secrets
+- ✅ Use local.settings.json for development
+- ✅ Add sensitive files to .gitignore
+
 ## Database Documentation Update
 
 ### Changes Made
