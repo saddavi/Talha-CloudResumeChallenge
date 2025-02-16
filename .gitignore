@@ -43,3 +43,6 @@ backend/api/local.settings.json
 
 # VS Code
 .vscode/
+connection_string.txt
+local.settings.json
+.env
