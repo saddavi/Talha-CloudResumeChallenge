@@ -16,7 +16,6 @@ Thumbs.db
 
 # Azure specific
 .azure/
-local.settings.json
 *.pubxml
 
 # Node modules (if used later)
@@ -25,5 +24,22 @@ node_modules/
 # Python (if used later)
 __pycache__/
 *.py[cod]
+*$py.class
 venv/
 .env*.swp
+
+# Local development
+.env
+.venv
+venv/
+connection_string.txt
+**/local.settings.json
+
+# Azure Function local settings
+backend/api/local.settings.json
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
