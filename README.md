@@ -1,5 +1,7 @@
 # Cloud Resume Challenge
 
+![Deployment Status](https://github.com/saddavi/Talha-CloudResumeChallenge/actions/workflows/deploy.yml/badge.svg)
+
 > A modern, serverless resume platform showcasing cloud architecture and DevOps practices
 
 ![Project Status](https://img.shields.io/badge/status-in%20progress-brightgreen)

@@ -1,10 +1,10 @@
 {
-  "databaseName": "VisitorDB",
-  "containerName": "VisitorCounter",
+  "databaseName": "visitordb",
+  "containerName": "visitors",
   "partitionKey": "/id",
-  "location": "uaenorth", // Current production region
+  "location": "uaenorth",
   "consistencyLevel": "Eventual",
-  "accountName": "talha-resume-db-2025-v2", // Current production instance
+  "accountName": "talha-resume-db-2025-v3",
   "apiVersion": "2023-05-15",
-  "offerThroughput": 100 // Optimized for cost (≈$5.84/month)
+  "offerThroughput": 100
 }

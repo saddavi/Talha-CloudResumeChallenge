@@ -27,6 +27,7 @@ __pycache__/
 *$py.class
 venv/
 .env*.swp
+.python_version
 
 # Local development
 .env
@@ -34,6 +35,7 @@ venv/
 venv/
 connection_string.txt
 **/local.settings.json
+local.settings.json
 
 # Azure Function local settings
 backend/api/local.settings.json
