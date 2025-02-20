@@ -44,7 +44,6 @@ backend/api/local.settings.json
 *.log
 
 # VS Code
-.vscode/
-connection_string.txt
-local.settings.json
-.env
+.vscode/*
+!.vscode/extensions.json
+backend/api/.vscode/
