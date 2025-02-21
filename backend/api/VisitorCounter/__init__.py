@@ -1,7 +1,8 @@
 import logging
 import azure.functions as func
-import os
+import json
 from pymongo import MongoClient
+import os
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
@@ -32,6 +33,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     except Exception as e:
         logging.error(f"Error: {e}")
         return func.HttpResponse(
-             "Error",
+             str(e),
              status_code=500
         )
