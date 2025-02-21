@@ -3,13 +3,21 @@
   "containerName": "visitors",
   "partitionKey": "/id",
   "location": "uaenorth",
-  "consistencyLevel": "Session", // Updated to match actual setting
+  "consistencyLevel": "Session",
   "accountName": "talha-resume-db-2025-v3",
   "apiVersion": "2023-05-15",
-  "offerThroughput": 100,
-  "mode": "serverless", // Added based on capabilities
+  "mode": "serverless",
   "apiProperties": {
-    // Added MongoDB version
     "serverVersion": "4.0"
+  },
+  "backup": {
+    "type": "Periodic",
+    "intervalMinutes": 240,
+    "retentionHours": 8,
+    "redundancy": "Geo"
+  },
+  "security": {
+    "minimalTlsVersion": "Tls12",
+    "publicNetworkAccess": "Enabled"
   }
 }
