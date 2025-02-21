@@ -33,8 +33,10 @@ __pycache__/
 .env
 .venv
 venv/
-.python_version
+ENV/
+.python-version
 
-# Logs and temp files
+# Logs and temporary files
 *.log
+temp/
 .env*
