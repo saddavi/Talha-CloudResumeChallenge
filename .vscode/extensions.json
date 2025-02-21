@@ -1,7 +1,7 @@
 {
   "recommendations": [
-    "ms-python.python",
     "ms-azuretools.vscode-azurefunctions",
+    "ms-python.python",
     "ms-vscode.azure-account"
   ]
 }
