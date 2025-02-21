@@ -1,3 +1,7 @@
 {
-  "recommendations": ["ms-vscode.vscode-node-azure-pack"]
+  "recommendations": [
+    "ms-python.python",
+    "ms-azuretools.vscode-azurefunctions",
+    "ms-vscode.azure-account"
+  ]
 }
