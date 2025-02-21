@@ -6,24 +6,35 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.swp
 
-# VS Code specific
+# IDE - VS Code
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+backend/api/.vscode/
 
-# Azure specific
+# Azure
 .azure/
-local.settings.json
 *.pubxml
+**/local.settings.json
+connection_string.txt
 
-# Node modules (if used later)
+# Node.js
 node_modules/
+package-lock.json
 
-# Python (if used later)
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+.env
+.venv
 venv/
-.env*.swp
+.python_version
+
+# Logs and temp files
+*.log
+.env*
