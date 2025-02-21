@@ -40,3 +40,6 @@ ENV/
 *.log
 temp/
 .env*
+
+# Azure Functions
+**/local.settings.json
