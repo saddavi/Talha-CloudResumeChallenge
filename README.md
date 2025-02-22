@@ -27,6 +27,11 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
   - Connection testing framework created
   - Error handling and retry logic implemented
   - Security measures for connection strings
+- [2024-02-22] Visitor Counter Implementation ✅
+  - Azure Function created with Python
+  - CosmosDB integration completed
+  - Local testing successful
+  - Unit tests implemented
 
 ## Implementation Status
 
@@ -67,6 +72,15 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
     - Indexed on: \_id
     - Shard key: id (Hash)
     - Type: MongoDB collection
+- **Visitor Counter Implementation** (Completed: 2024-02-22)
+  - Azure Function created (VisitorCounterUnique)
+  - MongoDB integration via CosmosDB
+  - Local testing environment configured
+  - Unit tests with pytest
+  - Connection string management
+  - Error handling implemented
+  - Anonymous authentication enabled
+  - Response format: plain text with count
 
 #### In Progress 🔄
 
@@ -349,12 +363,18 @@ Closes #[Issue number] - Database setup documentation
 - [Cloud Resume Challenge Guide](https://cloudresumechallenge.dev/)
 - [Azure Architecture Center](https://docs.microsoft.com/en-us/azure/architecture/)
 
+
 ---
 
 _Last updated: 2025-02-13 16:57:00 UTC by @saddavi_
 
 _This project is part of the Cloud Resume Challenge, demonstrating practical cloud engineering skills and best practices._
 
-```
-
+```python
+# Example Visitor Counter Function
+@app.function_name("VisitorCounterUnique")
+@app.route(route="VisitorCounter", auth_level=func.AuthLevel.ANONYMOUS)
+def VisitorCounterUnique(req: func.HttpRequest) -> func.HttpResponse:
+    # Increments and returns visitor count
+    # Connects to CosmosDB (MongoDB API)
 ```
