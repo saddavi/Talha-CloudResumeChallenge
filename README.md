@@ -369,12 +369,3 @@ Closes #[Issue number] - Database setup documentation
 _Last updated: 2025-02-13 16:57:00 UTC by @saddavi_
 
 _This project is part of the Cloud Resume Challenge, demonstrating practical cloud engineering skills and best practices._
-
-```python
-# Example Visitor Counter Function
-@app.function_name("VisitorCounterUnique")
-@app.route(route="VisitorCounter", auth_level=func.AuthLevel.ANONYMOUS)
-def VisitorCounterUnique(req: func.HttpRequest) -> func.HttpResponse:
-    # Increments and returns visitor count
-    # Connects to CosmosDB (MongoDB API)
-```
