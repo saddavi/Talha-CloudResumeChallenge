@@ -1,6 +1,4 @@
 import azure.functions as func
-import datetime
-import json
 import logging
 import os
 from pymongo import MongoClient
@@ -13,7 +11,7 @@ def VisitorCounterUnique(req: func.HttpRequest) -> func.HttpResponse:
     logging.info("Processing HTTP request for VisitorCounterUnique.")
 
     try:
-        # Ensure COSMOS_CONNECTION_STRING is correctly set in your environment or local.settings.json
+        # Ensure COSMOS_CONNECTION_STRING is set correctly via local.settings.json or environment
         cosmos_connection_string = os.environ["COSMOS_CONNECTION_STRING"]
         client = MongoClient(cosmos_connection_string)
         db = client["visitordb"]
@@ -39,10 +37,6 @@ def VisitorCounterUnique(req: func.HttpRequest) -> func.HttpResponse:
     except Exception as e:
         logging.error(f"Error processing the visitor counter: {e}")
         return func.HttpResponse(
-             f"Error: {e}",
-             status_code=500
+            f"Error: {e}",
+            status_code=500
         )
-
-{
-  
-}
