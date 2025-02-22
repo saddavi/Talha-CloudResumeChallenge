@@ -28,10 +28,11 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
   - Error handling and retry logic implemented
   - Security measures for connection strings
 - [2024-02-22] Visitor Counter Implementation ✅
-  - Azure Function created with Python
-  - CosmosDB integration completed
-  - Local testing successful
-  - Unit tests implemented
+  - Azure Function created with Python 3.11
+  - CosmosDB integration completed using MongoDB API
+  - Local testing successful with proper environment setup
+  - Unit tests implemented with pytest
+  - Secure connection string management
 
 ## Implementation Status
 
@@ -73,14 +74,14 @@ This project demonstrates end-to-end cloud architecture implementation, combinin
     - Shard key: id (Hash)
     - Type: MongoDB collection
 - **Visitor Counter Implementation** (Completed: 2024-02-22)
-  - Azure Function created (VisitorCounterUnique)
-  - MongoDB integration via CosmosDB
-  - Local testing environment configured
-  - Unit tests with pytest
-  - Connection string management
-  - Error handling implemented
+  - Azure Function (VisitorCounterUnique) implemented
+  - MongoDB API integration via CosmosDB
+  - Environment-based configuration
+  - Proper error handling
+  - Unit tests with mocking
+  - Local development environment setup
   - Anonymous authentication enabled
-  - Response format: plain text with count
+  - Response format: "Visitor count: {count}"
 
 #### In Progress 🔄
 
@@ -101,6 +102,8 @@ graph TD
     A[Static Website] -->|CDN| B[Users]
     C[Backend APIs] -->|Data| D[Database]
     E[CI/CD] -->|Deploy| A
+    F[Visitor Counter] -->|Increment| D[CosmosDB]
+    B -->|Triggers| F
 ```
 
 ### Detailed Architecture Diagram
@@ -271,101 +274,14 @@ cloud-resume/
     └── workflows/         # CI/CD pipelines
 ```
 
-## Security Implementation
-
-### Key Features
-
-- SSL/TLS encryption
-- Secured storage access
-- Automated security updates
-
-### Detailed Security Configuration
-
-#### Security Measures
-
-- Principle of least privilege implementation
-- Isolated web container configuration
-- Azure Firewall rules
-- Rate limiting
-- DDoS protection
-- Regular security audits
-
-#### SSL/TLS Configuration
-
-- Protocol: TLS 1.2+
-- Cipher suites: Modern only
-- HSTS enabled
-- Certificate auto-renewal
-
-## Database Documentation Update
-
-### Changes Made
-
-- Updated CosmosDB configuration details
-- Documented MongoDB API implementation
-- Added serverless capacity mode specifics
-- Updated region information to UAE North
-
-### Verified Components
-
-- [x] CosmosDB account creation
-- [x] MongoDB API configuration
-- [x] Database creation
-- [x] Collection setup
-- [x] Serverless mode enablement
-
-### Related Issues
-
-Closes #[Issue number] - Database setup documentation
-
-### Screenshots
-
-![CosmosDB Configuration](link-to-screenshot) <!-- Optional -->
-
-## Future Enhancements
-
-### Performance Optimization
-
-- Implement Azure Front Door
-- Enable HTTP/3
-- Optimize asset delivery
-
-### Detailed Enhancement Plans
-
-#### Planned Improvements
-
-1. **Performance Optimization**
-
-   - Azure Front Door implementation
-   - HTTP/3 enablement
-   - Asset delivery optimization
-   - Browser caching strategies
-   - CDN rule refinement
-
-2. **Security Enhancements**
-
-   - WAF protection
-   - Enhanced rate limiting
-   - Security monitoring improvements
-   - Automated security testing
-   - Compliance monitoring
-
-3. **Feature Additions**
-   - Blog integration
-   - Portfolio showcase
-   - Interactive elements
-   - Analytics dashboard
-   - Performance monitoring tools
-
 ## Additional Resources
 
 - [Azure Static Website Documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website)
 - [Cloud Resume Challenge Guide](https://cloudresumechallenge.dev/)
 - [Azure Architecture Center](https://docs.microsoft.com/en-us/azure/architecture/)
 
-
 ---
 
-_Last updated: 2025-02-13 16:57:00 UTC by @saddavi_
+_Last updated: 2025-02-22 16:57:00 UTC by @saddavi_
 
 _This project is part of the Cloud Resume Challenge, demonstrating practical cloud engineering skills and best practices._
