@@ -4,7 +4,7 @@
 [![Deployment Status](https://img.shields.io/badge/Deployment-Success-brightgreen)](#)
 [![Azure](https://img.shields.io/badge/Platform-Azure-blue)](#)
 [![Infrastructure as Code](https://img.shields.io/badge/IaC-Terraform-purple)](#)
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--02--13-orange)](#)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--02--22-orange)](#)
 ## 🌐 Live Demo
 Check out the live demo [here](http://www.talharesume.com).
 ## 📜 Overview
