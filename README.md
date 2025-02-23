@@ -1,9 +1,3 @@
-Absolutely! I'll merge the content from your latest version into the polished README I created earlier, ensuring that all the new details are included while maintaining a clean and professional structure. This will result in a comprehensive, well-organized README that combines the best of both versions.
-
-Here’s the updated and merged README:
-
----
-
 # 🌟 Talha's Cloud Resume Challenge
 
 [![Deployment Status](https://img.shields.io/badge/Deployment-Success-brightgreen)](#)  
