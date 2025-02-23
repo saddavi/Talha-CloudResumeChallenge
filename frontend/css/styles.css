@@ -120,9 +120,14 @@ body {
   text-align: center;
   margin: 20px 0;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.visitor-counter p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.9em;
 }
 @media (max-width: 768px) {
   body {
