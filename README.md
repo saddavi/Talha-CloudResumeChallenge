@@ -18,6 +18,7 @@ Check out the live demo [here](http://www.talharesume.com).
 This project showcases a modern, **serverless resume platform** built using **Azure services**, **infrastructure as code (IaC)**, and **DevOps best practices**. It demonstrates real-world cloud engineering skills by delivering a high-performance, secure, and scalable resume website.
 
 Key features include:
+
 - **Static Website Hosting**: Powered by Azure CDN with a custom domain.
 - **Visitor Counter**: Integrated with CosmosDB and Azure Functions.
 - **CI/CD Pipeline**: Automated workflows for seamless updates (in progress).
@@ -38,6 +39,11 @@ Key features include:
   - Successfully tested locally with proper environment setup.
   - Wrote unit tests using pytest.
   - Enabled anonymous authentication.
+- [2024-02-23] Azure Function Deployment ✅
+  - Visitor counter function deployed to Azure
+  - CosmosDB integration completed
+  - Frontend JavaScript integration successful
+  - CORS configuration implemented
 
 ---
 
@@ -61,6 +67,52 @@ Key features include:
 
 - **Backend Development**: Enhancing visitor counter and Azure Functions API.
 - **CI/CD Pipeline**: Developing GitHub Actions workflows for automated testing and deployment.
+
+### Components Status
+
+#### Backend (Completed ✅)
+
+- **Azure Function**
+  - Name: `talha-resume-func-2025`
+  - Region: UAE North
+  - Runtime: Python 3.11
+  - Endpoint: `https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter`
+- **Database**
+  - CosmosDB (MongoDB API)
+  - Collection: visitors
+  - Document schema: `{ "id": "visitor_count", "count": number }`
+
+#### Frontend (Completed ✅)
+
+- **Visitor Counter Integration**
+  - JavaScript fetch implementation
+  - Error handling
+  - Dynamic counter display
+
+---
+
+## Implementation Status ✅
+
+### Frontend
+
+- Static website hosted on Azure Storage
+- Custom domain with SSL/TLS
+- CDN integration for performance
+- Visitor counter UI integration
+
+### Backend
+
+- Azure Functions with Python
+- CosmosDB with MongoDB API
+- Visitor counter API
+- CORS enabled for production
+
+### Recent Achievements (February 2025)
+
+- Visitor counter implementation completed
+- Azure Function deployed to production
+- Frontend-backend integration successful
+- CDN configuration optimized
 
 ---
 
@@ -131,6 +183,25 @@ flowchart TD
     class Monitoring monitoringLayer
 ```
 
+### Architecture
+
+```mermaid
+graph TD
+    A[Resume Website] -->|HTTP GET| B[Azure Function]
+    B -->|Query/Update| C[CosmosDB]
+    C -->|Return Count| B
+    B -->|Display Count| A
+```
+
+```mermaid
+graph TD
+    A[Resume Website] -->|CDN| B[Azure Storage]
+    C[Visitor Counter JS] -->|API Call| D[Azure Function]
+    D -->|Query/Update| E[CosmosDB]
+    E -->|Return Count| D
+    D -->|Display Count| C
+```
+
 ---
 
 ## 🛠️ Development Setup
@@ -192,6 +263,31 @@ func start
 pytest tests/test_visitor_counter.py -v
 ```
 
+### Local Development
+
+```powershell
+# Start Azure Function locally
+cd backend/api
+func start
+
+# Test endpoint
+curl http://localhost:7071/api/VisitorCounter
+```
+
+### Deployment
+
+The visitor counter is deployed and accessible at:
+
+```
+https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter
+```
+
+### Configuration
+
+- Azure Function configured with CORS support
+- Environment variables set for database connection
+- Anonymous authentication enabled for public access
+
 ---
 
 ## 🔒 Security Implementation
@@ -236,4 +332,3 @@ graph LR
 - [Azure Static Website Documentation](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website)
 - [Cloud Resume Challenge Guide](https://cloudresumechallenge.dev/)
 - [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/)
-
