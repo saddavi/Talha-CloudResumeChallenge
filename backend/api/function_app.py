@@ -27,11 +27,16 @@ def VisitorCounterUnique(req: func.HttpRequest) -> func.HttpResponse:
         new_count = visitor_doc["count"] + 1
         collection.update_one({"id": "visitor_count"}, {"$set": {"count": new_count}})
 
-        # Return the updated visitor count
+        # Return the updated visitor count with CORS headers
         return func.HttpResponse(
             f"Visitor count: {new_count}",
             mimetype="text/plain",
-            status_code=200
+            status_code=200,
+            headers={
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET',
+                'Access-Control-Allow-Headers': 'Content-Type'
+            }
         )
 
     except Exception as e:
