@@ -1,4 +1,4 @@
-# 🌟 Talha's Cloud Resume Challenge
+# Talha's Cloud Resume Challenge
 
 [![Deployment Status](https://img.shields.io/badge/Deployment-Success-brightgreen)](#)  
 [![Platform](https://img.shields.io/badge/Platform-Azure-blue)](#)  
