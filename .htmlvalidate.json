@@ -2,7 +2,7 @@
   "extends": ["html-validate:recommended"],
   "rules": {
     "element-required-attributes": "error",
-    "no-trailing-whitespace": "warning",
+    "no-trailing-whitespace": "warn",
     "void-style": "off"
   }
 }
