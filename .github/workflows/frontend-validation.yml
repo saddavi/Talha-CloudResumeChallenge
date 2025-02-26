@@ -23,11 +23,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
 
-      # Install Node.js for the validator
+      # Install Node.js for the validator - Updated version
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: "20"  # Upgraded from "16" to "20"
 
       # Install html-validate
       - name: Install HTML validator
