@@ -1,0 +1,32 @@
+name: Frontend Validation
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events but only for the main branch
+  push:
+    branches: [ main ]
+    paths:
+      - 'frontend/**'
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs
+jobs:
+  # This workflow contains a job called "validate"
+  validate:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v3
+
+      # Validates HTML
+      - name: HTML5 Validator
+        uses: Cyb3r-Jak3/html5-validator@v7.2.0
+        with:
+          root: frontend/
+          format: text
+          log_level: INFO
