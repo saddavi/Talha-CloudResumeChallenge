@@ -3,7 +3,8 @@
 [![Deployment Status](https://img.shields.io/badge/Deployment-Success-brightgreen)](#)  
 [![Platform](https://img.shields.io/badge/Platform-Azure-blue)](#)  
 [![Infrastructure as Code](https://img.shields.io/badge/IaC-Terraform-purple)](#)  
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--02--23-orange)](#)
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub_Actions-green)](#)  
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--02--26-orange)](#)
 
 ---
 
@@ -20,8 +21,10 @@ This project showcases a modern, **serverless resume platform** built using **Az
 Key features include:
 
 - **Static Website Hosting**: Powered by Azure CDN with a custom domain.
-- **Visitor Counter**: Integrated with CosmosDB and Azure Functions.
-- **CI/CD Pipeline**: Automated workflows for seamless updates (in progress).
+- **Serverless Backend**: Visitor counter API implemented with Azure Functions.
+- **Database Integration**: CosmosDB for persistent data storage.
+- **CI/CD Pipeline**: Automated testing and deployment with GitHub Actions.
+- **Infrastructure as Code**: Azure resources provisioned using Terraform.
 
 ---
 
@@ -297,6 +300,26 @@ https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter
 - **Error Handling and Retry Logic**: Implemented to handle transient failures gracefully.
 - **Automated Security Updates**: Regularly applied to keep dependencies up-to-date.
 - **Regular Security Audits**: Conducted to identify and mitigate potential vulnerabilities.
+
+---
+
+## 🔄 CI/CD Pipeline
+
+The project implements continuous integration and continuous deployment using GitHub Actions:
+
+- **Frontend Validation**: Automated HTML validation to ensure code quality
+- **Backend Testing**: Unit tests for the visitor counter API
+- **Automated Deployment**: Streamlined deployment process for both frontend and backend
+
+### Workflows
+
+| Workflow            | Purpose                                              | Status         |
+| ------------------- | ---------------------------------------------------- | -------------- |
+| Frontend Validation | Validates HTML markup for quality and best practices | ✅ Implemented |
+| Backend Testing     | Tests Azure Function API                             | 🟡 Planned     |
+| Frontend Deployment | Deploys frontend to Azure Storage                    | 🟡 Planned     |
+| Backend Deployment  | Deploys Azure Functions                              | 🟡 In Progress |
+| CDN Purge           | Updates CDN after content changes                    | 🟡 Planned     |
 
 ---
 
