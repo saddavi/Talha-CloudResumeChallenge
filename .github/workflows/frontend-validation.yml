@@ -4,10 +4,10 @@ name: Frontend Validation
 on:
   # Triggers the workflow on push events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
-      - 'frontend/**'
-  
+      - "frontend/**"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -23,10 +23,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
 
-      # Validates HTML
-      - name: HTML5 Validator
-        uses: Cyb3r-Jak3/html5-validator@v7.2.0
+      # Install Node.js for the validator
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          root: frontend/
-          format: text
-          log_level: INFO
+          node-version: "16"
+
+      # Install html-validate
+      - name: Install HTML validator
+        run: npm install -g html-validate
+
+      # Validate HTML files
+      - name: Validate HTML
+        run: |
+          find frontend -name "*.html" -print0 | xargs -0 -n1 html-validate --config .htmlvalidate.json || true
