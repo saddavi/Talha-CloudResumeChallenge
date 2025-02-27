@@ -10,7 +10,7 @@
 
 ## 🌐 Live Demo
 
-Check out the live demo [here](http://www.talharesume.com).
+Check out the live demo [here](https://www.talharesume.com/).
 
 ---
 
