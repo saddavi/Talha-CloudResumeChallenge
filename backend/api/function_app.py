@@ -50,3 +50,12 @@ def VisitorCounterUnique(req: func.HttpRequest) -> func.HttpResponse:
             f"Error: {e}",
             status_code=500
         )
+
+@app.function_name("TestFunction")
+@app.route(route="test", auth_level=func.AuthLevel.ANONYMOUS)
+def test_function(req: func.HttpRequest) -> func.HttpResponse:
+    logging.info("Test function executed successfully")
+    return func.HttpResponse(
+        "Test successful!",
+        status_code=200
+    )
