@@ -4,13 +4,13 @@
 [![Platform](https://img.shields.io/badge/Platform-Azure-blue)](#)  
 [![Infrastructure as Code](https://img.shields.io/badge/IaC-Terraform-purple)](#)  
 [![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub_Actions-green)](#)  
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--02--26-orange)](#)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-2023--05--22-orange)](#)
 
 ---
 
 ## 🌐 Live Demo
 
-Check out the live demo [here](https://www.talharesume.com/).
+Check out the live resume [here](https://www.talharesume.com/).
 
 ---
 
@@ -28,48 +28,20 @@ Key features include:
 
 ---
 
-## 📅 Implementation Timeline
+## 📅 Development Timeline and Status
 
-- [2024-02-14]: Frontend deployment completed.
-- [2024-02-15]: CosmosDB implementation started.
-- [2024-02-19]: Database connection implemented and tested ✅
-  - Created a connection testing framework.
-  - Implemented error handling and retry logic.
-  - Secured connection strings using Azure Key Vault.
-- [2024-02-22]: Visitor Counter Implementation ✅
-  - Developed Azure Function using Python 3.11.
-  - Integrated CosmosDB via MongoDB API.
-  - Successfully tested locally with proper environment setup.
-  - Wrote unit tests using pytest.
-  - Enabled anonymous authentication.
-- [2024-02-23] Azure Function Deployment ✅
-  - Visitor counter function deployed to Azure
-  - CosmosDB integration completed
-  - Frontend JavaScript integration successful
-  - CORS configuration implemented
-
----
-
-## 🏗️ Implementation Status
-
-### Completed Components ✅
-
-- **Frontend Infrastructure**: Azure Static Website Hosting with CDN and custom domain setup.
-- **Database Setup**: CosmosDB instance with MongoDB API, serverless capacity mode, and security measures.
-- **Visitor Counter Implementation** (Completed: 2024-02-22)
-  - Azure Function (`VisitorCounterUnique`) implemented.
-  - MongoDB API integration via CosmosDB.
-  - Environment-based configuration.
-  - Proper error handling and retry logic.
-  - Unit tests with mocking.
-  - Local development environment setup.
-  - Anonymous authentication enabled.
-  - Response format: `"Visitor count: {count}"`.
-
-### In Progress 🔄
-
-- **Backend Development**: Enhancing visitor counter and Azure Functions API.
-- **CI/CD Pipeline**: Developing GitHub Actions workflows for automated testing and deployment.
+| Date           | Component   | Task                         | Status | Tools/Technologies Used                          | Details                                                                                               |
+| -------------- | ----------- | ---------------------------- | ------ | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| **2025-02-14** | Frontend    | Initial deployment           | ✅     | Azure Storage, Azure CLI, HTML5, CSS3            | Deployed HTML/CSS resume to Azure Storage static website with custom styles and responsive design     |
+| **2025-02-15** | Database    | CosmosDB implementation      | ✅     | Azure Portal, Azure CLI                          | Provisioned MongoDB API-compatible CosmosDB instance with serverless capacity mode and security rules |
+| **2025-02-19** | Database    | Connection implementation    | ✅     | Python, Azure Functions                          | Implemented connection string handling with error handling and retry patterns for reliability         |
+| **2025-02-22** | Backend     | Visitor Counter API          | ✅     | Python 3.11, Azure Functions Core Tools, PyMongo | Created Python Azure Function with upsert operation, error handling, and CORS support                 |
+| **2025-02-23** | Integration | Azure Function Deployment    | ✅     | Azure CLI, GitHub Actions                        | Deployed API to production with application settings and logging configuration                        |
+| **2025-03-01** | CI/CD       | Frontend validation workflow | ✅     | GitHub Actions                                   | Implemented GitHub Actions workflow for HTML validation and testing                                   |
+| **2025-03-01** | CI/CD       | Backend deployment workflow  | ✅     | GitHub Actions, Python pip                       | Created automated deployment pipeline with Python dependency management and versioning                |
+| **2025-03-01** | Frontend    | HTML quality improvements    | ✅     | HTML5, Semantic markup                           | Fixed validation errors including header structure, alt tags, and meta description improvements       |
+| **Current**    | Backend     | Enhanced API features        | 🔄     | Python, Azure Functions                          | Implementing caching and performance optimizations                                                    |
+| **Current**    | CI/CD       | Additional workflows         | 🔄     | GitHub Actions, Azure CLI                        | Creating workflows with staged deployments and automated testing across environments                  |
 
 ### Components Status
 
@@ -87,41 +59,16 @@ Key features include:
 
 #### Frontend (Completed ✅)
 
-- **Visitor Counter Integration**
-  - JavaScript fetch implementation
-  - Error handling
-  - Dynamic counter display
-
----
-
-## Implementation Status ✅
-
-### Frontend
-
 - Static website hosted on Azure Storage
 - Custom domain with SSL/TLS
 - CDN integration for performance
 - Visitor counter UI integration
 
-### Backend
-
-- Azure Functions with Python
-- CosmosDB with MongoDB API
-- Visitor counter API
-- CORS enabled for production
-
-### Recent Achievements (February 2025)
-
-- Visitor counter implementation completed
-- Azure Function deployed to production
-- Frontend-backend integration successful
-- CDN configuration optimized
-
 ---
 
 ## 🗺️ System Architecture
 
-### High-Level Overview
+### Architecture Overview
 
 ```mermaid
 graph TD
@@ -186,25 +133,6 @@ flowchart TD
     class Monitoring monitoringLayer
 ```
 
-### Architecture
-
-```mermaid
-graph TD
-    A[Resume Website] -->|HTTP GET| B[Azure Function]
-    B -->|Query/Update| C[CosmosDB]
-    C -->|Return Count| B
-    B -->|Display Count| A
-```
-
-```mermaid
-graph TD
-    A[Resume Website] -->|CDN| B[Azure Storage]
-    C[Visitor Counter JS] -->|API Call| D[Azure Function]
-    D -->|Query/Update| E[CosmosDB]
-    E -->|Return Count| D
-    D -->|Display Count| C
-```
-
 ---
 
 ## 🛠️ Development Setup
@@ -219,10 +147,11 @@ npm install
 
 ### Prerequisites
 
-- **Azure CLI**
-- **Node.js**
-- **Git**
-- **Visual Studio Code** (recommended)
+- **Azure CLI**: v2.37.0 or later for resource management
+- **Node.js**: v14.x or later for frontend tooling
+- **Python**: v3.11 for Azure Functions development
+- **Git**: For version control
+- **Visual Studio Code**: With Azure extension pack (recommended)
 
 ### Project Structure
 
@@ -277,6 +206,20 @@ func start
 curl http://localhost:7071/api/VisitorCounter
 ```
 
+### Local Development Instructions
+
+#### Development-Production Parity
+
+The local development environment closely mirrors the production setup to ensure consistency across environments:
+
+- Local functions use the same Python version (3.11) as production
+- Application settings are structured identically between `local.settings.json` and Azure configuration
+- CORS policies match between environments
+- Database connections use the same client library with environment-specific connection strings
+- Testing covers both unit tests and integration tests that simulate real-world scenarios
+
+This environment parity minimizes "works on my machine" issues and ensures smooth deployment from development to staging to production environments.
+
 ### Deployment
 
 The visitor counter is deployed and accessible at:
@@ -296,7 +239,7 @@ https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter
 ## 🔒 Security Implementation
 
 - **SSL/TLS Encryption**: Ensures secure communication between users and the website.
-- **Secure Connection Strings**: Stored in Azure Key Vault for enhanced security.
+- **Secure Connection Strings**: Stored as environment variables.
 - **Error Handling and Retry Logic**: Implemented to handle transient failures gracefully.
 - **Automated Security Updates**: Regularly applied to keep dependencies up-to-date.
 - **Regular Security Audits**: Conducted to identify and mitigate potential vulnerabilities.
@@ -313,13 +256,13 @@ The project implements continuous integration and continuous deployment using Gi
 
 ### Workflows
 
-| Workflow            | Purpose                                              | Status         |
-| ------------------- | ---------------------------------------------------- | -------------- |
-| Frontend Validation | Validates HTML markup for quality and best practices | ✅ Implemented |
-| Backend Testing     | Tests Azure Function API                             | 🟡 Planned     |
-| Frontend Deployment | Deploys frontend to Azure Storage                    | 🟡 Planned     |
-| Backend Deployment  | Deploys Azure Functions                              | 🟡 In Progress |
-| CDN Purge           | Updates CDN after content changes                    | 🟡 Planned     |
+| Workflow            | Purpose                                              | Status         | Workflow File           | Details                                                                                               |
+| ------------------- | ---------------------------------------------------- | -------------- | ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| Frontend Validation | Validates HTML markup for quality and best practices | ✅ Implemented | `validate-html.yml`     | Checks for broken links, valid markup, and accessibility issues                                       |
+| Backend Testing     | Tests Azure Function API                             | 🟡 Planned     | `test-backend.yml`      | Will use pytest to validate counter functionality, error handling, and edge cases                     |
+| Frontend Deployment | Deploys frontend to Azure Storage                    | 🟡 Planned     | `deploy-frontend.yml`   | Will implement Azure CLI commands to sync static content to $web container with cache control headers |
+| Backend Deployment  | Deploys Azure Functions                              | ✅ Implemented | `deploy-azure-func.yml` | Uses Azure/functions-action to deploy Python functions to talha-resume-func-2025                      |
+| CDN Purge           | Updates CDN after content changes                    | 🟡 Planned     | `purge-cdn-cache.yml`   | Will execute Azure CLI commands to purge CDN endpoints after successful content updates               |
 
 ---
 
@@ -331,22 +274,16 @@ The project implements continuous integration and continuous deployment using Gi
 - **Cache Hit Ratio**: >95%
 - **Global Availability**: 99.99%
 
-### CDN Performance Analysis
-
-```mermaid
-graph LR
-    A[Original: 152ms] -->|33% Faster| B[CDN: 101ms]
-    style A fill:#ff9999
-    style B fill:#99ff99
-```
+These metrics were measured using Azure monitoring tools over a testing period.
 
 ---
 
 ## 📈 Future Enhancements
 
-- **Performance Optimization**: Implement Azure Front Door, enable HTTP/3, and optimize asset delivery.
-- **Security Enhancements**: Enhanced rate limiting, WAF protection, and automated security testing.
-- **Feature Additions**: Blog integration, portfolio showcase, and interactive elements.
+- **Global Performance Optimization**:
+  - Implement Azure Front Door for intelligent global routing
+  - Enable HTTP/3 support for faster connection establishment
+  - Implement adaptive image sizing based on client device capabilities
 
 ---
 
