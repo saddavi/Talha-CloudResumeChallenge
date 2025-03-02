@@ -11,11 +11,16 @@ def VisitorCounterUnique(req: func.HttpRequest) -> func.HttpResponse:
     logging.info("Processing HTTP request for VisitorCounterUnique.")
 
     try:
-        # Ensure COSMOS_CONNECTION_STRING is set correctly via local.settings.json or environment
+        # Log steps for troubleshooting
+        logging.info("Getting connection string...")
         cosmos_connection_string = os.environ["COSMOS_CONNECTION_STRING"]
+        logging.info("Creating MongoDB client...")
         client = MongoClient(cosmos_connection_string)
+        logging.info("Accessing database...")
         db = client["visitordb"]
+        logging.info("Accessing collection...")
         collection = db["visitors"]
+        logging.info("Finding visitor document...")
 
         # Get or create the visitor count document
         visitor_doc = collection.find_one({"id": "visitor_count"})
