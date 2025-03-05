@@ -1,0 +1,127 @@
+name: Frontend Deployment
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events but only for the main branch
+  push:
+    branches: [main]
+    paths:
+      - "frontend/**"
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Environment variables
+env:
+  STORAGE_ACCOUNT_NAME: ${{ secrets.STORAGE_ACCOUNT_NAME }}
+
+# A workflow run is made up of one or more jobs
+jobs:
+  # This workflow contains a job called "deploy"
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    # Steps represent a sequence of tasks
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v3
+      
+      # Install the Azure CLI
+      - name: Install Azure CLI
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      
+      # Login to Azure using frontend service principal
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.FRONTEND_AZURE_CREDENTIALS }}
+      
+      # Pre-deployment validation
+      - name: Validate frontend files
+        run: |
+          if [ ! -f "frontend/index.html" ]; then
+            echo "❌ index.html not found in frontend directory!"
+            exit 1
+          fi
+          echo "✅ Basic frontend validation passed"
+      
+      # Deploy HTML files with short cache duration
+      - name: Deploy HTML files
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --account-name ${{ env.STORAGE_ACCOUNT_NAME }} \
+              --auth-mode login \
+              --source frontend/ \
+              --destination '$web' \
+              --pattern "*.html" \
+              --content-cache-control "max-age=3600" \
+              --overwrite
+      
+      # Deploy CSS and JS files with medium cache duration
+      - name: Deploy CSS/JS files
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --account-name ${{ env.STORAGE_ACCOUNT_NAME }} \
+              --auth-mode login \
+              --source frontend/ \
+              --destination '$web' \
+              --pattern "*.{css,js}" \
+              --content-cache-control "max-age=86400" \
+              --overwrite
+      
+      # Deploy media files with long cache duration
+      - name: Deploy media files
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --account-name ${{ env.STORAGE_ACCOUNT_NAME }} \
+              --auth-mode login \
+              --source frontend/ \
+              --destination '$web' \
+              --pattern "*.{jpg,jpeg,png,svg,ico}" \
+              --content-cache-control "max-age=604800" \
+              --overwrite
+      
+      # Deploy remaining files
+      - name: Deploy other files
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --account-name ${{ env.STORAGE_ACCOUNT_NAME }} \
+              --auth-mode login \
+              --source frontend/ \
+              --destination '$web' \
+              --exclude-path "*.{html,css,js,jpg,jpeg,png,svg,ico}" \
+              --overwrite
+      
+      # Validate deployment
+      - name: Verify deployment
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            echo "Verifying index.html exists in storage..."
+            EXISTS=$(az storage blob exists --account-name ${{ env.STORAGE_ACCOUNT_NAME }} --auth-mode login --container-name '$web' --name 'index.html' --query "exists" -o tsv)
+            if [[ "$EXISTS" == "true" ]]; then
+              echo "✅ Frontend deployment successful!"
+            else
+              echo "❌ Frontend deployment failed - index.html not found!"
+              exit 1
+            fi
+            
+            # Additional validation - get the URL and check HTTP response
+            STORAGE_URL="https://${STORAGE_ACCOUNT_NAME}.z13.web.core.windows.net/"
+            echo "Checking if site is accessible at $STORAGE_URL"
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" $STORAGE_URL)
+            if [[ "$HTTP_STATUS" == "200" ]]; then
+              echo "✅ Site is accessible with HTTP 200 status"
+            else
+              echo "⚠️ Site returned HTTP $HTTP_STATUS - may require investigation"
+            fi
