@@ -40,6 +40,7 @@ Key features include:
 | **2025-03-01** | CI/CD       | Frontend validation workflow | ✅     | GitHub Actions                                   | Implemented GitHub Actions workflow for HTML validation and testing                                   |
 | **2025-03-01** | CI/CD       | Backend deployment workflow  | ✅     | GitHub Actions, Python pip                       | Created automated deployment pipeline with Python dependency management and versioning                |
 | **2025-03-01** | Frontend    | HTML quality improvements    | ✅     | HTML5, Semantic markup                           | Fixed validation errors including header structure, alt tags, and meta description improvements       |
+| **2025-03-05** | Backend     | Fixed Visitor Counter        | ✅     | Azure Functions, JavaScript                      | Resolved API endpoint access issues and ensured proper integration between frontend and backend       |
 | **Current**    | Backend     | Enhanced API features        | 🔄     | Python, Azure Functions                          | Implementing caching and performance optimizations                                                    |
 | **Current**    | CI/CD       | Additional workflows         | 🔄     | GitHub Actions, Azure CLI                        | Creating workflows with staged deployments and automated testing across environments                  |
 
@@ -51,7 +52,7 @@ Key features include:
   - Name: `talha-resume-func-2025`
   - Region: UAE North
   - Runtime: Python 3.11
-  - Endpoint: `https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter`
+  - Endpoint: `https://talha-resume-func-2025.azurewebsites.net/api/counter`
 - **Database**
   - CosmosDB (MongoDB API)
   - Collection: visitors
@@ -261,7 +262,7 @@ The project implements continuous integration and continuous deployment using Gi
 | Frontend Validation | Validates HTML markup for quality and best practices | ✅ Implemented | `validate-html.yml`     | Checks for broken links, valid markup, and accessibility issues                                       |
 | Backend Testing     | Tests Azure Function API                             | 🟡 Planned     | `test-backend.yml`      | Will use pytest to validate counter functionality, error handling, and edge cases                     |
 | Frontend Deployment | Deploys frontend to Azure Storage                    | 🟡 Planned     | `deploy-frontend.yml`   | Will implement Azure CLI commands to sync static content to $web container with cache control headers |
-| Backend Deployment  | Deploys Azure Functions                              | ✅ Implemented | `deploy-azure-func.yml` | Uses Azure/functions-action to deploy Python functions to talha-resume-func-2025                      |
+| Backend Deployment  | Deploys Azure Functions                              | ✅ Implemented | `deploy-azure-func.yml` | Deploys Python functions to Azure using publish profile for authentication                            |
 | CDN Purge           | Updates CDN after content changes                    | 🟡 Planned     | `purge-cdn-cache.yml`   | Will execute Azure CLI commands to purge CDN endpoints after successful content updates               |
 
 ---
@@ -292,3 +293,17 @@ These metrics were measured using Azure monitoring tools over a testing period.
 - [Azure Static Website Documentation](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website)
 - [Cloud Resume Challenge Guide](https://cloudresumechallenge.dev/)
 - [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/)
+
+---
+
+## 🔧 Troubleshooting Lessons
+
+During this project, several valuable troubleshooting lessons were learned:
+
+- **Function Naming Consistency**: Maintaining consistent naming conventions between function names, routes, and client code is critical
+- **Case Sensitivity Awareness**: HTTP routes in Azure Functions are case-sensitive and must match exactly in client code
+- **CI/CD Validation**: Implementing verification steps after deployments prevents silent failures
+- **Systematic Diagnostics**: Following a structured approach (environment → code → deployment → integration) efficiently isolates issues
+- **Deployment Verification**: Always verify function existence and configuration after deployment
+
+These lessons have been incorporated into the project's development practices to ensure smoother operations.

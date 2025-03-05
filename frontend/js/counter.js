@@ -1,5 +1,4 @@
-const apiUrl =
-  "https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter"; // Or wherever your API is
+const apiUrl = "https://talha-resume-func-2025.azurewebsites.net/api/counter";
 
 async function getVisitorCount() {
   try {
