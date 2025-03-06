@@ -1,0 +1,88 @@
+name: Purge CDN Cache
+
+# This workflow is triggered when the Frontend Deployment workflow completes successfully
+on:
+  workflow_run:
+    workflows: ["Frontend Deployment"]
+    types:
+      - completed
+  # Allow manual trigger as well
+  workflow_dispatch:
+
+# Environment variables
+env:
+  RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
+  CDN_PROFILE_NAME: ${{ secrets.CDN_PROFILE_NAME }}
+  CDN_ENDPOINT_NAME: ${{ secrets.CDN_ENDPOINT_NAME }}
+
+jobs:
+  purge:
+    # Only run if the triggering workflow succeeded or this is manually triggered
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out code for access to workflow scripts
+      - uses: actions/checkout@v3
+
+      # Install Azure CLI
+      - name: Install Azure CLI
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+      # Login to Azure
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.FRONTEND_AZURE_CREDENTIALS }}
+
+      # Purge CDN endpoint
+      - name: Purge CDN Cache
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            echo "Purging CDN endpoint: ${{ env.CDN_ENDPOINT_NAME }}..."
+            az cdn endpoint purge \
+              --resource-group ${{ env.RESOURCE_GROUP }} \
+              --profile-name ${{ env.CDN_PROFILE_NAME }} \
+              --name ${{ env.CDN_ENDPOINT_NAME }} \
+              --content-paths '/*'
+              
+            echo "Purge operation initiated"
+
+      # Verify CDN purge status
+      - name: Verify CDN Purge Status
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            echo "Checking purge operation status..."
+            RETRY_COUNT=0
+            MAX_RETRIES=5
+
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              PURGE_STATUS=$(az cdn endpoint purge-status list \
+                --resource-group ${{ env.RESOURCE_GROUP }} \
+                --profile-name ${{ env.CDN_PROFILE_NAME }} \
+                --name ${{ env.CDN_ENDPOINT_NAME }} \
+                --query "[0].status" -o tsv)
+                
+              echo "Current purge status: $PURGE_STATUS"
+              
+              if [[ "$PURGE_STATUS" == "Succeeded" ]]; then
+                echo "✅ CDN purge completed successfully!"
+                break
+              elif [[ "$PURGE_STATUS" == "Processing" ]]; then
+                echo "⏳ CDN purge still processing, waiting 15 seconds..."
+                sleep 15
+              else
+                echo "⚠️ Unexpected purge status: $PURGE_STATUS"
+                exit 1
+              fi
+              
+              RETRY_COUNT=$((RETRY_COUNT+1))
+              
+              if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+                echo "⚠️ Reached maximum retry attempts. CDN purge may still be in progress."
+                echo "Please check Azure Portal for final status."
+              fi
+            done
