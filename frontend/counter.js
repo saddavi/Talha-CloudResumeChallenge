@@ -3,8 +3,8 @@
  * This script fetches the visitor count from Azure Function API
  */
 
-// Use the correct lowercase URL
-const apiUrl = "https://talha-resume-func-2025.azurewebsites.net/api/visitorcounter";
+// Get the API endpoint from the data attribute
+const apiUrl = document.querySelector('body').dataset.apiEndpoint;
 
 // Function to fetch and display visitor count
 async function getVisitorCount() {
@@ -17,7 +17,7 @@ async function getVisitorCount() {
       console.error('Element with ID "visitor-count" not found');
       return;
     }
-    
+
     counterElement.innerText = "Loading...";
 
     const response = await fetch(apiUrl);
