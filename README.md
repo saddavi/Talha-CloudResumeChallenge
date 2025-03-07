@@ -4,7 +4,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Azure-blue)](#)  
 [![Infrastructure as Code](https://img.shields.io/badge/IaC-Terraform-purple)](#)  
 [![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub_Actions-green)](#)  
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--02-orange)](#)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--06-orange)](#)
 
 ---
 

@@ -36,4 +36,5 @@ jobs:
       # Validate HTML files
       - name: Validate HTML
         run: |
-          find frontend -name "*.html" -print0 | xargs -0 -n1 html-validate --config .htmlvalidate.json || true
+          find frontend -name "*.html" -print0 | xargs -0 -n1 html-validate --config .htmlvalidate.json
+

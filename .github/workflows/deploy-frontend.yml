@@ -7,7 +7,7 @@ on:
     branches: [main]
     paths:
       - "frontend/**"
-    
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -21,23 +21,23 @@ jobs:
   deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    
+
     # Steps represent a sequence of tasks
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
-      
+
       # Install the Azure CLI
       - name: Install Azure CLI
         run: |
           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-      
+
       # Login to Azure using frontend service principal
       - name: Login to Azure
         uses: azure/login@v1
         with:
           creds: ${{ secrets.FRONTEND_AZURE_CREDENTIALS }}
-      
+
       # Pre-deployment validation
       - name: Validate frontend files
         run: |
@@ -46,7 +46,7 @@ jobs:
             exit 1
           fi
           echo "✅ Basic frontend validation passed"
-      
+
       # Deploy HTML files with short cache duration
       - name: Deploy HTML files
         uses: azure/CLI@v1
@@ -60,7 +60,7 @@ jobs:
               --pattern "*.html" \
               --content-cache-control "max-age=3600" \
               --overwrite
-      
+
       # Deploy CSS and JS files with medium cache duration
       - name: Deploy CSS/JS files
         uses: azure/CLI@v1
@@ -74,7 +74,7 @@ jobs:
               --pattern "*.{css,js}" \
               --content-cache-control "max-age=86400" \
               --overwrite
-      
+
       # Deploy media files with long cache duration
       - name: Deploy media files
         uses: azure/CLI@v1
@@ -88,7 +88,7 @@ jobs:
               --pattern "*.{jpg,jpeg,png,svg,ico}" \
               --content-cache-control "max-age=604800" \
               --overwrite
-      
+
       # Deploy remaining files (simplified approach)
       - name: Deploy other files
         uses: azure/CLI@v1
@@ -101,7 +101,7 @@ jobs:
               --source frontend/ \
               --destination '$web' \
               --overwrite
-      
+
       # Validate deployment
       - name: Verify deployment and site accessibility
         uses: azure/CLI@v1
@@ -115,7 +115,7 @@ jobs:
               echo "❌ Frontend deployment failed - index.html not found!"
               exit 1
             fi
-            
+
             # Simplified HTTP check to avoid curl formatting issues
             echo "Checking if site is accessible..."
             STORAGE_URL="https://${STORAGE_ACCOUNT_NAME}.z13.web.core.windows.net/"
@@ -124,4 +124,23 @@ jobs:
             else
               echo "⚠️ Site may not be accessible - this is a warning not an error"
               # Not failing the build on this check
+            fi
+
+            # Check if the counter API is accessible - with verbose output for debugging
+            echo "Checking if counter API is accessible..."
+            API_ENDPOINT="${{ secrets.API_ENDPOINT_URL }}"
+            if [ -z "$API_ENDPOINT" ]; then
+              echo "⚠️ API_ENDPOINT_URL secret is not set - skipping API check"
+            else
+              echo "Testing API at: $API_ENDPOINT"
+              HTTP_RESPONSE=$(curl -s -I "$API_ENDPOINT")
+              echo "API Response: $HTTP_RESPONSE"
+              
+              if echo "$HTTP_RESPONSE" | grep -q "HTTP/2 200\|HTTP/1.1 200"; then
+                echo "✅ Counter API is accessible"
+              else
+                echo "⚠️ Counter API is not accessible - check configuration"
+                echo "Make sure the API_ENDPOINT_URL secret points to: https://your-function-app.azurewebsites.net/api/VisitorCounter"
+                # Not failing the build, but adding detailed warning
+              fi
             fi
