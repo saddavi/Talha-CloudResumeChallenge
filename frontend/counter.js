@@ -4,7 +4,7 @@
  */
 
 // Use the specific Azure Function endpoint
-const apiUrl = 'https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter';
+const apiUrl = "https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounterUnique";
 
 // Function to fetch and display visitor count
 async function getVisitorCount() {
