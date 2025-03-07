@@ -4,7 +4,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Azure-blue)](#)  
 [![Infrastructure as Code](https://img.shields.io/badge/IaC-Terraform-purple)](#)  
 [![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub_Actions-green)](#)  
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--06-orange)](#)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--08-orange)](#)
 
 ---
 
@@ -16,15 +16,16 @@ Check out the live resume [here](https://www.talharesume.com/).
 
 ## 📜 Overview
 
-This project showcases a modern, **serverless resume platform** built using **Azure services**, **infrastructure as code (IaC)**, and **DevOps best practices**. It demonstrates real-world cloud engineering skills by delivering a high-performance, secure, and scalable resume website.
+This project implements the [Cloud Resume Challenge](https://cloudresumechallenge.dev/), showcasing my cloud engineering skills through a **serverless resume platform** built using **Azure services**, **infrastructure as code (IaC)**, and **DevOps best practices**. It demonstrates real-world cloud architecture capabilities by delivering a high-performance, secure, and scalable web application.
 
 Key features include:
 
-- **Static Website Hosting**: Powered by Azure CDN with a custom domain.
-- **Serverless Backend**: Visitor counter API implemented with Azure Functions.
-- **Database Integration**: CosmosDB for persistent data storage.
-- **CI/CD Pipeline**: Automated testing and deployment with GitHub Actions.
-- **Infrastructure as Code**: Azure resources provisioned using Terraform.
+- **Static Website Hosting**: Powered by Azure Storage and CDN with a custom domain
+- **Serverless Backend**: Visitor counter API implemented with Azure Functions and Python
+- **Database Integration**: CosmosDB with MongoDB API for persistent visitor data
+- **CI/CD Pipeline**: Automated testing and deployment with GitHub Actions
+- **Infrastructure as Code**: Azure resources provisioned using Terraform
+- **Security Best Practices**: Proper secrets management, CORS configuration, and access controls
 
 ---
 
@@ -41,6 +42,7 @@ Key features include:
 | **2025-03-01** | CI/CD       | Backend deployment workflow  | ✅     | GitHub Actions, Python pip                       | Created automated deployment pipeline with Python dependency management and versioning                |
 | **2025-03-01** | Frontend    | HTML quality improvements    | ✅     | HTML5, Semantic markup                           | Fixed validation errors including header structure, alt tags, and meta description improvements       |
 | **2025-03-05** | Backend     | Fixed Visitor Counter        | ✅     | Azure Functions, JavaScript                      | Resolved API endpoint access issues and ensured proper integration between frontend and backend       |
+| **2025-03-08** | Frontend    | Fixed JavaScript path issue  | ✅     | GitHub Actions, Azure CDN                        | Corrected JS file structure mismatch between HTML references and actual file locations               |
 | **Current**    | Backend     | Enhanced API features        | 🔄     | Python, Azure Functions                          | Implementing caching and performance optimizations                                                    |
 | **Current**    | CI/CD       | Additional workflows         | 🔄     | GitHub Actions, Azure CLI                        | Creating workflows with staged deployments and automated testing across environments                  |
 
@@ -52,7 +54,7 @@ Key features include:
   - Name: `talha-resume-func-2025`
   - Region: UAE North
   - Runtime: Python 3.11
-  - Endpoint: `https://talha-resume-func-2025.azurewebsites.net/api/counter`
+  - Endpoint: `https://talha-resume-func-2025.azurewebsites.net/api/visitorcounter`
 - **Database**
   - CosmosDB (MongoDB API)
   - Collection: visitors
@@ -63,7 +65,8 @@ Key features include:
 - Static website hosted on Azure Storage
 - Custom domain with SSL/TLS
 - CDN integration for performance
-- Visitor counter UI integration
+- Visitor counter UI integration (fully functional)
+- Responsive design for all device types
 
 ---
 
@@ -138,14 +141,6 @@ flowchart TD
 
 ## 🛠️ Development Setup
 
-### Quick Start
-
-```bash
-git clone https://github.com/saddavi/Talha-CloudResumeChallenge.git
-cd Talha-CloudResumeChallenge
-npm install
-```
-
 ### Prerequisites
 
 - **Azure CLI**: v2.37.0 or later for resource management
@@ -165,15 +160,36 @@ cloud-resume/
 │   └── js/
 │       └── counter.js      # Visitor counter
 ├── backend/
-│   ├── api/               # Azure Functions
-│   └── database/          # CosmosDB setup
+│   ├── api/                # Azure Functions
+│   └── database/           # CosmosDB setup
 ├── infrastructure/
-│   └── terraform/         # IaC templates
+│   └── terraform/          # IaC templates
 └── .github/
-    └── workflows/         # CI/CD pipelines
+    └── workflows/          # CI/CD pipelines
 ```
 
-### Local Development Setup
+### Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/saddavi/Talha-CloudResumeChallenge.git
+cd Talha-CloudResumeChallenge
+
+# Set up Python virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On macOS/Linux
+# OR
+.\.venv\Scripts\Activate.ps1  # On Windows PowerShell
+
+# Install dependencies
+pip install -r backend/api/requirements.txt
+
+# Start Azure Function locally
+cd backend/api
+func start
+```
+
+### Local Development Instructions
 
 #### Setting Up the Python Environment
 
@@ -196,19 +212,6 @@ func start
 pytest tests/test_visitor_counter.py -v
 ```
 
-### Local Development
-
-```powershell
-# Start Azure Function locally
-cd backend/api
-func start
-
-# Test endpoint
-curl http://localhost:7071/api/VisitorCounter
-```
-
-### Local Development Instructions
-
 #### Development-Production Parity
 
 The local development environment closely mirrors the production setup to ensure consistency across environments:
@@ -226,7 +229,7 @@ This environment parity minimizes "works on my machine" issues and ensures smoot
 The visitor counter is deployed and accessible at:
 
 ```
-https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter
+https://talha-resume-func-2025.azurewebsites.net/api/visitorcounter
 ```
 
 ### Configuration
@@ -240,9 +243,11 @@ https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter
 ## 🔒 Security Implementation
 
 - **SSL/TLS Encryption**: Ensures secure communication between users and the website.
-- **Secure Connection Strings**: Stored as environment variables.
+- **Secure Connection Strings**: Stored as environment variables in Azure Functions.
 - **Error Handling and Retry Logic**: Implemented to handle transient failures gracefully.
 - **Automated Security Updates**: Regularly applied to keep dependencies up-to-date.
+- **CORS Configuration**: Properly configured to allow only necessary origins.
+- **Principle of Least Privilege**: Storage and Function access policies follow least privilege principles.
 - **Regular Security Audits**: Conducted to identify and mitigate potential vulnerabilities.
 
 ---
@@ -254,16 +259,17 @@ The project implements continuous integration and continuous deployment using Gi
 - **Frontend Validation**: Automated HTML validation to ensure code quality
 - **Backend Testing**: Unit tests for the visitor counter API
 - **Automated Deployment**: Streamlined deployment process for both frontend and backend
+- **CDN Cache Purging**: Automatic purging after new deployments to ensure content freshness
 
 ### Workflows
 
 | Workflow            | Purpose                                              | Status         | Workflow File           | Details                                                                                               |
 | ------------------- | ---------------------------------------------------- | -------------- | ----------------------- | ----------------------------------------------------------------------------------------------------- |
-| Frontend Validation | Validates HTML markup for quality and best practices | ✅ Implemented | `validate-html.yml`     | Checks for broken links, valid markup, and accessibility issues                                       |
-| Backend Testing     | Tests Azure Function API                             | 🟡 Planned     | `test-backend.yml`      | Will use pytest to validate counter functionality, error handling, and edge cases                     |
-| Frontend Deployment | Deploys frontend to Azure Storage                    | 🟡 Planned     | `deploy-frontend.yml`   | Will implement Azure CLI commands to sync static content to $web container with cache control headers |
+| Frontend Validation | Validates HTML markup for quality and best practices | ✅ Implemented | `frontend-validation.yml` | Checks for broken links, valid markup, and accessibility issues                                       |
+| Backend Testing     | Tests Azure Function API                             | ✅ Implemented | `test-backend.yml`      | Uses pytest to validate counter functionality, error handling, and edge cases                         |
+| Frontend Deployment | Deploys frontend to Azure Storage                    | ✅ Implemented | `deploy-frontend.yml`   | Implements Azure CLI commands to sync static content to $web container with cache control headers     |
 | Backend Deployment  | Deploys Azure Functions                              | ✅ Implemented | `deploy-azure-func.yml` | Deploys Python functions to Azure using publish profile for authentication                            |
-| CDN Purge           | Updates CDN after content changes                    | 🟡 Planned     | `purge-cdn-cache.yml`   | Will execute Azure CLI commands to purge CDN endpoints after successful content updates               |
+| CDN Purge           | Updates CDN after content changes                    | ✅ Implemented | `purge-cdn-cache.yml`   | Executes Azure CLI commands to purge CDN endpoints after successful content updates                  |
 
 ---
 
@@ -274,6 +280,7 @@ The project implements continuous integration and continuous deployment using Gi
 - **Page Load Time**: 101ms (CDN-optimized)
 - **Cache Hit Ratio**: >95%
 - **Global Availability**: 99.99%
+- **Monthly Cost**: <$5 USD
 
 These metrics were measured using Azure monitoring tools over a testing period.
 
@@ -286,6 +293,16 @@ These metrics were measured using Azure monitoring tools over a testing period.
   - Enable HTTP/3 support for faster connection establishment
   - Implement adaptive image sizing based on client device capabilities
 
+- **Security Enhancements**:
+  - Add IP-based rate limiting to the Azure Function
+  - Implement custom domain for Azure Function API
+  - Enable Azure Key Vault integration for centralized secrets management
+
+- **Analytics & Monitoring**:
+  - Implement Application Insights for detailed visitor analytics
+  - Create custom dashboards for real-time monitoring
+  - Set up automated alerting for performance degradation
+
 ---
 
 ## 📚 Additional Resources
@@ -293,6 +310,7 @@ These metrics were measured using Azure monitoring tools over a testing period.
 - [Azure Static Website Documentation](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website)
 - [Cloud Resume Challenge Guide](https://cloudresumechallenge.dev/)
 - [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/)
+- [Azure Functions Documentation](https://docs.microsoft.com/azure/azure-functions/)
 
 ---
 
@@ -302,8 +320,12 @@ During this project, several valuable troubleshooting lessons were learned:
 
 - **Function Naming Consistency**: Maintaining consistent naming conventions between function names, routes, and client code is critical
 - **Case Sensitivity Awareness**: HTTP routes in Azure Functions are case-sensitive and must match exactly in client code
+- **File Path Structure**: JavaScript file paths in HTML must match actual directory structure; mismatches lead to 404 errors
 - **CI/CD Validation**: Implementing verification steps after deployments prevents silent failures
+- **CDN Cache Management**: Regular purging of CDN cache is essential after deploying changes
 - **Systematic Diagnostics**: Following a structured approach (environment → code → deployment → integration) efficiently isolates issues
+- **API Endpoint Case Sensitivity**: API route casing matters in Azure Functions - `VisitorCounter` and `visitorcounter` are treated as different routes
+- **Browser Developer Tools**: Using console logs and network inspection in browser dev tools is crucial for identifying frontend issues
 - **Deployment Verification**: Always verify function existence and configuration after deployment
 
-These lessons have been incorporated into the project's development practices to ensure smoother operations.
+These lessons have been incorporated into the project's development practices to ensure smoother operations going forward.
