@@ -128,19 +128,18 @@ jobs:
 
             # Check if the counter API is accessible - with verbose output for debugging
             echo "Checking if counter API is accessible..."
-            API_ENDPOINT="${{ secrets.API_ENDPOINT_URL }}"
+            API_ENDPOINT="https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter"
             if [ -z "$API_ENDPOINT" ]; then
-              echo "⚠️ API_ENDPOINT_URL secret is not set - skipping API check"
+              echo "❌ API_ENDPOINT is not set"
+              exit 1
             else
               echo "Testing API at: $API_ENDPOINT"
               HTTP_RESPONSE=$(curl -s -I "$API_ENDPOINT")
               echo "API Response: $HTTP_RESPONSE"
-              
               if echo "$HTTP_RESPONSE" | grep -q "HTTP/2 200\|HTTP/1.1 200"; then
                 echo "✅ Counter API is accessible"
               else
-                echo "⚠️ Counter API is not accessible - check configuration"
-                echo "Make sure the API_ENDPOINT_URL secret points to: https://your-function-app.azurewebsites.net/api/VisitorCounter"
-                # Not failing the build, but adding detailed warning
+                echo "❌ Counter API is not accessible - check configuration"
+                exit 1
               fi
             fi
