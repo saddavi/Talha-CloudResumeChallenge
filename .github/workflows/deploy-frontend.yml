@@ -89,17 +89,17 @@ jobs:
               --content-cache-control "max-age=604800" \
               --overwrite
       
-      # Deploy remaining files
+      # Deploy remaining files (simplified approach)
       - name: Deploy other files
         uses: azure/CLI@v1
         with:
           inlineScript: |
+            # Simple approach: Upload all files (will overwrite what we've already uploaded)
             az storage blob upload-batch \
               --account-name ${{ env.STORAGE_ACCOUNT_NAME }} \
               --auth-mode login \
               --source frontend/ \
               --destination '$web' \
-              --exclude-path "*.{html,css,js,jpg,jpeg,png,svg,ico}" \
               --overwrite
       
       # Validate deployment
