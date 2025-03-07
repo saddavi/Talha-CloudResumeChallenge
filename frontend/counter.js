@@ -3,37 +3,38 @@
  * This script fetches the visitor count from Azure Function API
  */
 
-// Use the specific Azure Function endpoint with query parameter format
-const apiUrl =
-  "https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter";
+// Use the correct lowercase URL
+const apiUrl = "https://talha-resume-func-2025.azurewebsites.net/api/visitorcounter";
 
-// Function to fetch and display visitor count with enhanced error handling
+// Function to fetch and display visitor count
 async function getVisitorCount() {
   try {
     console.log("Fetching visitor count from API...");
 
     // Display loading state
     const counterElement = document.getElementById("visitor-count");
-    if (counterElement) {
-      counterElement.innerText = "Loading...";
-    } else {
+    if (!counterElement) {
       console.error('Element with ID "visitor-count" not found');
-      return; // Exit early if the element is not found
+      return;
     }
+    
+    counterElement.innerText = "Loading...";
 
     const response = await fetch(apiUrl);
-    console.log("API response status:", response.status);
+    console.log("API response status:", response.status, response.statusText);
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(
+        `API request failed with status ${response.status}: ${response.statusText}`
+      );
     }
 
-    // Get the text response which should be "Visitor count: X"
-    const text = await response.text();
-    console.log("API response text:", text);
+    // Get text response (not JSON)
+    const textData = await response.text();
+    console.log("API Data:", textData);
 
-    // Extract just the number from the response
-    const countMatch = text.match(/\d+/);
+    // Extract just the number from "Visitor count: 139"
+    const countMatch = textData.match(/\d+/);
     if (countMatch) {
       const count = countMatch[0];
       counterElement.innerText = count;
@@ -43,7 +44,6 @@ async function getVisitorCount() {
     }
   } catch (error) {
     console.error("Error fetching visitor count:", error);
-    // Provide a fallback display
     const counterElement = document.getElementById("visitor-count");
     if (counterElement) {
       counterElement.innerText = "--";
