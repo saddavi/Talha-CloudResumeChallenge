@@ -10,7 +10,9 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body
+    data-api-endpoint="https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter"
+  >
     <div class="container">
       <!-- Hero Section -->
       <div class="hero-bg"></div>
@@ -42,6 +44,13 @@
               <div class="icon-container"><i class="fab fa-linkedin"></i></div>
               <span>LinkedIn</span>
             </a>
+            <a
+              href="https://github.com/saddavi/Talha-CloudResumeChallenge"
+              class="contact-item"
+            >
+              <div class="icon-container"><i class="fab fa-github"></i></div>
+              <span>GitHub Repo</span>
+            </a>
             <a href="#" class="contact-item">
               <div class="icon-container"><i class="fas fa-globe"></i></div>
               <span>Open to Remote Work</span>
@@ -55,14 +64,17 @@
         <h2 class="section-title">Professional Summary</h2>
         <div class="summary-content">
           <p>
-            IT professional with 16+ years of experience transitioning from
-            systems administration to cloud engineering, combining extensive
-            cybersecurity expertise with newly acquired cloud architecture
-            skills. Specializes in designing secure, scalable infrastructures
-            and implementing automation to enhance operational efficiency.
-            Demonstrates persistence and transparency in problem-solving, having
-            iterated through multiple versions of solutions to achieve optimal
-            results.
+            IT professional with 16+ years of systems and security experience
+            actively transitioning to cloud engineering. Bringing extensive
+            cybersecurity expertise to cloud architecture, with demonstrated
+            skills in Azure services implementation and CI/CD pipeline
+            development. Currently building competency in Infrastructure as
+            Code. Uniquely positioned to bridge traditional infrastructure
+            knowledge with modern cloud practices, specializing in secure,
+            cost-effective cloud solutions that align with enterprise security
+            requirements. Proven track record of enhancing operational
+            efficiency through automation and applying systematic
+            problem-solving methodologies across technology transitions.
           </p>
           <div class="certifications">
             <h3>Certifications</h3>
@@ -183,42 +195,142 @@
                   <div class="project-tags">
                     <span class="project-tag">Azure</span>
                     <span class="project-tag">Serverless</span>
-                    <span class="project-tag">IaC</span>
+                    <span class="project-tag">CI/CD</span>
+                    <span class="project-tag">DevOps</span>
                   </div>
                 </div>
+                <p>
+                  Designed and implemented a comprehensive serverless resume
+                  platform using Microsoft Azure cloud services, showcasing
+                  cloud engineering capabilities through hands-on development
+                  and integration of multiple Azure services.
+                </p>
+
+                <h4 class="section-subheading">Technical Implementation</h4>
                 <ul class="bullet-list">
                   <li>
-                    Architected and implemented a serverless web application
-                    hosted on Azure, demonstrating proficiency in cloud-native
-                    development.
+                    <strong>Frontend Development</strong>: Hand-coded responsive
+                    resume website using HTML5, CSS3, and JavaScript, optimizing
+                    for both desktop and mobile experiences. Implemented
+                    client-side visitor counter integration with error handling
+                    and loading states.
                   </li>
                   <li>
-                    Developed backend API using Azure Functions and Python to
-                    create a dynamic visitor counter, handling concurrent user
-                    requests efficiently.
+                    <strong>Azure Storage &amp; CDN</strong>: Deployed the
+                    website to Azure Storage static website hosting with custom
+                    cache-control headers for different file types to optimize
+                    performance. Configured Azure CDN integration to improve
+                    global content delivery, reducing page load times by 33%.
                   </li>
                   <li>
-                    Designed a persistent data storage solution using CosmosDB
-                    with MongoDB API, ensuring scalability and cost optimization
-                    (&lt; $1/month).
+                    <strong>Serverless Backend</strong>: Developed a
+                    Python-based visitor counter API using Azure Functions,
+                    following best practices for error handling, logging, and
+                    CORS security implementation. Used dependency injection
+                    patterns and proper configuration management for
+                    maintainability.
                   </li>
                   <li>
-                    Implemented infrastructure as code (IaC) and automated
-                    deployment pipelines with GitHub Actions, enabling seamless
-                    updates and version control.
+                    Implemented persistent data storage using Azure CosmosDB
+                    with MongoDB API in serverless capacity mode for cost
+                    efficiency (&lt; $1/month). Created proper database
+                    connection management with retry logic for reliability.
                   </li>
                   <li>
-                    Configured Azure CDN for optimized content delivery,
-                    reducing page load times by 33%.
+                    <strong>CI/CD Pipeline</strong>: Established a robust
+                    continuous integration and deployment workflow using GitHub
+                    Actions with:
+                    <ul class="nested-bullet-list">
+                      <li>
+                        Automated HTML validation to enforce code quality
+                        standards
+                      </li>
+                      <li>
+                        Separate deployment pipelines for frontend and backend
+                        components
+                      </li>
+                      <li>
+                        Intelligent cache management with automated CDN purge
+                        after deployments
+                      </li>
+                      <li>Environment-specific configuration handling</li>
+                    </ul>
                   </li>
                   <li>
-                    Integrated security best practices, including Azure Key
-                    Vault for secrets management and restricted CORS policies to
-                    enhance API security.
+                    <strong>Cross-Origin Security</strong>: Configured proper
+                    CORS policies to secure the API while allowing access only
+                    from authorized domains, implementing security best
+                    practices for web applications.
                   </li>
                 </ul>
+
+                <h4 class="section-subheading">
+                  Development Environment &amp; Approach
+                </h4>
+                <ul class="bullet-list">
+                  <li>
+                    Utilized Visual Studio Code with GitHub Copilot as an AI
+                    pair programmer to accelerate development while maintaining
+                    code quality
+                  </li>
+                  <li>
+                    Worked primarily with PowerShell in a cross-platform
+                    environment, ensuring compatibility between macOS and
+                    Windows environments
+                  </li>
+                  <li>
+                    Leveraged Claude.ai as a learning resource to understand
+                    complex cloud concepts and architecture patterns through
+                    analogies and explanations
+                  </li>
+                  <li>
+                    Followed an iterative development approach, systematically
+                    building, testing, and refining each component
+                  </li>
+                </ul>
+
+                <h4 class="section-subheading">Outcomes &amp; Metrics</h4>
+                <ul class="bullet-list">
+                  <li>
+                    Achieved a production-ready resume platform with global
+                    accessibility and performance optimization
+                  </li>
+                  <li>
+                    Maintained extremely low operating costs (approximately
+                    $1-2/month) through careful service selection and
+                    configuration
+                  </li>
+                  <li>
+                    Demonstrated real-world cloud skills including serverless
+                    architecture design, API development, database integration,
+                    and CI/CD implementation
+                  </li>
+                  <li>
+                    Built a maintainable solution with comprehensive
+                    documentation and automated workflows for ongoing updates
+                  </li>
+                </ul>
+
+                <h4 class="section-subheading">Skills Demonstrated</h4>
+                <ul class="bullet-list">
+                  <li>
+                    Azure cloud service selection, configuration, and
+                    integration
+                  </li>
+                  <li>
+                    Serverless application architecture and implementation
+                  </li>
+                  <li>Python backend development for cloud functions</li>
+                  <li>Frontend/backend integration in cloud environments</li>
+                  <li>CI/CD pipeline design and implementation</li>
+                  <li>Cost-effective cloud resource management</li>
+                  <li>
+                    Systematic problem-solving and technical documentation
+                  </li>
+                </ul>
+
                 <div class="project-link">
-                  <a href="https://talharesume.com" target="_blank">
+                  <a href="https://www.talharesume.com" target="_blank">
                     <i class="fas fa-external-link-alt"></i> Visit Project:
                     talharesume.com
                   </a>
@@ -502,7 +614,7 @@
       <div class="visitor-counter">
         <p>
           <i class="fas fa-eye"></i> Visits:
-          <span id="visitor-counter">Loading...</span>
+          <span id="visitor-count">Loading...</span>
         </p>
       </div>
 

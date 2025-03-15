@@ -1,9 +1,2 @@
-# Do not include azure-functions-worker in this file
-# The Python Worker is managed by the Azure Functions platform
-# Manually managing azure-functions-worker may cause unexpected issues
-
-azure-functions==1.15.0
-pymongo==4.5.0
-python-dotenv==1.0.0
-pytest==7.4.0
-pytest-asyncio==0.21.1
+pymongo
+azure-functions
