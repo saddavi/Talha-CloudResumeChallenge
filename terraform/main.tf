@@ -55,6 +55,12 @@ variable "tags" {
   }
 }
 
+variable "allowed_origins" {
+  description = "Allowed origins for CORS"
+  type        = list(string)
+  default     = ["https://www.talharesume.com"]
+}
+
 # Create a resource group
 resource "azurerm_resource_group" "main" {
   name     = var.resource_group_name
@@ -198,7 +204,11 @@ resource "azurerm_linux_function_app" "main" {
     }
     
     cors {
-      allowed_origins = ["https://${azurerm_storage_account.website.primary_web_host}", "https://${azurerm_cdn_endpoint.main.host_name}", "https://www.talharesume.com"]
+      allowed_origins = concat(
+        ["https://${azurerm_storage_account.website.primary_web_host}", 
+         "https://${azurerm_cdn_endpoint.main.host_name}"], 
+        var.allowed_origins
+      )
       support_credentials = false
     }
   }
