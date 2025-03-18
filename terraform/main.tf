@@ -7,13 +7,12 @@ terraform {
     }
   }
   
-  # Uncomment this block if you want to use remote state storage
-  # backend "azurerm" {
-  #   resource_group_name  = "rg-terraform-state"
-  #   storage_account_name = "talhaterraformstate"
-  #   container_name       = "tfstate"
-  #   key                  = "cloudresume.terraform.tfstate"
-  # }
+  backend "azurerm" {
+    resource_group_name  = "rg-cloudresume"
+    storage_account_name = "talhaterrastate27998"  # Using the existing storage account name
+    container_name       = "tfstate"
+    key                  = "cloudresume.terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
