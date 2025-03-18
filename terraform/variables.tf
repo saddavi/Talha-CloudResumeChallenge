@@ -33,3 +33,9 @@ variable "tags" {
     Owner       = "Talha"
   }
 }
+
+variable "allowed_origins" {
+  description = "Allowed origins for CORS"
+  type        = list(string)
+  default     = ["https://www.talharesume.com"]
+}

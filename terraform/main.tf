@@ -19,47 +19,6 @@ provider "azurerm" {
   features {}
 }
 
-# Variables
-variable "prefix" {
-  description = "Prefix for all resource names"
-  type        = string
-  default     = "talha"
-}
-
-variable "resource_group_name" {
-  description = "Name of the resource group"
-  type        = string
-  default     = "rg-cloudresume"
-}
-
-variable "location" {
-  description = "Azure region for resources"
-  type        = string
-  default     = "UAE North"  # Based on your README
-}
-
-variable "backup_location" {
-  description = "Backup Azure region for resources"
-  type        = string
-  default     = "Qatar Central"  # Based on your README
-}
-
-variable "tags" {
-  description = "Tags for all resources"
-  type        = map(string)
-  default = {
-    Environment = "Production"
-    Project     = "CloudResumeChallenge"
-    Owner       = "Talha"
-  }
-}
-
-variable "allowed_origins" {
-  description = "Allowed origins for CORS"
-  type        = list(string)
-  default     = ["https://www.talharesume.com"]
-}
-
 # Create a resource group
 resource "azurerm_resource_group" "main" {
   name     = var.resource_group_name
@@ -220,22 +179,4 @@ resource "azurerm_linux_function_app" "main" {
   }
   
   tags = var.tags
-}
-
-# Outputs
-output "website_url" {
-  value = "https://${azurerm_storage_account.website.primary_web_host}"
-}
-
-output "cdn_endpoint_url" {
-  value = "https://${azurerm_cdn_endpoint.main.host_name}"
-}
-
-output "function_app_url" {
-  value = "https://${azurerm_linux_function_app.main.default_hostname}/api/VisitorCounter"
-}
-
-output "cosmos_connection_string" {
-  value     = azurerm_cosmosdb_account.main.connection_strings[0]
-  sensitive = true
 }
