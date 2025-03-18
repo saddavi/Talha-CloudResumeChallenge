@@ -5,7 +5,7 @@ output "website_url" {
 }
 
 output "cdn_endpoint_url" {
-  value = "https://${azurerm_cdn_endpoint.main.host_name}"
+  value = "https://${azurerm_cdn_endpoint.main.fqdn}"  # Changed from host_name to fqdn
 }
 
 output "function_app_url" {
@@ -13,7 +13,7 @@ output "function_app_url" {
 }
 
 output "cosmos_connection_string" {
-  value     = azurerm_cosmosdb_account.main.connection_strings[0]
+  value     = azurerm_cosmosdb_account.main.primary_mongodb_connection_string  # Changed to use specific MongoDB connection string
   sensitive = true
 }
 

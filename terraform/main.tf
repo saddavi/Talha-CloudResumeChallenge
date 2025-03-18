@@ -28,14 +28,14 @@ resource "azurerm_resource_group" "main" {
 
 # Storage Account for Static Website Hosting
 resource "azurerm_storage_account" "website" {
-  name                     = "${var.prefix}crc0210"  # Based on your README
-  resource_group_name      = azurerm_resource_group.main.name
-  location                 = azurerm_resource_group.main.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  account_kind             = "StorageV2"
-  enable_https_traffic_only = true
-  min_tls_version          = "TLS1_2"
+  name                      = "${var.prefix}crc0210"  # Based on your README
+  resource_group_name       = azurerm_resource_group.main.name
+  location                  = azurerm_resource_group.main.location
+  account_tier              = "Standard"
+  account_replication_type  = "LRS"
+  account_kind              = "StorageV2"
+  https_traffic_only_enabled = true  # Changed from enable_https_traffic_only
+  min_tls_version           = "TLS1_2"
   
   static_website {
     index_document         = "index.html"
@@ -128,13 +128,14 @@ resource "azurerm_cosmosdb_mongo_collection" "main" {
 
 # Storage account for Function App
 resource "azurerm_storage_account" "function" {
-  name                     = "${var.prefix}resumefunc2025"
-  resource_group_name      = azurerm_resource_group.main.name
-  location                 = azurerm_resource_group.main.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  min_tls_version          = "TLS1_2"
-  tags                     = var.tags
+  name                      = "${var.prefix}resumefunc2025"
+  resource_group_name       = azurerm_resource_group.main.name
+  location                  = azurerm_resource_group.main.location
+  account_tier              = "Standard"
+  account_replication_type  = "LRS"
+  https_traffic_only_enabled = true  # Changed from enable_https_traffic_only if present
+  min_tls_version           = "TLS1_2"
+  tags                      = var.tags
 }
 
 # App Service Plan for Function App
@@ -164,7 +165,7 @@ resource "azurerm_linux_function_app" "main" {
     cors {
       allowed_origins = concat(
         ["https://${azurerm_storage_account.website.primary_web_host}", 
-         "https://${azurerm_cdn_endpoint.main.host_name}"], 
+         "https://${azurerm_cdn_endpoint.main.fqdn}"],  # Changed from host_name to fqdn
         var.allowed_origins
       )
       support_credentials = false
@@ -173,7 +174,7 @@ resource "azurerm_linux_function_app" "main" {
   
   app_settings = {
     "FUNCTIONS_WORKER_RUNTIME"    = "python"
-    "COSMOS_CONNECTION_STRING"    = azurerm_cosmosdb_account.main.connection_strings[0]
+    "COSMOS_CONNECTION_STRING"    = azurerm_cosmosdb_account.main.primary_mongodb_connection_string  # Changed to use specific MongoDB connection string
     "SCM_DO_BUILD_DURING_DEPLOYMENT" = "true"
     "ENABLE_ORYX_BUILD"           = "true"
   }
