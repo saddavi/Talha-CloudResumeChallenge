@@ -1,45 +1,24 @@
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-*.swp
+# Local .terraform directories
+**/.terraform/*
 
-# IDE - VS Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-backend/api/.vscode/
+# .tfstate files
+*.tfstate
+*.tfstate.*
 
-# Azure
-.azure/
-*.pubxml
-**/local.settings.json
-connection_string.txt
+# Crash log files
+crash.log
+crash.*.log
 
-# Node.js
-node_modules/
-package-lock.json
+# Exclude all .tfvars files, which might contain sensitive data
+*.tfvars
+*.tfvars.json
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.env
-.venv
-venv/
-ENV/
-.python-version
+# Ignore override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
 
-# Logs and temporary files
-*.log
-temp/
-.env*
-
-# Azure Functions
-**/local.settings.json
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
