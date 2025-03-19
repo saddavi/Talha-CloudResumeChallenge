@@ -31,20 +31,23 @@ Key features include:
 
 ## 📅 Development Timeline and Status
 
-| Date           | Component   | Task                         | Status | Tools/Technologies Used                          | Details                                                                                               |
-| -------------- | ----------- | ---------------------------- | ------ | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
-| **2025-02-14** | Frontend    | Initial deployment           | ✅     | Azure Storage, Azure CLI, HTML5, CSS3            | Deployed HTML/CSS resume to Azure Storage static website with custom styles and responsive design     |
-| **2025-02-15** | Database    | CosmosDB implementation      | ✅     | Azure Portal, Azure CLI                          | Provisioned MongoDB API-compatible CosmosDB instance with serverless capacity mode and security rules |
-| **2025-02-19** | Database    | Connection implementation    | ✅     | Python, Azure Functions                          | Implemented connection string handling with error handling and retry patterns for reliability         |
-| **2025-02-22** | Backend     | Visitor Counter API          | ✅     | Python 3.11, Azure Functions Core Tools, PyMongo | Created Python Azure Function with upsert operation, error handling, and CORS support                 |
-| **2025-02-23** | Integration | Azure Function Deployment    | ✅     | Azure CLI, GitHub Actions                        | Deployed API to production with application settings and logging configuration                        |
-| **2025-03-01** | CI/CD       | Frontend validation workflow | ✅     | GitHub Actions                                   | Implemented GitHub Actions workflow for HTML validation and testing                                   |
-| **2025-03-01** | CI/CD       | Backend deployment workflow  | ✅     | GitHub Actions, Python pip                       | Created automated deployment pipeline with Python dependency management and versioning                |
-| **2025-03-01** | Frontend    | HTML quality improvements    | ✅     | HTML5, Semantic markup                           | Fixed validation errors including header structure, alt tags, and meta description improvements       |
-| **2025-03-05** | Backend     | Fixed Visitor Counter        | ✅     | Azure Functions, JavaScript                      | Resolved API endpoint access issues and ensured proper integration between frontend and backend       |
-| **2025-03-08** | Frontend    | Fixed JavaScript path issue  | ✅     | GitHub Actions, Azure CDN                        | Corrected JS file structure mismatch between HTML references and actual file locations               |
-| **Current**    | Backend     | Enhanced API features        | 🔄     | Python, Azure Functions                          | Implementing caching and performance optimizations                                                    |
-| **Current**    | CI/CD       | Additional workflows         | 🔄     | GitHub Actions, Azure CLI                        | Creating workflows with staged deployments and automated testing across environments                  |
+| Date           | Component      | Task                         | Status | Tools/Technologies Used                          | Details                                                                                               |
+| -------------- | -------------- | ---------------------------- | ------ | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| **2025-02-14** | Frontend       | Initial deployment           | ✅     | Azure Storage, Azure CLI, HTML5, CSS3            | Deployed HTML/CSS resume to Azure Storage static website with custom styles and responsive design     |
+| **2025-02-15** | Database       | CosmosDB implementation      | ✅     | Azure Portal, Azure CLI                          | Provisioned MongoDB API-compatible CosmosDB instance with serverless capacity mode and security rules |
+| **2025-02-19** | Database       | Connection implementation    | ✅     | Python, Azure Functions                          | Implemented connection string handling with error handling and retry patterns for reliability         |
+| **2025-02-22** | Backend        | Visitor Counter API          | ✅     | Python 3.11, Azure Functions Core Tools, PyMongo | Created Python Azure Function with upsert operation, error handling, and CORS support                 |
+| **2025-02-23** | Integration    | Azure Function Deployment    | ✅     | Azure CLI, GitHub Actions                        | Deployed API to production with application settings and logging configuration                        |
+| **2025-03-01** | CI/CD          | Frontend validation workflow | ✅     | GitHub Actions                                   | Implemented GitHub Actions workflow for HTML validation and testing                                   |
+| **2025-03-01** | CI/CD          | Backend deployment workflow  | ✅     | GitHub Actions, Python pip                       | Created automated deployment pipeline with Python dependency management and versioning                |
+| **2025-03-01** | Frontend       | HTML quality improvements    | ✅     | HTML5, Semantic markup                           | Fixed validation errors including header structure, alt tags, and meta description improvements       |
+| **2025-03-05** | Backend        | Fixed Visitor Counter        | ✅     | Azure Functions, JavaScript                      | Resolved API endpoint access issues and ensured proper integration between frontend and backend       |
+| **2025-03-08** | Frontend       | Fixed JavaScript path issue  | ✅     | GitHub Actions, Azure CDN                        | Corrected JS file structure mismatch between HTML references and actual file locations                |
+| **2025-03-10** | Infrastructure | Terraform implementation     | ✅     | Terraform, Azure Provider, HCL                   | Created initial Terraform configuration for Azure resource provisioning                               |
+| **2025-03-12** | Infrastructure | Modularized Terraform code   | ✅     | Terraform modules, CI integration                | Refactored Terraform into reusable modules for better maintainability                                 |
+| **2025-03-15** | CI/CD          | Terraform pipeline setup     | ✅     | GitHub Actions, Terraform Cloud                  | Implemented automated Terraform plan and apply in the CI/CD pipeline                                  |
+| **Current**    | Backend        | Enhanced API features        | 🔄     | Python, Azure Functions                          | Implementing caching and performance optimizations                                                    |
+| **Current**    | CI/CD          | Additional workflows         | 🔄     | GitHub Actions, Azure CLI                        | Creating workflows with staged deployments and automated testing across environments                  |
 
 ### Components Status
 
@@ -80,6 +83,10 @@ graph TD
     B -->|Triggers| C[Visitor Counter]
     C -->|Increment| D[CosmosDB]
     E[CI/CD] -->|Deploy| A
+    F[Terraform] -->|Provisions| A
+    F -->|Provisions| C
+    F -->|Provisions| D
+    E -->|Executes| F
 ```
 
 ### Detailed Architecture
@@ -240,6 +247,88 @@ https://talha-resume-func-2025.azurewebsites.net/api/visitorcounter
 
 ---
 
+## 🏗️ Infrastructure as Code with Terraform
+
+### Overview
+
+This project uses Terraform to provision and manage all Azure resources in a consistent, version-controlled manner. The infrastructure is defined as code, enabling repeatable deployments, easier collaboration, and automated provisioning.
+
+### Terraform Components
+
+The Terraform configuration is organized as follows:
+
+```plaintext
+infrastructure/terraform/
+├── main.tf               # Primary configuration file
+├── variables.tf          # Input variable declarations
+├── outputs.tf            # Output definitions
+├── providers.tf          # Provider configuration
+├── backend.tf            # State storage configuration
+├── modules/              # Reusable Terraform modules
+│   ├── storage/          # Storage account module
+│   ├── function/         # Azure Functions module
+│   └── cosmosdb/         # CosmosDB module
+└── environments/         # Environment-specific configurations
+    ├── dev/              # Development environment
+    └── prod/             # Production environment
+```
+
+### Provisioned Resources
+
+The following Azure resources are managed by Terraform:
+
+- **Resource Group**: Central container for all cloud resume resources
+- **Storage Account**: Hosts the static website frontend with blob storage
+- **Azure CDN Profile**: Provides global content delivery with custom domain
+- **CosmosDB Account**: MongoDB API-compatible database for the visitor counter
+- **Azure Function App**: Serverless backend API with Python runtime
+- **Application Insights**: Monitoring and logging for the Function App
+- **Key Vault**: Secure storage for sensitive configuration values
+
+### State Management
+
+Terraform state is stored in an Azure Storage account with the following configuration:
+
+- Remote state stored in a dedicated Azure Storage container
+- State locking implemented to prevent concurrent modifications
+- State file encryption enabled for security
+
+### Deployment Process
+
+```bash
+# Initialize Terraform with Azure backend
+terraform init
+
+# Plan deployment to review changes
+terraform plan -out=tfplan
+
+# Apply the planned changes
+terraform apply tfplan
+
+# For destruction (use with caution)
+terraform destroy
+```
+
+### CI/CD Integration
+
+Terraform execution is integrated into the CI/CD pipeline with the following workflow:
+
+1. GitHub Actions workflow authenticates with Azure
+2. Terraform plan runs on pull requests to preview changes
+3. Approval required before changes are applied to production
+4. Terraform apply runs automatically after merge to main branch
+5. State is backed up after successful apply operations
+
+### Best Practices Implemented
+
+- **Modular Design**: Resources organized into reusable modules
+- **Variable Parameterization**: Environment-specific values defined in variables
+- **Secure Authentication**: Service principal with minimal permissions used for deployment
+- **Resource Naming Convention**: Consistent naming pattern applied across all resources
+- **Tagging Strategy**: Resources tagged for organizational and cost tracking purposes
+- **Conditional Creation**: Resources optionally created based on environment needs
+- **Output Documentation**: Key outputs exposed for reference by other systems
+
 ## 🔒 Security Implementation
 
 - **SSL/TLS Encryption**: Ensures secure communication between users and the website.
@@ -263,13 +352,15 @@ The project implements continuous integration and continuous deployment using Gi
 
 ### Workflows
 
-| Workflow            | Purpose                                              | Status         | Workflow File           | Details                                                                                               |
-| ------------------- | ---------------------------------------------------- | -------------- | ----------------------- | ----------------------------------------------------------------------------------------------------- |
-| Frontend Validation | Validates HTML markup for quality and best practices | ✅ Implemented | `frontend-validation.yml` | Checks for broken links, valid markup, and accessibility issues                                       |
-| Backend Testing     | Tests Azure Function API                             | ✅ Implemented | `test-backend.yml`      | Uses pytest to validate counter functionality, error handling, and edge cases                         |
-| Frontend Deployment | Deploys frontend to Azure Storage                    | ✅ Implemented | `deploy-frontend.yml`   | Implements Azure CLI commands to sync static content to $web container with cache control headers     |
-| Backend Deployment  | Deploys Azure Functions                              | ✅ Implemented | `deploy-azure-func.yml` | Deploys Python functions to Azure using publish profile for authentication                            |
-| CDN Purge           | Updates CDN after content changes                    | ✅ Implemented | `purge-cdn-cache.yml`   | Executes Azure CLI commands to purge CDN endpoints after successful content updates                  |
+| Workflow            | Purpose                                              | Status         | Workflow File             | Details                                                                                           |
+| ------------------- | ---------------------------------------------------- | -------------- | ------------------------- | ------------------------------------------------------------------------------------------------- |
+| Frontend Validation | Validates HTML markup for quality and best practices | ✅ Implemented | `frontend-validation.yml` | Checks for broken links, valid markup, and accessibility issues                                   |
+| Backend Testing     | Tests Azure Function API                             | ✅ Implemented | `test-backend.yml`        | Uses pytest to validate counter functionality, error handling, and edge cases                     |
+| Frontend Deployment | Deploys frontend to Azure Storage                    | ✅ Implemented | `deploy-frontend.yml`     | Implements Azure CLI commands to sync static content to $web container with cache control headers |
+| Backend Deployment  | Deploys Azure Functions                              | ✅ Implemented | `deploy-azure-func.yml`   | Deploys Python functions to Azure using publish profile for authentication                        |
+| CDN Purge           | Updates CDN after content changes                    | ✅ Implemented | `purge-cdn-cache.yml`     | Executes Azure CLI commands to purge CDN endpoints after successful content updates               |
+| Terraform Plan      | Validates infrastructure changes                     | ✅ Implemented | `terraform-plan.yml`      | Runs on PRs to validate changes to infrastructure code                                            |
+| Terraform Apply     | Deploys infrastructure changes                       | ✅ Implemented | `terraform-apply.yml`     | Runs on merge to main to apply validated infrastructure changes                                   |
 
 ---
 
@@ -289,11 +380,13 @@ These metrics were measured using Azure monitoring tools over a testing period.
 ## 📈 Future Enhancements
 
 - **Global Performance Optimization**:
+
   - Implement Azure Front Door for intelligent global routing
   - Enable HTTP/3 support for faster connection establishment
   - Implement adaptive image sizing based on client device capabilities
 
 - **Security Enhancements**:
+
   - Add IP-based rate limiting to the Azure Function
   - Implement custom domain for Azure Function API
   - Enable Azure Key Vault integration for centralized secrets management
