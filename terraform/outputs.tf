@@ -5,7 +5,7 @@ output "website_url" {
 }
 
 output "cdn_endpoint_url" {
-  value = "https://${azurerm_cdn_endpoint.main.fqdn}"  # Changed from host_name to fqdn
+  value = "https://${azurerm_cdn_endpoint.main.fqdn}"
 }
 
 output "function_app_url" {
@@ -13,7 +13,7 @@ output "function_app_url" {
 }
 
 output "cosmos_connection_string" {
-  value     = azurerm_cosmosdb_account.main.primary_mongodb_connection_string  # Changed to use specific MongoDB connection string
+  value     = azurerm_cosmosdb_account.main.primary_mongodb_connection_string
   sensitive = true
 }
 
@@ -25,4 +25,9 @@ output "storage_account_name" {
 output "resource_group_name" {
   description = "The name of the resource group"
   value       = azurerm_resource_group.main.name
+}
+
+output "subscription_id" {
+  description = "The subscription ID"
+  value       = "9af1a87d-1c54-4758-88fd-27d35a7a228c"  # From your resource IDs
 }
