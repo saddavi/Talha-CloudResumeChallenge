@@ -13,29 +13,25 @@ variable "resource_group_name" {
 }
 
 variable "location" {
-  description = "Azure region for resources"
+  description = "Primary Azure region for resources"
   type        = string
-  default     = "UAE North"  # Based on your README
+  default     = "qatarcentral"  # Updated to match existing resources
 }
 
-variable "backup_location" {
-  description = "Backup Azure region for resources"
+variable "function_location" {
+  description = "Azure region for function app"
   type        = string
-  default     = "Qatar Central"  # Based on your README
+  default     = "UAE North"  # Separate variable for function app location
 }
 
 variable "tags" {
   description = "Tags for all resources"
   type        = map(string)
-  default = {
-    Environment = "Production"
-    Project     = "CloudResumeChallenge"
-    Owner       = "Talha"
-  }
+  default = {}  # No common tags in the output
 }
 
 variable "allowed_origins" {
   description = "Allowed origins for CORS"
   type        = list(string)
-  default     = ["https://www.talharesume.com"]
+  default     = ["https://talharesume.com", "https://www.talharesume.com"]
 }
