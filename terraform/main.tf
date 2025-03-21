@@ -21,44 +21,48 @@ provider "azurerm" {
 
 # Create a resource group
 resource "azurerm_resource_group" "main" {
-  name     = var.resource_group_name
-  location = var.location
-  tags     = var.tags
+  name     = "rg-cloudresume"
+  location = "qatarcentral"  # Updated to match existing location
+  tags     = {}  # No tags defined in output
 }
 
 # Storage Account for Static Website Hosting
 resource "azurerm_storage_account" "website" {
-  name                      = "${var.prefix}crc0210"  # Based on your README
-  resource_group_name       = azurerm_resource_group.main.name
-  location                  = azurerm_resource_group.main.location
-  account_tier              = "Standard"
-  account_replication_type  = "LRS"
-  account_kind              = "StorageV2"
-  https_traffic_only_enabled = true  # Changed from enable_https_traffic_only
-  min_tls_version           = "TLS1_2"
+  name                     = "talhacrc0210"
+  resource_group_name      = azurerm_resource_group.main.name
+  location                 = azurerm_resource_group.main.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  account_kind             = "StorageV2"
+  access_tier              = "Cool"  # Updated to match existing configuration
+  https_traffic_only_enabled = true
+  min_tls_version          = "TLS1_2"
+  
+  # Allow blob public access must match existing configuration
+  allow_blob_public_access = false
   
   static_website {
     index_document         = "index.html"
     error_404_document     = "error.html"
   }
   
-  tags = var.tags
+  tags = {}  # No tags defined in output
 }
 
 # CDN Profile
 resource "azurerm_cdn_profile" "main" {
-  name                = "cdn-${var.prefix}-resume"  # Based on your README
-  location            = azurerm_resource_group.main.location
+  name                = "cdn-talha-resume"
+  location            = "Global"  # CDN profiles are global resources
   resource_group_name = azurerm_resource_group.main.name
   sku                 = "Standard_Microsoft"
-  tags                = var.tags
+  tags                = {}  # No tags defined in output
 }
 
 # CDN Endpoint
 resource "azurerm_cdn_endpoint" "main" {
-  name                = "cdn-${var.prefix}-endpoint"  # Based on your README
+  name                = "cdn-talha-endpoint"
   profile_name        = azurerm_cdn_profile.main.name
-  location            = azurerm_resource_group.main.location
+  location            = azurerm_cdn_profile.main.location
   resource_group_name = azurerm_resource_group.main.name
   origin_host_header  = azurerm_storage_account.website.primary_web_host
   
@@ -67,19 +71,13 @@ resource "azurerm_cdn_endpoint" "main" {
     host_name = azurerm_storage_account.website.primary_web_host
   }
   
-  # Optional: Add custom domain configuration here if you have one
-  # custom_domain {
-  #   name = "www.talharesume.com"
-  #   host_name = "www.talharesume.com"
-  # }
-  
-  tags = var.tags
+  tags = {}  # No tags defined in output
 }
 
 # CosmosDB Account (MongoDB API)
 resource "azurerm_cosmosdb_account" "main" {
-  name                = "${var.prefix}-resume-db-2025-v3"  # Based on your README
-  location            = azurerm_resource_group.main.location
+  name                = "talha-resume-db-2025-v3"
+  location            = "Qatar Central"  # Matches existing region
   resource_group_name = azurerm_resource_group.main.name
   offer_type          = "Standard"
   kind                = "MongoDB"
@@ -99,23 +97,33 @@ resource "azurerm_cosmosdb_account" "main" {
   }
   
   geo_location {
-    location          = azurerm_resource_group.main.location
+    location          = "UAE North"  # Based on output showing UAE North as the location
     failover_priority = 0
   }
   
-  tags = var.tags
+  backup_policy {
+    type = "Periodic"
+    
+    periodic_mode_properties {
+      backup_interval_in_minutes      = 240
+      backup_retention_interval_in_hours = 8
+      backup_storage_redundancy       = "Geo"
+    }
+  }
+  
+  tags = {}
 }
 
 # CosmosDB Database
 resource "azurerm_cosmosdb_mongo_database" "main" {
-  name                = "visitordb"  # Based on your code files
+  name                = "visitordb"
   resource_group_name = azurerm_resource_group.main.name
   account_name        = azurerm_cosmosdb_account.main.name
 }
 
 # CosmosDB Collection
 resource "azurerm_cosmosdb_mongo_collection" "main" {
-  name                = "visitors"  # Based on your code files
+  name                = "visitors"
   resource_group_name = azurerm_resource_group.main.name
   account_name        = azurerm_cosmosdb_account.main.name
   database_name       = azurerm_cosmosdb_mongo_database.main.name
@@ -126,58 +134,40 @@ resource "azurerm_cosmosdb_mongo_collection" "main" {
   }
 }
 
-# Storage account for Function App
-resource "azurerm_storage_account" "function" {
-  name                      = "${var.prefix}resumefunc2025"
-  resource_group_name       = azurerm_resource_group.main.name
-  location                  = azurerm_resource_group.main.location
-  account_tier              = "Standard"
-  account_replication_type  = "LRS"
-  https_traffic_only_enabled = true  # Changed from enable_https_traffic_only if present
-  min_tls_version           = "TLS1_2"
-  tags                      = var.tags
-}
-
-# App Service Plan for Function App
+# For the Function App, we need to reference the existing service plan
 resource "azurerm_service_plan" "main" {
-  name                = "plan-${var.prefix}-resume-func"
-  location            = azurerm_resource_group.main.location
+  name                = "UAENorthLinuxDynamicPlan"  # Name from your Function App output
   resource_group_name = azurerm_resource_group.main.name
+  location            = "UAE North"  # Function App is in UAE North
   os_type             = "Linux"
-  sku_name            = "Y1"  # Consumption plan
-  tags                = var.tags
+  sku_name            = "Y1"  # Dynamic plan for consumption
 }
 
 # Function App
 resource "azurerm_linux_function_app" "main" {
-  name                       = "${var.prefix}-resume-func-2025"  # Based on your README
-  location                   = azurerm_resource_group.main.location
+  name                       = "talha-resume-func-2025"
+  location                   = "UAE North"  # Function App is in UAE North
   resource_group_name        = azurerm_resource_group.main.name
   service_plan_id            = azurerm_service_plan.main.id
-  storage_account_name       = azurerm_storage_account.function.name
-  storage_account_access_key = azurerm_storage_account.function.primary_access_key
   
   site_config {
     application_stack {
-      python_version = "3.11"  # Based on your code requirements
+      python_version = "3.11"
     }
     
     cors {
-      allowed_origins = concat(
-        ["https://${azurerm_storage_account.website.primary_web_host}", 
-         "https://${azurerm_cdn_endpoint.main.fqdn}"],  # Changed from host_name to fqdn
-        var.allowed_origins
-      )
+      allowed_origins = ["*", "https://talharesume.com", "https://www.talharesume.com"]
       support_credentials = false
     }
   }
   
-  app_settings = {
-    "FUNCTIONS_WORKER_RUNTIME"    = "python"
-    "COSMOS_CONNECTION_STRING"    = azurerm_cosmosdb_account.main.primary_mongodb_connection_string  # Changed to use specific MongoDB connection string
-    "SCM_DO_BUILD_DURING_DEPLOYMENT" = "true"
-    "ENABLE_ORYX_BUILD"           = "true"
+  # Adding tags from the output
+  tags = {
+    "hidden-link: /app-insights-conn-string" = "InstrumentationKey=74e63443-a5f8-4159-80ae-758e38c0c7de;IngestionEndpoint=https://uaenorth-0.in.applicationinsights.azure.com/;LiveEndpoint=https://uaenorth.livediagnostics.monitor.azure.com/;ApplicationId=0db4e2df-f0d8-4302-984f-67ca4bfe8dd7"
+    "hidden-link: /app-insights-instrumentation-key" = "74e63443-a5f8-4159-80ae-758e38c0c7de"
+    "hidden-link: /app-insights-resource-id" = "/subscriptions/9af1a87d-1c54-4758-88fd-27d35a7a228c/resourceGroups/rg-cloudresume/providers/microsoft.insights/components/talha-resume-func-2025"
   }
   
-  tags = var.tags
+  # Note: We can't see the app settings in the output, so we'll need to add them later
+  # or retrieve them separately
 }
