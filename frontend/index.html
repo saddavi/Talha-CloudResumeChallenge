@@ -51,9 +51,9 @@
               <div class="icon-container"><i class="fab fa-github"></i></div>
               <span>GitHub Repo</span>
             </a>
-            <a href="#" class="contact-item">
-              <div class="icon-container"><i class="fas fa-globe"></i></div>
-              <span>Open to Remote Work</span>
+            <a href="https://talhacloud.com" class="contact-item">
+              <div class="icon-container"><i class="fas fa-blog"></i></div>
+              <span>Blog</span>
             </a>
           </div>
         </div>
@@ -87,6 +87,27 @@
           </div>
         </div>
       </section>
+      
+      <!-- My Journey Section -->
+      <section class="section journey-section">
+        <h2 class="section-title">My Cloud Journey</h2>
+        <div class="summary-content">
+          <p>
+            I've spent 16+ years mastering systems and security, but my passion now lies in cloud engineering. 
+            This portfolio showcases my transition journey - both what I've accomplished and what I'm actively learning. 
+            The Cloud Resume Challenge (Azure) and SecureVote (GCP) projects reflect my hands-on approach to learning 
+            by building real solutions. I'm particularly excited about Infrastructure as Code and serverless architectures 
+            where I can apply my security background to create robust cloud solutions.
+          </p>
+          <p>
+            Currently seeking cloud engineering opportunities in Qatar where I can contribute my unique combination 
+            of enterprise systems experience and growing cloud expertise. I'm eager to join a team where I can both 
+            apply what I've learned and continue expanding my skills through real-world projects. I'm passionate about 
+            bridging the gap between traditional infrastructure and modern cloud practices, with a special focus on 
+            ensuring security is built into architectures from the ground up rather than added as an afterthought.
+          </p>
+        </div>
+      </section>
 
       <!-- Cloud &amp; Technical Skills -->
       <section class="section">
@@ -109,9 +130,9 @@
               <div class="skill-item" data-skill="Azure AD">
                 Azure Active Directory
               </div>
-              <div class="skill-item" data-skill="Azure Key Vault">
-                Azure Key Vault
-              </div>
+              <div class="skill-item" data-skill="GCP">Google Cloud Platform</div>
+              <div class="skill-item" data-skill="Cloud Run">Cloud Run</div>
+              <div class="skill-item" data-skill="Cloud SQL">Cloud SQL</div>
             </div>
           </div>
 
@@ -125,6 +146,7 @@
               <div class="skill-item" data-skill="Python">Python</div>
               <div class="skill-item" data-skill="JavaScript">JavaScript</div>
               <div class="skill-item" data-skill="Bash">Bash</div>
+              <div class="skill-item" data-skill="Terraform">Terraform</div>
             </div>
           </div>
 
@@ -142,6 +164,7 @@
               <div class="skill-item" data-skill="GitHub Actions">
                 GitHub Actions
               </div>
+              <div class="skill-item" data-skill="Terraform">Terraform</div>
             </div>
           </div>
 
@@ -186,6 +209,109 @@
       <section class="section">
         <h2 class="section-title">Projects</h2>
         <div class="timeline">
+          <!-- SecureVote Project -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">SecureVote - Serverless Voting Platform (2025 - Current)</h3>
+                  <div class="project-tags">
+                    <span class="project-tag">Google Cloud Platform</span>
+                    <span class="project-tag">Terraform</span>
+                    <span class="project-tag">IaC</span>
+                    <span class="project-tag">Serverless</span>
+                  </div>
+                </div>
+                <p>
+                  Designing and implementing a secure, serverless voting platform infrastructure on Google Cloud Platform, 
+                  showcasing multi-environment architecture design and infrastructure automation capabilities.
+                </p>
+
+                <h4 class="section-subheading">Technical Implementation</h4>
+                <ul class="bullet-list">
+                  <li>
+                    Created complete development and production environments with proper isolation using Terraform
+                  </li>
+                  <li>
+                    Implemented serverless architecture with Cloud Run services for scalable API processing
+                  </li>
+                  <li>
+                    Configured Cloud SQL instances with private networking for secure vote storage
+                  </li>
+                  <li>
+                    Established VPC connectors to enable secure serverless-to-VPC communication
+                  </li>
+                  <li>
+                    Designed proper IAM configurations with principle of least privilege
+                  </li>
+                  <li>
+                    Developing CI/CD pipeline with GitHub Actions for automated testing and deployment
+                  </li>
+                </ul>
+
+                <h4 class="section-subheading">Architecture Highlights</h4>
+                <ul class="bullet-list">
+                  <li>
+                    Entirely serverless design for maximum scalability and cost optimization
+                  </li>
+                  <li>
+                    Environment isolation with dedicated VPC networks and security controls
+                  </li>
+                  <li>
+                    Private networking for databases with no public internet exposure
+                  </li>
+                  <li>
+                    Infrastructure as Code approach for consistent, repeatable deployments
+                  </li>
+                  <li>
+                    Pay-per-use model that drastically reduces operational costs
+                  </li>
+                </ul>
+
+                <h4 class="section-subheading">Skills Demonstrated</h4>
+                <ul class="bullet-list">
+                  <li>
+                    GCP service selection, configuration, and integration
+                  </li>
+                  <li>
+                    Infrastructure as Code with Terraform
+                  </li>
+                  <li>
+                    Serverless architecture design and implementation
+                  </li>
+                  <li>
+                    Multi-environment security considerations
+                  </li>
+                  <li>
+                    CI/CD pipeline development with GitHub Actions
+                  </li>
+                </ul>
+
+                <h4 class="section-subheading">In Progress</h4>
+                <ul class="bullet-list">
+                  <li>
+                    Backend application development for vote processing
+                  </li>
+                  <li>
+                    Frontend implementation for voter interface
+                  </li>
+                  <li>
+                    Enhanced monitoring and observability setup
+                  </li>
+                </ul>
+
+                <div class="project-link">
+                  <a href="https://github.com/saddavi/securevote-gcp-iac" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Visit Project:
+                    github.com/saddavi/securevote-gcp-iac
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Cloud Resume Challenge Project -->
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-content">
