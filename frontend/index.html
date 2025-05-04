@@ -9,6 +9,233 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Google-inspired Color Theme */
+      :root {
+        --google-blue: #4285F4;
+        --google-red: #EA4335;
+        --google-yellow: #FBBC05;
+        --google-green: #34A853;
+        --google-gray: #5f6368;
+        --google-light-gray: #f8f9fa;
+        --google-white: #ffffff;
+        
+        /* Overriding the default theme variables */
+        --primary-color: var(--google-blue);
+        --secondary-color: var(--google-green);
+        --accent-color: var(--google-yellow);
+        --text-color: var(--google-gray);
+        --light-bg: var(--google-light-gray);
+        --border-color: #e0e0e0;
+        --card-bg: var(--google-white);
+        --gradient-start: var(--google-blue);
+        --gradient-end: var(--google-green);
+      }
+
+      /* Modern sleek styling updates */
+      body {
+        font-family: 'Google Sans', 'Segoe UI', Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+      }
+
+      .hero-bg {
+        height: 250px;
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
+      }
+
+      .header-content {
+        border-top: 5px solid var(--google-yellow);
+      }
+
+      .resume-header h1 {
+        color: var(--google-blue);
+        font-weight: 500;
+      }
+
+      .tagline {
+        color: var(--google-green);
+      }
+
+      .contact-item {
+        background: rgba(66, 133, 244, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .contact-item:hover {
+        background: rgba(66, 133, 244, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .icon-container {
+        background: var(--google-blue);
+      }
+
+      .section-title::after {
+        background: linear-gradient(90deg, var(--google-blue), var(--google-green), var(--google-yellow), var(--google-red));
+        height: 4px;
+      }
+
+      .summary-content {
+        border-left: 4px solid var(--google-green);
+      }
+
+      .cert-badge {
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
+      }
+
+      .skills-header {
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
+      }
+
+      .skills-category:hover {
+        border-top: 3px solid var(--google-yellow);
+        transform: translateY(-5px);
+      }
+
+      .skill-item {
+        background: rgba(66, 133, 244, 0.1);
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+      }
+
+      .skill-item:hover {
+        background: rgba(66, 133, 244, 0.2);
+      }
+
+      .timeline::before {
+        background: linear-gradient(to bottom, var(--google-blue), var(--google-red), var(--google-yellow), var(--google-green));
+      }
+
+      .timeline-marker {
+        border: 3px solid var(--google-blue);
+      }
+
+      .project-card {
+        border-top: 3px solid var(--google-blue);
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-title {
+        color: var(--google-blue);
+      }
+
+      .project-tag {
+        background: rgba(52, 168, 83, 0.1);
+        color: var(--google-green);
+      }
+
+      .project-link a {
+        color: var(--google-blue);
+      }
+
+      .project-link a:hover {
+        color: var(--google-red);
+      }
+
+      .experience-card {
+        border-top: 3px solid var(--google-green);
+        transition: all 0.3s ease;
+      }
+      
+      .experience-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .experience-title {
+        color: var(--google-blue);
+      }
+
+      .experience-company {
+        color: var(--google-green);
+      }
+
+      .experience-category {
+        background: rgba(66, 133, 244, 0.05);
+        border-left: 3px solid var(--google-yellow);
+      }
+
+      .experience-category h4 {
+        color: var(--google-blue);
+      }
+
+      .bullet-list li::before {
+        background-color: var(--google-red);
+      }
+
+      .nested-bullet-list li::before {
+        background-color: var(--google-yellow);
+      }
+
+      .education-icon {
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
+      }
+      
+      .education-card:hover {
+        border-top: 3px solid var(--google-yellow);
+      }
+
+      .education-card h3 {
+        color: var(--google-blue);
+      }
+
+      .education-status {
+        color: var(--google-red);
+      }
+
+      .development-icon {
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
+      }
+
+      .development-text {
+        color: var(--google-blue);
+      }
+
+      .visitor-counter {
+        background: rgba(66, 133, 244, 0.05);
+      }
+
+      .visitor-counter p {
+        color: var(--google-blue);
+      }
+
+      .print-button {
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
+        transition: all 0.3s ease;
+      }
+
+      .print-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, var(--google-green), var(--google-blue));
+      }
+
+      /* New Journey Section Styling */
+      .journey-section .summary-content {
+        border-left: 4px solid var(--google-yellow);
+      }
+
+      /* Responsive enhancements */
+      @media (max-width: 768px) {
+        .container {
+          margin: 0;
+          border-radius: 0;
+        }
+      }
+    </style>
   </head>
   <body
     data-api-endpoint="https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter"
@@ -45,11 +272,11 @@
               <span>LinkedIn</span>
             </a>
             <a
-              href="https://github.com/saddavi/Talha-CloudResumeChallenge"
+              href="https://github.com/saddavi"
               class="contact-item"
             >
               <div class="icon-container"><i class="fab fa-github"></i></div>
-              <span>GitHub Repo</span>
+              <span>GitHub</span>
             </a>
             <a href="https://talhacloud.com" class="contact-item">
               <div class="icon-container"><i class="fas fa-blog"></i></div>
@@ -459,6 +686,11 @@
                   <a href="https://www.talharesume.com" target="_blank">
                     <i class="fas fa-external-link-alt"></i> Visit Project:
                     talharesume.com
+                  </a>
+                </div>
+                <div class="project-link">
+                  <a href="https://github.com/saddavi/Talha-CloudResumeChallenge" target="_blank">
+                    <i class="fab fa-github"></i> GitHub Repository
                   </a>
                 </div>
               </div>
