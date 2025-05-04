@@ -10,530 +10,222 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <style>
-      /* Professional LinkedIn-Inspired Color Theme */
+      /* Google-inspired Color Theme */
       :root {
-        --linkedin-blue: #0077B5;
-        --linkedin-light-blue: #0a66c2;
-        --linkedin-dark-blue: #004182;
-        --accent-color: #057642;
-        --secondary-accent: #f5b82e;
-        --text-color: #333333;
-        --subtext-color: #666666;
-        --light-bg: #f3f6f8;
-        --card-bg: #ffffff;
-        --border-color: #e0e0e0;
+        --google-blue: #4285F4;
+        --google-red: #EA4335;
+        --google-yellow: #FBBC05;
+        --google-green: #34A853;
+        --google-gray: #5f6368;
+        --google-light-gray: #f8f9fa;
+        --google-white: #ffffff;
         
         /* Overriding the default theme variables */
-        --primary-color: var(--linkedin-blue);
-        --secondary-color: var(--accent-color);
-        --gradient-start: var(--linkedin-blue);
-        --gradient-end: var(--linkedin-dark-blue);
+        --primary-color: var(--google-blue);
+        --secondary-color: var(--google-green);
+        --accent-color: var(--google-yellow);
+        --text-color: var(--google-gray);
+        --light-bg: var(--google-light-gray);
+        --border-color: #e0e0e0;
+        --card-bg: var(--google-white);
+        --gradient-start: var(--google-blue);
+        --gradient-end: var(--google-green);
       }
 
-      /* Modern professional styling updates */
+      /* Modern sleek styling updates */
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: 'Google Sans', 'Segoe UI', Arial, sans-serif;
         line-height: 1.6;
-        background-color: var(--light-bg);
       }
 
       .container {
         max-width: 1200px;
         margin: 2rem auto;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
       }
 
-      /* Header redesign */
       .hero-bg {
-        display: none; /* Remove hero background */
-      }
-
-      .resume-header {
-        background-color: var(--linkedin-blue);
-        color: white;
-        padding: 2.5rem 2rem;
-        margin-bottom: 0;
-        text-align: center;
+        height: 250px;
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
       }
 
       .header-content {
-        max-width: 900px;
-        margin: 0 auto;
-        background: transparent;
-        border-radius: 0;
-        padding: 0;
-        box-shadow: none;
-        border-top: none;
+        border-top: 5px solid var(--google-yellow);
       }
 
       .resume-header h1 {
-        color: white;
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        letter-spacing: 1px;
-        font-weight: 600;
+        color: var(--google-blue);
+        font-weight: 500;
       }
 
       .tagline {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-        font-weight: 400;
-      }
-
-      .contact-info {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1.2rem;
-        margin-top: 1.5rem;
+        color: var(--google-green);
       }
 
       .contact-item {
-        display: flex;
-        align-items: center;
-        color: white;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
+        background: rgba(66, 133, 244, 0.05);
         transition: all 0.3s ease;
-        background: rgba(255, 255, 255, 0.1);
       }
 
       .contact-item:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
+        background: rgba(66, 133, 244, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
       }
 
       .icon-container {
-        background: rgba(255, 255, 255, 0.85);
-        color: var(--linkedin-blue);
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 0.75rem;
-      }
-
-      /* Section styling */
-      .section {
-        padding: 2rem 2.5rem;
-        margin-bottom: 1.5rem;
-        background-color: var(--card-bg);
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      }
-
-      /* Section headings */
-      .section-title {
-        color: var(--linkedin-blue);
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-        position: relative;
-        display: inline-block;
-        font-weight: 600;
+        background: var(--google-blue);
       }
 
       .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, var(--linkedin-blue), var(--accent-color));
-        border-radius: 3px;
+        background: linear-gradient(90deg, var(--google-blue), var(--google-green), var(--google-yellow), var(--google-red));
+        height: 4px;
       }
 
-      /* Summary Section */
       .summary-content {
-        background: var(--card-bg);
-        border-radius: 8px;
-        padding: 0;
-        box-shadow: none;
-        border-left: none;
-      }
-
-      .journey-section .summary-content {
-        border-left: 4px solid var(--secondary-accent);
-        padding-left: 1rem;
-        margin-top: 1rem;
-      }
-
-      /* Certifications */
-      .certifications {
-        margin-top: 1.5rem;
-      }
-
-      .certifications h3 {
-        color: var(--linkedin-blue);
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-      }
-
-      .cert-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
+        border-left: 4px solid var(--google-green);
       }
 
       .cert-badge {
-        background: var(--linkedin-blue);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        font-size: 0.9rem;
-        font-weight: 500;
-      }
-
-      /* Skills Section */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .skills-category {
-        background: var(--card-bg);
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid var(--border-color);
-      }
-
-      .skills-category:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
       }
 
       .skills-header {
-        background: var(--linkedin-blue);
-        color: white;
-        padding: 1rem;
-        display: flex;
-        align-items: center;
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
       }
 
-      .skills-header i {
-        font-size: 1.25rem;
-        margin-right: 0.75rem;
-      }
-
-      .skills-header h3 {
-        font-size: 1.1rem;
-        font-weight: 500;
-      }
-
-      .skills-content {
-        padding: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
+      .skills-category:hover {
+        border-top: 3px solid var(--google-yellow);
+        transform: translateY(-5px);
       }
 
       .skill-item {
-        background: rgba(0, 119, 181, 0.1);
-        color: var(--linkedin-blue);
-        padding: 0.5rem 1rem;
+        background: rgba(66, 133, 244, 0.1);
         border-radius: 20px;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(0, 119, 181, 0.2);
+        padding: 0.5rem 1rem;
       }
 
       .skill-item:hover {
-        background: rgba(0, 119, 181, 0.15);
-        transform: translateY(-2px);
-      }
-
-      /* Timeline Styling */
-      .timeline {
-        position: relative;
-        margin-left: 20px;
+        background: rgba(66, 133, 244, 0.2);
       }
 
       .timeline::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 3px;
-        height: 100%;
-        background: var(--linkedin-blue);
-        border-radius: 3px;
-      }
-
-      .timeline-item {
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 2rem;
+        background: linear-gradient(to bottom, var(--google-blue), var(--google-red), var(--google-yellow), var(--google-green));
       }
 
       .timeline-marker {
-        position: absolute;
-        left: -10px;
-        top: 0;
-        width: 20px;
-        height: 20px;
-        background: white;
-        border: 3px solid var(--accent-color);
-        border-radius: 50%;
-        z-index: 1;
+        border: 3px solid var(--google-blue);
       }
 
-      /* Project Cards */
       .project-card {
-        background: var(--card-bg);
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        padding: 1.5rem;
+        border-top: 3px solid var(--google-blue);
         transition: all 0.3s ease;
-        border-left: 4px solid var(--linkedin-blue);
       }
 
       .project-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-
-      .project-header {
-        margin-bottom: 1rem;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
       }
 
       .project-title {
-        color: var(--linkedin-blue);
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-      }
-
-      .project-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
+        color: var(--google-blue);
       }
 
       .project-tag {
-        background: rgba(5, 118, 66, 0.1);
-        color: var(--accent-color);
-        font-size: 0.75rem;
-        padding: 0.25rem 0.75rem;
-        border-radius: 50px;
-        border: 1px solid rgba(5, 118, 66, 0.2);
-      }
-
-      .section-subheading {
-        color: var(--accent-color);
-        margin-top: 1.25rem;
-        margin-bottom: 0.75rem;
-        font-weight: 600;
-      }
-
-      .project-link {
-        margin-top: 1rem;
-        padding-top: 0.75rem;
-        border-top: 1px solid var(--border-color);
+        background: rgba(52, 168, 83, 0.1);
+        color: var(--google-green);
       }
 
       .project-link a {
-        display: inline-flex;
-        align-items: center;
-        color: var(--linkedin-blue);
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
-
-      .project-link a i {
-        margin-right: 0.5rem;
+        color: var(--google-blue);
       }
 
       .project-link a:hover {
-        color: var(--accent-color);
+        color: var(--google-red);
       }
 
-      /* Experience Cards */
       .experience-card {
-        background: var(--card-bg);
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        padding: 1.5rem;
+        border-top: 3px solid var(--google-green);
         transition: all 0.3s ease;
-        border-left: 4px solid var(--accent-color);
       }
-
+      
       .experience-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
       }
 
       .experience-title {
-        color: var(--linkedin-blue);
-        font-weight: 600;
+        color: var(--google-blue);
       }
 
       .experience-company {
-        color: var(--accent-color);
-        font-weight: 500;
-      }
-
-      .experience-date {
-        color: var(--subtext-color);
-      }
-
-      .experience-date i {
-        color: var(--linkedin-blue);
+        color: var(--google-green);
       }
 
       .experience-category {
-        background: rgba(0, 119, 181, 0.05);
-        padding: 1.25rem;
-        border-radius: 8px;
-        margin-top: 1rem;
-        border-left: 3px solid var(--accent-color);
+        background: rgba(66, 133, 244, 0.05);
+        border-left: 3px solid var(--google-yellow);
       }
 
       .experience-category h4 {
-        color: var(--linkedin-blue);
-        margin-bottom: 1rem;
-        font-weight: 600;
+        color: var(--google-blue);
       }
 
-      /* Bullet Lists */
       .bullet-list li::before {
-        background-color: var(--accent-color);
+        background-color: var(--google-red);
       }
 
       .nested-bullet-list li::before {
-        background-color: var(--secondary-accent);
-      }
-
-      /* Education Section */
-      .education-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-      }
-
-      .education-card {
-        background: var(--card-bg);
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition: all 0.3s ease;
-        border-top: 3px solid var(--linkedin-blue);
-      }
-
-      .education-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        background-color: var(--google-yellow);
       }
 
       .education-icon {
-        width: 50px;
-        height: 50px;
-        background: var(--linkedin-blue);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1rem;
-        font-size: 1.25rem;
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
+      }
+      
+      .education-card:hover {
+        border-top: 3px solid var(--google-yellow);
       }
 
       .education-card h3 {
-        color: var(--linkedin-blue);
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.4;
-        font-weight: 600;
+        color: var(--google-blue);
       }
 
       .education-status {
-        color: var(--accent-color);
-        font-weight: 500;
-      }
-
-      /* Development Items */
-      .development-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1.25rem;
-      }
-
-      .development-item {
-        background: var(--card-bg);
-        border-radius: 8px;
-        padding: 1.25rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        display: flex;
-        align-items: center;
-        transition: all 0.3s ease;
-      }
-
-      .development-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        color: var(--google-red);
       }
 
       .development-icon {
-        background: var(--linkedin-blue);
-        color: white;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 1rem;
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
       }
 
       .development-text {
-        color: var(--linkedin-blue);
+        color: var(--google-blue);
       }
 
-      /* Visitor Counter & Print Button */
       .visitor-counter {
-        text-align: center;
-        margin: 1.5rem 0;
-        padding: 1rem;
-        background: rgba(0, 119, 181, 0.05);
-        border-radius: 8px;
+        background: rgba(66, 133, 244, 0.05);
       }
 
       .visitor-counter p {
-        color: var(--linkedin-blue);
+        color: var(--google-blue);
       }
 
       .print-button {
-        background: var(--linkedin-blue);
-        color: white;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 50px;
-        cursor: pointer;
-        font-weight: 500;
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
         transition: all 0.3s ease;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
       .print-button:hover {
-        background: var(--linkedin-dark-blue);
         transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, var(--google-green), var(--google-blue));
+      }
+
+      /* New Journey Section Styling */
+      .journey-section .summary-content {
+        border-left: 4px solid var(--google-yellow);
       }
 
       /* Responsive enhancements */
@@ -542,15 +234,6 @@
           margin: 0;
           border-radius: 0;
         }
-        
-        .section {
-          padding: 1.5rem;
-          margin-bottom: 1rem;
-        }
-        
-        .resume-header {
-          padding: 2rem 1rem;
-        }
       }
     </style>
   </head>
@@ -558,6 +241,9 @@
     data-api-endpoint="https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter"
   >
     <div class="container">
+      <!-- Hero Section -->
+      <div class="hero-bg"></div>
+
       <!-- Header Section -->
       <header class="resume-header">
         <div class="header-content">
