@@ -8,17 +8,20 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       /* --- Google-inspired Color Theme --- */
       :root {
-        --google-blue: #4285F4;
-        --google-red: #EA4335;
-        --google-yellow: #FBBC05;
-        --google-green: #34A853;
+        --google-blue: #4285f4;
+        --google-red: #ea4335;
+        --google-yellow: #fbbc05;
+        --google-green: #34a853;
         --google-gray: #5f6368; /* Darker text */
         --google-medium-gray: #70757a; /* Slightly lighter text */
         --google-light-gray: #f8f9fa; /* Light background */
@@ -37,17 +40,35 @@
         --border-color: var(--google-border-gray);
 
         /* Gradients */
-        --primary-gradient: linear-gradient(135deg, var(--google-blue), var(--google-green));
-        --accent-gradient: linear-gradient(90deg, var(--google-blue), var(--google-green), var(--google-yellow), var(--google-red));
-        --timeline-gradient: linear-gradient(to bottom, var(--google-blue), var(--google-red), var(--google-yellow), var(--google-green));
+        --primary-gradient: linear-gradient(
+          135deg,
+          var(--google-blue),
+          var(--google-green)
+        );
+        --accent-gradient: linear-gradient(
+          90deg,
+          var(--google-blue),
+          var(--google-green),
+          var(--google-yellow),
+          var(--google-red)
+        );
+        --timeline-gradient: linear-gradient(
+          to bottom,
+          var(--google-blue),
+          var(--google-red),
+          var(--google-yellow),
+          var(--google-green)
+        );
 
-         /* Transitions */
+        /* Transitions */
         --transition-speed: 0.3s;
         --transition-timing: ease-in-out;
       }
 
       /* --- Base & Typography --- */
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -58,7 +79,7 @@
       }
 
       body {
-        font-family: 'Roboto', 'Google Sans', 'Segoe UI', Arial, sans-serif;
+        font-family: "Roboto", "Google Sans", "Segoe UI", Arial, sans-serif;
         line-height: 1.7;
         color: var(--text-color);
         background-color: var(--bg-color);
@@ -67,22 +88,50 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
-      h1, h2, h3, h4 {
+      h1,
+      h2,
+      h3,
+      h4 {
         font-weight: 500;
         line-height: 1.3;
         color: var(--google-blue); /* Default heading color */
       }
 
-      h1 { font-size: 2.5rem; margin-bottom: 0.25rem; }
-      h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
-      h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
-      h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-color); } /* Slightly less emphasis */
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.25rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+      }
+      h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+      } /* Slightly less emphasis */
 
-      p { margin-bottom: 1rem; }
-      a { color: var(--primary-color); text-decoration: none; transition: color var(--transition-speed) var(--transition-timing); }
-      a:hover { color: var(--google-red); text-decoration: underline; }
+      p {
+        margin-bottom: 1rem;
+      }
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color var(--transition-speed) var(--transition-timing);
+      }
+      a:hover {
+        color: var(--google-red);
+        text-decoration: underline;
+      }
 
-      ul { list-style: none; margin-bottom: 1rem; }
+      ul {
+        list-style: none;
+        margin-bottom: 1rem;
+      }
 
       /* --- Layout --- */
       .container {
@@ -175,13 +224,15 @@
         text-align: center;
         transition: color var(--transition-speed) var(--transition-timing);
       }
-       .contact-item:hover i {
-         color: var(--primary-color); /* Keep color on hover, or change if desired */
-       }
-       /* Hide the old icon container if it still exists in HTML (it shouldn't based on previous step) */
-       .icon-container {
-         display: none;
-       }
+      .contact-item:hover i {
+        color: var(
+          --primary-color
+        ); /* Keep color on hover, or change if desired */
+      }
+      /* Hide the old icon container if it still exists in HTML (it shouldn't based on previous step) */
+      .icon-container {
+        display: none;
+      }
 
       /* --- Section Titles --- */
       .section-title {
@@ -195,7 +246,7 @@
       }
 
       .section-title::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -208,8 +259,8 @@
 
       /* Class to add extra space above a section title */
       .section-title-spaced {
-          margin-top: 4rem;
-          font-size: 1.6rem; /* Keep the adjusted font size if desired */
+        margin-top: 4rem;
+        font-size: 1.6rem; /* Keep the adjusted font size if desired */
       }
 
       .section-subheading {
@@ -231,41 +282,45 @@
         max-width: 900px; /* Constrain width for readability */
       }
       .journey-section .summary-content {
-         background-color: rgba(251, 188, 5, 0.05); /* Light yellow bg */
-         border-left-color: var(--google-yellow);
+        background-color: rgba(251, 188, 5, 0.05); /* Light yellow bg */
+        border-left-color: var(--google-yellow);
       }
       .summary-content p:last-child {
         margin-bottom: 0;
       }
 
       /* --- Certifications --- */
-       .certifications {
-         margin-top: 2rem;
-       }
-       .certifications h3 {
-         text-align: center;
-         margin-bottom: 1rem;
-         color: var(--text-light-color);
-         font-size: 1rem;
-         text-transform: uppercase;
-         letter-spacing: 1px;
-         font-weight: 500;
-       }
-       .cert-badges {
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: center;
-         gap: 0.8rem;
-       }
-       .cert-badge {
-         background: linear-gradient(135deg, var(--google-blue), var(--google-green));
-         color: var(--google-white);
-         padding: 0.4rem 1rem;
-         border-radius: 15px;
-         font-size: 0.85rem;
-         font-weight: 500;
-         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-       }
+      .certifications {
+        margin-top: 2rem;
+      }
+      .certifications h3 {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: var(--text-light-color);
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+      }
+      .cert-badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+      }
+      .cert-badge {
+        background: linear-gradient(
+          135deg,
+          var(--google-blue),
+          var(--google-green)
+        );
+        color: var(--google-white);
+        padding: 0.4rem 1rem;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
 
       /* --- Skills --- */
       .skills-grid {
@@ -290,12 +345,11 @@
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         border-top: 3px solid var(--google-yellow);
       }
-       /* Adjust border radius after hover border is added */
+      /* Adjust border radius after hover border is added */
       .skills-category:hover .skills-header {
         border-top-left-radius: 9px; /* 12px - 3px border */
         border-top-right-radius: 9px;
       }
-
 
       .skills-header {
         display: flex;
@@ -307,8 +361,15 @@
         border-top-left-radius: 12px; /* Match parent */
         border-top-right-radius: 12px; /* Match parent */
       }
-      .skills-header i { font-size: 1.3rem; }
-      .skills-header h3 { color: var(--google-white); margin-bottom: 0; font-size: 1.1rem; font-weight: 500;}
+      .skills-header i {
+        font-size: 1.3rem;
+      }
+      .skills-header h3 {
+        color: var(--google-white);
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
 
       .skills-content {
         padding: 1.5rem;
@@ -325,7 +386,8 @@
         border-radius: 20px;
         font-size: 0.9rem;
         font-weight: 500;
-        transition: background-color var(--transition-speed) var(--transition-timing);
+        transition: background-color var(--transition-speed)
+          var(--transition-timing);
         cursor: default; /* Indicate non-interactive */
       }
 
@@ -342,7 +404,7 @@
       }
 
       .timeline::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 10px; /* Start below first marker's top */
         bottom: 10px; /* End above last marker's bottom */
@@ -368,7 +430,9 @@
         top: 5px; /* Align roughly with first line of text */
         width: 44px; /* Diameter of outer circle */
         height: 44px;
-        background: var(--card-bg); /* Match page background to "punch" through line */
+        background: var(
+          --card-bg
+        ); /* Match page background to "punch" through line */
         border: 4px solid var(--google-blue);
         border-radius: 50%;
         z-index: 1; /* Above the timeline line */
@@ -377,28 +441,40 @@
         align-items: center;
       }
       /* Inner dot */
-       .timeline-marker::after {
-         content: '';
-         width: 12px;
-         height: 12px;
-         background: var(--google-blue);
-         border-radius: 50%;
-       }
-       /* Alternate marker colors for visual interest */
-       .timeline-item:nth-child(2n) .timeline-marker { border-color: var(--google-red); }
-       .timeline-item:nth-child(2n) .timeline-marker::after { background: var(--google-red); }
-       .timeline-item:nth-child(3n) .timeline-marker { border-color: var(--google-yellow); }
-       .timeline-item:nth-child(3n) .timeline-marker::after { background: var(--google-yellow); }
-       .timeline-item:nth-child(4n) .timeline-marker { border-color: var(--google-green); }
-       .timeline-item:nth-child(4n) .timeline-marker::after { background: var(--google-green); }
-
+      .timeline-marker::after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: var(--google-blue);
+        border-radius: 50%;
+      }
+      /* Alternate marker colors for visual interest */
+      .timeline-item:nth-child(2n) .timeline-marker {
+        border-color: var(--google-red);
+      }
+      .timeline-item:nth-child(2n) .timeline-marker::after {
+        background: var(--google-red);
+      }
+      .timeline-item:nth-child(3n) .timeline-marker {
+        border-color: var(--google-yellow);
+      }
+      .timeline-item:nth-child(3n) .timeline-marker::after {
+        background: var(--google-yellow);
+      }
+      .timeline-item:nth-child(4n) .timeline-marker {
+        border-color: var(--google-green);
+      }
+      .timeline-item:nth-child(4n) .timeline-marker::after {
+        background: var(--google-green);
+      }
 
       .timeline-content {
         position: relative;
       }
 
       /* --- Cards (Project & Experience) --- */
-      .project-card, .experience-card {
+      .project-card,
+      .experience-card {
         background-color: var(--card-bg);
         border-radius: 12px;
         padding: 2rem;
@@ -407,16 +483,20 @@
         transition: all var(--transition-speed) var(--transition-timing);
         border-top: 4px solid var(--google-blue); /* Default top border for projects */
       }
-       .experience-card {
-         border-top-color: var(--google-green); /* Green top border for experience */
-       }
+      .experience-card {
+        border-top-color: var(
+          --google-green
+        ); /* Green top border for experience */
+      }
 
-      .project-card:hover, .experience-card:hover {
+      .project-card:hover,
+      .experience-card:hover {
         transform: translateY(-5px) scale(1.01); /* Slight lift and scale */
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
       }
 
-      .project-header, .experience-header {
+      .project-header,
+      .experience-header {
         margin-bottom: 1rem;
       }
       .experience-header {
@@ -427,14 +507,21 @@
         gap: 0.5rem; /* Space between title block and date */
       }
 
-      .project-title { color: var(--google-blue); margin-bottom: 0.2rem; } /* Reduced margin */
-      .project-header p { /* Style for date below title */
-          font-size: 0.9rem;
-          color: var(--text-light-color);
-          margin-bottom: 0.8rem;
+      .project-title {
+        color: var(--google-blue);
+        margin-bottom: 0.2rem;
+      } /* Reduced margin */
+      .project-header p {
+        /* Style for date below title */
+        font-size: 0.9rem;
+        color: var(--text-light-color);
+        margin-bottom: 0.8rem;
       }
 
-      .experience-title { color: var(--google-blue); margin-bottom: 0.1rem; } /* Reduced margin */
+      .experience-title {
+        color: var(--google-blue);
+        margin-bottom: 0.1rem;
+      } /* Reduced margin */
       .experience-company {
         color: var(--secondary-color);
         font-weight: 500;
@@ -448,7 +535,9 @@
         padding-top: 0.2rem; /* Align better with title */
         flex-shrink: 0; /* Prevent shrinking */
       }
-       .experience-date i { margin-right: 0.4rem; }
+      .experience-date i {
+        margin-right: 0.4rem;
+      }
 
       .project-tags {
         display: flex;
@@ -478,56 +567,60 @@
         align-items: center;
         gap: 0.5rem; /* Space between icon and text */
       }
-       .project-link a:hover {
-         color: var(--google-red);
-       }
-      .project-link + .project-link { margin-top: 0.5rem; } /* Space between multiple links */
+      .project-link a:hover {
+        color: var(--google-red);
+      }
+      .project-link + .project-link {
+        margin-top: 0.5rem;
+      } /* Space between multiple links */
 
       /* --- Experience Categories & Lists --- */
-       .experience-categories {
-         margin-top: 1.5rem;
-         display: grid;
-         gap: 1.5rem;
-       }
-       .experience-category {
-         background: rgba(66, 133, 244, 0.03); /* Very light blue */
-         border-left: 3px solid var(--google-yellow);
-         padding: 1.5rem; /* Increased padding */
-         border-radius: 8px;
-       }
-       .experience-category h4 {
-         color: var(--google-blue);
-         margin-bottom: 0.8rem;
-         display: flex;
-         align-items: center;
-         gap: 0.6rem;
-         font-size: 1rem;
-         font-weight: 500;
-       }
-        .experience-category h4 i {
-          font-size: 1.1rem;
-          color: var(--google-yellow); /* Match border */
-          width: 20px; /* Give icon fixed width */
-          text-align: center;
-        }
-
+      .experience-categories {
+        margin-top: 1.5rem;
+        display: grid;
+        gap: 1.5rem;
+      }
+      .experience-category {
+        background: rgba(66, 133, 244, 0.03); /* Very light blue */
+        border-left: 3px solid var(--google-yellow);
+        padding: 1.5rem; /* Increased padding */
+        border-radius: 8px;
+      }
+      .experience-category h4 {
+        color: var(--google-blue);
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      .experience-category h4 i {
+        font-size: 1.1rem;
+        color: var(--google-yellow); /* Match border */
+        width: 20px; /* Give icon fixed width */
+        text-align: center;
+      }
 
       /* --- Bullet Lists --- */
-      .bullet-list, .nested-bullet-list {
+      .bullet-list,
+      .nested-bullet-list {
         padding-left: 1rem; /* Indentation */
       }
 
-      .bullet-list li, .nested-bullet-list li {
+      .bullet-list li,
+      .nested-bullet-list li {
         position: relative;
         padding-left: 1.4rem; /* Space for bullet */
         margin-bottom: 0.6rem;
       }
-      .bullet-list li:last-child, .nested-bullet-list li:last-child {
-         margin-bottom: 0; /* Remove margin on last item */
+      .bullet-list li:last-child,
+      .nested-bullet-list li:last-child {
+        margin-bottom: 0; /* Remove margin on last item */
       }
 
       .bullet-list li::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         top: 0.6em; /* Vertically center */
@@ -538,7 +631,10 @@
         border-radius: 50%;
       }
 
-      .nested-bullet-list { margin-top: 0.5rem; padding-left: 1.2rem;} /* Further indent nested */
+      .nested-bullet-list {
+        margin-top: 0.5rem;
+        padding-left: 1.2rem;
+      } /* Further indent nested */
       .nested-bullet-list li::before {
         background-color: var(--google-yellow);
         width: 6px;
@@ -546,16 +642,18 @@
       }
 
       /* --- Education & Professional Development --- */
-      .education-grid, .development-grid {
+      .education-grid,
+      .development-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.5rem;
       }
-       .development-grid {
-         margin-top: 1.5rem; /* Reduced space between education and development */
-       }
+      .development-grid {
+        margin-top: 1.5rem; /* Reduced space between education and development */
+      }
 
-      .education-card, .development-item {
+      .education-card,
+      .development-item {
         background-color: var(--card-bg);
         border-radius: 12px;
         padding: 1.5rem;
@@ -568,13 +666,15 @@
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
       }
 
-      .education-card:hover, .development-item:hover {
+      .education-card:hover,
+      .development-item:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         border-color: var(--primary-color); /* Highlight border on hover */
       }
 
-      .education-icon, .development-icon {
+      .education-icon,
+      .development-icon {
         width: 60px;
         height: 60px;
         border-radius: 50%;
@@ -596,7 +696,8 @@
         font-weight: 500;
       }
 
-      .education-details, .development-text {
+      .education-details,
+      .development-text {
         font-size: 0.9rem;
         color: var(--text-light-color);
       }
@@ -605,27 +706,26 @@
         font-weight: 500;
         color: var(--danger-color);
       }
-       /* Development items specific layout */
-       .development-item {
-         flex-direction: row; /* Horizontal layout */
-         text-align: left;
-         gap: 1rem;
-         padding: 1rem; /* Slightly less padding */
-         align-items: center; /* Vertically center icon and text */
-       }
-        .development-icon {
-          width: 40px;
-          height: 40px;
-          font-size: 1.2rem;
-          margin-bottom: 0; /* Remove bottom margin */
-        }
-        .development-text {
-          flex-grow: 1;
-           color: var(--text-color); /* Slightly darker */
-           font-size: 0.9rem;
-           line-height: 1.4; /* Adjust line height */
-        }
-
+      /* Development items specific layout */
+      .development-item {
+        flex-direction: row; /* Horizontal layout */
+        text-align: left;
+        gap: 1rem;
+        padding: 1rem; /* Slightly less padding */
+        align-items: center; /* Vertically center icon and text */
+      }
+      .development-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin-bottom: 0; /* Remove bottom margin */
+      }
+      .development-text {
+        flex-grow: 1;
+        color: var(--text-color); /* Slightly darker */
+        font-size: 0.9rem;
+        line-height: 1.4; /* Adjust line height */
+      }
 
       /* --- Visitor Counter --- */
       .visitor-counter {
@@ -641,7 +741,10 @@
         color: var(--text-light-color);
         font-size: 0.9rem;
       }
-      .visitor-counter i { margin-right: 0.5rem; color: var(--primary-color); }
+      .visitor-counter i {
+        margin-right: 0.5rem;
+        color: var(--primary-color);
+      }
       #visitor-count {
         font-weight: 700;
         color: var(--primary-color);
@@ -676,621 +779,1085 @@
       .print-button:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        background: linear-gradient(135deg, var(--google-green), var(--google-blue)); /* Reverse gradient on hover */
+        background: linear-gradient(
+          135deg,
+          var(--google-green),
+          var(--google-blue)
+        ); /* Reverse gradient on hover */
       }
-       .print-button i { font-size: 1.1rem; }
-
+      .print-button i {
+        font-size: 1.1rem;
+      }
 
       /* --- Responsive Enhancements --- */
       @media (max-width: 768px) {
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.6rem; }
-        .section { padding: 2rem 1rem; }
-        .resume-header { padding: 0 1rem; margin-top: -60px; }
-        .header-content { padding: 1.5rem; }
-        .contact-info { gap: 0.5rem; justify-content: center;}
-        .contact-item { padding: 0.4rem 0.8rem; font-size: 0.85rem;}
+        h1 {
+          font-size: 2.2rem;
+        }
+        h2 {
+          font-size: 1.6rem;
+        }
+        .section {
+          padding: 2rem 1rem;
+        }
+        .resume-header {
+          padding: 0 1rem;
+          margin-top: -60px;
+        }
+        .header-content {
+          padding: 1.5rem;
+        }
+        .contact-info {
+          gap: 0.5rem;
+          justify-content: center;
+        }
+        .contact-item {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.85rem;
+        }
 
-        .timeline { max-width: 100%; padding: 1rem 0;} /* Remove max-width */
-        .timeline::before { left: 15px; }
-        .timeline-item { padding-left: 45px; }
-        .timeline-marker { width: 34px; height: 34px; left: 0; border-width: 3px;}
-         .timeline-marker::after { width: 8px; height: 8px; }
+        .timeline {
+          max-width: 100%;
+          padding: 1rem 0;
+        } /* Remove max-width */
+        .timeline::before {
+          left: 15px;
+        }
+        .timeline-item {
+          padding-left: 45px;
+        }
+        .timeline-marker {
+          width: 34px;
+          height: 34px;
+          left: 0;
+          border-width: 3px;
+        }
+        .timeline-marker::after {
+          width: 8px;
+          height: 8px;
+        }
 
-        .experience-header { flex-direction: column; align-items: flex-start; gap: 0.2rem;}
-        .experience-date { margin-left: 0; padding-top: 0; }
-        .project-card, .experience-card { padding: 1.5rem; }
-        .education-grid, .development-grid { grid-template-columns: 1fr; } /* Stack on smaller screens */
-        .summary-content { padding: 1rem; max-width: 100%;}
+        .experience-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.2rem;
+        }
+        .experience-date {
+          margin-left: 0;
+          padding-top: 0;
+        }
+        .project-card,
+        .experience-card {
+          padding: 1.5rem;
+        }
+        .education-grid,
+        .development-grid {
+          grid-template-columns: 1fr;
+        } /* Stack on smaller screens */
+        .summary-content {
+          padding: 1rem;
+          max-width: 100%;
+        }
       }
 
-       /* --- Print Styles --- */
-       @media print {
-         body {
-           background-color: #fff !important; /* Override base */
-           color: #000;
-           font-size: 10pt; /* Adjust for print */
-           line-height: 1.4;
-           font-family: 'Times New Roman', Times, serif; /* Use serif for print */
-         }
-         :root { /* Reset colors for print */
-            --google-blue: #000;
-            --google-red: #000;
-            --google-yellow: #000;
-            --google-green: #000;
-            --google-gray: #000;
-            --google-medium-gray: #333;
-            --google-light-gray: #fff;
-            --google-border-gray: #ccc;
-            --google-white: #000;
-            --primary-color: #000;
-            --secondary-color: #000;
-            --accent-color: #000;
-            --danger-color: #000;
-            --text-color: #000;
-            --text-light-color: #333;
-            --bg-color: #fff;
-            --card-bg: #fff;
-            --border-color: #ccc;
-         }
+      /* --- Print Styles --- */
+      @media print {
+        body {
+          background-color: #fff !important; /* Override base */
+          color: #000;
+          font-size: 10pt; /* Adjust for print */
+          line-height: 1.4;
+          font-family: "Times New Roman", Times, serif; /* Use serif for print */
+        }
+        :root {
+          /* Reset colors for print */
+          --google-blue: #000;
+          --google-red: #000;
+          --google-yellow: #000;
+          --google-green: #000;
+          --google-gray: #000;
+          --google-medium-gray: #333;
+          --google-light-gray: #fff;
+          --google-border-gray: #ccc;
+          --google-white: #000;
+          --primary-color: #000;
+          --secondary-color: #000;
+          --accent-color: #000;
+          --danger-color: #000;
+          --text-color: #000;
+          --text-light-color: #333;
+          --bg-color: #fff;
+          --card-bg: #fff;
+          --border-color: #ccc;
+        }
 
-         .container {
-           max-width: 100%;
-           margin: 0;
-           box-shadow: none !important; /* Override inline */
-           border-radius: 0;
-           background-color: #fff !important;
-         }
-         .hero-bg, .print-container, .visitor-counter, .timeline-marker, .education-icon, .development-icon {
-           display: none !important; /* Hide non-essential print elements */
-         }
-         .resume-header {
-           margin-top: 0;
-           padding: 0;
-         }
-         .header-content {
-           box-shadow: none !important;
-           border-radius: 0;
-           padding: 1rem 0;
-           border-top: none !important;
-           text-align: left;
-           background-color: #fff !important;
-         }
-         .contact-info {
-           justify-content: flex-start;
-           gap: 0.5rem;
-         }
-          .contact-item {
-             background: none !important;
-             padding: 0.2rem 0;
-             border: none !important;
-             color: #000 !important;
-             font-size: 9pt;
-           }
-            .contact-item i { color: #000 !important; margin-right: 0.3rem;}
-            .contact-item span { display: inline;}
+        .container {
+          max-width: 100%;
+          margin: 0;
+          box-shadow: none !important; /* Override inline */
+          border-radius: 0;
+          background-color: #fff !important;
+        }
+        .hero-bg,
+        .print-container,
+        .visitor-counter,
+        .timeline-marker,
+        .education-icon,
+        .development-icon {
+          display: none !important; /* Hide non-essential print elements */
+        }
+        .resume-header {
+          margin-top: 0;
+          padding: 0;
+        }
+        .header-content {
+          box-shadow: none !important;
+          border-radius: 0;
+          padding: 1rem 0;
+          border-top: none !important;
+          text-align: left;
+          background-color: #fff !important;
+        }
+        .contact-info {
+          justify-content: flex-start;
+          gap: 0.5rem;
+        }
+        .contact-item {
+          background: none !important;
+          padding: 0.2rem 0;
+          border: none !important;
+          color: #000 !important;
+          font-size: 9pt;
+        }
+        .contact-item i {
+          color: #000 !important;
+          margin-right: 0.3rem;
+        }
+        .contact-item span {
+          display: inline;
+        }
 
-         .section {
-           padding: 1rem 0;
-           border-bottom: 1px solid #ccc;
-           page-break-inside: avoid;
-         }
-         .section:last-of-type { border-bottom: none; }
+        .section {
+          padding: 1rem 0;
+          border-bottom: 1px solid #ccc;
+          page-break-inside: avoid;
+        }
+        .section:last-of-type {
+          border-bottom: none;
+        }
 
-         .section-title {
-           text-align: left;
-           font-size: 14pt;
-           margin-bottom: 0.8rem;
-           padding-bottom: 0.3rem;
-           color: #000 !important;
-           font-weight: bold;
-           border-bottom: 1px solid #000;
-         }
-         .section-title::after {
-            display: none; /* Hide gradient line */
-         }
-          h1, h2, h3, h4 { color: #000 !important; font-weight: bold;}
-          h1 { font-size: 18pt; }
-          h2 { font-size: 14pt; }
-          h3 { font-size: 11pt; }
-          h4 { font-size: 10pt; font-weight: bold; }
-          p { font-size: 10pt; margin-bottom: 0.5rem;}
-          a { color: #000 !important; text-decoration: none !important; }
-          a[href^="http"]::after { /* Optionally show URLs */
-             /* content: " (" attr(href) ")"; */
-             /* font-size: 8pt; */
-             /* color: #555; */
-          }
+        .section-title {
+          text-align: left;
+          font-size: 14pt;
+          margin-bottom: 0.8rem;
+          padding-bottom: 0.3rem;
+          color: #000 !important;
+          font-weight: bold;
+          border-bottom: 1px solid #000;
+        }
+        .section-title::after {
+          display: none; /* Hide gradient line */
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+          color: #000 !important;
+          font-weight: bold;
+        }
+        h1 {
+          font-size: 18pt;
+        }
+        h2 {
+          font-size: 14pt;
+        }
+        h3 {
+          font-size: 11pt;
+        }
+        h4 {
+          font-size: 10pt;
+          font-weight: bold;
+        }
+        p {
+          font-size: 10pt;
+          margin-bottom: 0.5rem;
+        }
+        a {
+          color: #000 !important;
+          text-decoration: none !important;
+        }
+        a[href^="http"]::after {
+          /* Optionally show URLs */
+          /* content: " (" attr(href) ")"; */
+          /* font-size: 8pt; */
+          /* color: #555; */
+        }
 
-         .skills-grid, .education-grid, .development-grid {
-           grid-template-columns: 1fr 1fr; /* Try two columns for print */
-           gap: 1rem;
-         }
-         .skills-category, .education-card, .development-item {
-           box-shadow: none !important;
-           border: 1px solid #eee !important;
-           border-radius: 0px !important;
-            padding: 0.5rem;
-            background-color: #fff !important;
-            page-break-inside: avoid;
-         }
-          .skills-header { background: #eee !important; color: #000 !important; padding: 0.3rem 0.5rem; border-radius: 0 !important;}
-          .skills-header h3 { color: #000 !important; font-size: 10pt;}
-          .skills-content { padding: 0.5rem; }
-          .skill-item { background: #f0f0f0 !important; color: #000 !important; padding: 0.2rem 0.5rem; font-size: 9pt;}
-          .cert-badge { background: #eee !important; color: #000 !important; box-shadow: none !important; }
+        .skills-grid,
+        .education-grid,
+        .development-grid {
+          grid-template-columns: 1fr 1fr; /* Try two columns for print */
+          gap: 1rem;
+        }
+        .skills-category,
+        .education-card,
+        .development-item {
+          box-shadow: none !important;
+          border: 1px solid #eee !important;
+          border-radius: 0px !important;
+          padding: 0.5rem;
+          background-color: #fff !important;
+          page-break-inside: avoid;
+        }
+        .skills-header {
+          background: #eee !important;
+          color: #000 !important;
+          padding: 0.3rem 0.5rem;
+          border-radius: 0 !important;
+        }
+        .skills-header h3 {
+          color: #000 !important;
+          font-size: 10pt;
+        }
+        .skills-content {
+          padding: 0.5rem;
+        }
+        .skill-item {
+          background: #f0f0f0 !important;
+          color: #000 !important;
+          padding: 0.2rem 0.5rem;
+          font-size: 9pt;
+        }
+        .cert-badge {
+          background: #eee !important;
+          color: #000 !important;
+          box-shadow: none !important;
+        }
 
-         .timeline { padding: 0; max-width: 100%;}
-         .timeline::before { display: none; } /* Hide timeline visual elements for print */
-         .timeline-item { padding-left: 0; margin-bottom: 1rem; }
+        .timeline {
+          padding: 0;
+          max-width: 100%;
+        }
+        .timeline::before {
+          display: none;
+        } /* Hide timeline visual elements for print */
+        .timeline-item {
+          padding-left: 0;
+          margin-bottom: 1rem;
+        }
 
-         .project-card, .experience-card {
-           box-shadow: none !important;
-           border: 1px solid #eee !important;
-           border-radius: 0 !important;
-           padding: 0.8rem;
-            border-top: 1px solid #ccc !important;
-            page-break-inside: avoid; /* Try to keep cards intact */
-            background-color: #fff !important;
-         }
-          .experience-category { background: none !important; border-left: 2px solid #ccc !important; padding: 0.5rem 0.8rem;}
-          .bullet-list, .nested-bullet-list { padding-left: 1rem; }
-          .bullet-list li, .nested-bullet-list li { padding-left: 1rem; margin-bottom: 0.3rem;}
-          .bullet-list li::before { background-color: #555 !important; width: 5px; height: 5px; top: 0.5em;}
-          .nested-bullet-list li::before { background-color: #777 !important; width: 4px; height: 4px; top: 0.5em;}
-          .education-card h3 { font-size: 10pt; }
-          .education-details, .development-text, .education-status { font-size: 9pt; }
-          .development-item { flex-direction: column; align-items: flex-start; text-align: left;}
-          .development-text { font-size: 9pt;}
-       }
-
+        .project-card,
+        .experience-card {
+          box-shadow: none !important;
+          border: 1px solid #eee !important;
+          border-radius: 0 !important;
+          padding: 0.8rem;
+          border-top: 1px solid #ccc !important;
+          page-break-inside: avoid; /* Try to keep cards intact */
+          background-color: #fff !important;
+        }
+        .experience-category {
+          background: none !important;
+          border-left: 2px solid #ccc !important;
+          padding: 0.5rem 0.8rem;
+        }
+        .bullet-list,
+        .nested-bullet-list {
+          padding-left: 1rem;
+        }
+        .bullet-list li,
+        .nested-bullet-list li {
+          padding-left: 1rem;
+          margin-bottom: 0.3rem;
+        }
+        .bullet-list li::before {
+          background-color: #555 !important;
+          width: 5px;
+          height: 5px;
+          top: 0.5em;
+        }
+        .nested-bullet-list li::before {
+          background-color: #777 !important;
+          width: 4px;
+          height: 4px;
+          top: 0.5em;
+        }
+        .education-card h3 {
+          font-size: 10pt;
+        }
+        .education-details,
+        .development-text,
+        .education-status {
+          font-size: 9pt;
+        }
+        .development-item {
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+        }
+        .development-text {
+          font-size: 9pt;
+        }
+      }
     </style>
   </head>
   <body
     data-api-endpoint="https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter"
-    >
+  >
     <div class="container">
+      <div class="hero-bg"></div>
 
-        <div class="hero-bg"></div>
+      <header class="resume-header">
+        <div class="header-content">
+          <h1>TALHA NASIRUDDIN</h1>
+          <p class="tagline">Cloud Engineer &amp; Cybersecurity Professional</p>
+          <div class="contact-info">
+            <a href="tel:974.5516.9203" class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+974&nbsp;5516&nbsp;9203</span>
+            </a>
+            <a href="mailto:talhanasiruddin@outlook.com" class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>talhanasiruddin@outlook.com</span>
+            </a>
+            <a href="#" class="contact-item" onclick="return false;">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Doha, Qatar</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/talhanasiruddin/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-item"
+            >
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/saddavi"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-item"
+            >
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://talhacloud.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-item"
+            >
+              <i class="fas fa-blog"></i>
+              <span>Blog</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-        <header class="resume-header">
-            <div class="header-content">
-                <h1>TALHA NASIRUDDIN</h1>
-                <p class="tagline">Cloud Engineer &amp; Cybersecurity Professional</p>
-                <div class="contact-info">
-                    <a href="tel:974.5516.9203" class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+974&nbsp;5516&nbsp;9203</span>
-                    </a>
-                    <a href="mailto:talhanasiruddin@outlook.com" class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>talhanasiruddin@outlook.com</span>
-                    </a>
-                    <a href="#" class="contact-item" onclick="return false;"> <i class="fas fa-map-marker-alt"></i>
-                        <span>Doha, Qatar</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/talhanasiruddin/" target="_blank" rel="noopener noreferrer" class="contact-item"> <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/saddavi" target="_blank" rel="noopener noreferrer" class="contact-item"> <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://talhacloud.com" target="_blank" rel="noopener noreferrer" class="contact-item"> <i class="fas fa-blog"></i>
-                        <span>Blog</span>
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <section class="section summary-section">
-            <h2 class="section-title">Professional Summary</h2>
-            <div class="summary-content">
-                <p>
-I'm a hands-on Tech professional with over 16 years in the trenches of systems and security, now channeling my passion into cloud engineering. Throughout my career, I've tackled complex technical problems—the kind that wake me up with excitement—and I bring this problem-solving mindset to cloud architecture. I've gone beyond theory by building real-world Azure and GCP projects, automating deployments through CI/CD pipelines, and getting my hands dirty with Infrastructure as Code. What makes me unique is my ability to bridge traditional infrastructure knowledge with modern cloud practices while keeping security at the forefront—something many cloud-first engineers lack. When I implement a solution, I approach it like solving a puzzle: methodically connecting the dots while finding the most efficient, secure path forward.                </p>
-                <div class="certifications">
-                    <h3>Key Certifications</h3>
-                    <div class="cert-badges">
-                        <span class="cert-badge">CISSP</span>
-                        <span class="cert-badge">Security+</span>
-                        <span class="cert-badge">CSAP</span>
-                        <span class="cert-badge">CySA+</span> </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section journey-section">
-            <h2 class="section-title">My Cloud Journey</h2>
-            <div class="summary-content">
-                <p>
-My journey to cloud engineering wasn't planned from day one—it evolved naturally as I kept solving bigger technical challenges. After years of making systems work and keeping them secure, I found myself increasingly drawn to the flexibility and innovation of cloud platforms. Instead of just reading about cloud concepts, I've taken a builder's approach: tackling the Cloud Resume Challenge on Azure and developing SecureVote on GCP from the ground up.                </p>
-                <p>
-These projects aren't just resume fillers—they're my hands-on laboratory where I get to experiment with serverless architectures and Infrastructure as Code, often working late into the night when a solution finally clicks. I get genuinely excited when my Terraform code successfully provisions complex infrastructure or when my CI/CD pipeline automates a previously manual process.                </p>
+      <section class="section summary-section">
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="summary-content">
           <p>
-            I'm looking for a cloud engineering role here in Qatar where my security background becomes an asset—where I can help teams build secure-by-design cloud solutions rather than bolting security on afterward. I want to join an organization where I can contribute immediately with my existing skills while continuing to grow through real-world challenges. This isn't just a career move; it's about applying my problem-solving abilities to a field that energizes me while providing better opportunities for my family.
+            I'm a hands-on Tech professional with over 16 years in the trenches
+            of systems and security, now channeling my passion into cloud
+            engineering. Throughout my career, I've tackled complex technical
+            problems—the kind that wake me up with excitement—and I bring this
+            problem-solving mindset to cloud architecture. I've gone beyond
+            theory by building real-world Azure and GCP projects, automating
+            deployments through CI/CD pipelines, and getting my hands dirty with
+            Infrastructure as Code. What makes me unique is my ability to bridge
+            traditional infrastructure knowledge with modern cloud practices
+            while keeping security at the forefront—something many cloud-first
+            engineers lack. When I implement a solution, I approach it like
+            solving a puzzle: methodically connecting the dots while finding the
+            most efficient, secure path forward.
           </p>
+          <div class="certifications">
+            <h3>Key Certifications</h3>
+            <div class="cert-badges">
+              <span class="cert-badge">CISSP</span>
+              <span class="cert-badge">Security+</span>
+              <span class="cert-badge">CSAP</span>
+              <span class="cert-badge">CySA+</span>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="section">
-            <h2 class="section-title">Cloud &amp; Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skills-category">
-                    <div class="skills-header">
-                        <i class="fas fa-cloud"></i>
-                        <h3>Cloud Platforms</h3> </div>
-                    <div class="skills-content">
-                        <span class="skill-item">Azure Functions</span>
-                        <span class="skill-item">Azure CosmosDB</span>
-                        <span class="skill-item">Azure Storage</span>
-                        <span class="skill-item">Azure CDN</span>
-                        <span class="skill-item">Azure AD</span>
-                        <span class="skill-item">Microsoft Intune</span>
-                        <span class="skill-item">Google Cloud (GCP)</span>
-                        <span class="skill-item">GCP Cloud Run</span>
-                        <span class="skill-item">GCP Cloud SQL</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <div class="skills-header">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Security</h3>
-                    </div>
-                    <div class="skills-content">
-                        <span class="skill-item">Identity &amp; Access Mgmt (IAM)</span>
-                        <span class="skill-item">MFA Implementation</span>
-                        <span class="skill-item">Privilege Access Mgmt (PAM)</span>
-                        <span class="skill-item">SIEM Configuration</span>
-                        <span class="skill-item">Endpoint Protection (EPP)</span>
-                        <span class="skill-item">Vulnerability Management</span>
-                        <span class="skill-item">Network Security</span>
-                        <span class="skill-item">CISSP Domains</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <div class="skills-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Programming &amp; IaC</h3> </div>
-                    <div class="skills-content">
-                        <span class="skill-item">PowerShell</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">JavaScript (ES6+)</span>
-                        <span class="skill-item">Bash Scripting</span>
-                        <span class="skill-item">Terraform (IaC)</span>
-                        <span class="skill-item">HTML5</span>
-                        <span class="skill-item">CSS3</span>
-                    </div>
-                </div>
-                 <div class="skills-category">
-                    <div class="skills-header">
-                        <i class="fas fa-cogs"></i>
-                        <h3>DevOps &amp; Automation</h3>
-                    </div>
-                    <div class="skills-content">
-                        <span class="skill-item">CI/CD Pipelines</span>
-                        <span class="skill-item">Infrastructure as Code (IaC)</span>
-                        <span class="skill-item">Azure CLI</span>
-                        <span class="skill-item">GitHub Actions</span>
-                        <span class="skill-item">Git / Version Control</span>
-                        <span class="skill-item">Process Automation</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <div class="skills-header">
-                        <i class="fas fa-server"></i>
-                        <h3>Infrastructure &amp; Systems</h3> </div>
-                    <div class="skills-content">
-                        <span class="skill-item">Windows Server Admin</span>
-                        <span class="skill-item">Active Directory</span>
-                        <span class="skill-item">Hyper-V</span>
-                        <span class="skill-item">VMware vSphere</span>
-                        <span class="skill-item">Network Monitoring</span>
-                        <span class="skill-item">Systems Integration</span>
-                        <span class="skill-item">MDM (Intune/Meraki)</span>
-                    </div>
-                </div>
+      <section class="section journey-section">
+        <h2 class="section-title">My Cloud Journey</h2>
+        <div class="summary-content">
+          <p>
+            My journey to cloud engineering wasn't planned from day one—it
+            evolved naturally as I kept solving bigger technical challenges.
+            After years of making systems work and keeping them secure, I found
+            myself increasingly drawn to the flexibility and innovation of cloud
+            platforms. Instead of just reading about cloud concepts, I've taken
+            a builder's approach: tackling the Cloud Resume Challenge on Azure
+            and developing SecureVote on GCP from the ground up.
+          </p>
+          <p>
+            These projects aren't just resume fillers—they're my hands-on
+            laboratory where I get to experiment with serverless architectures
+            and Infrastructure as Code, often working late into the night when a
+            solution finally clicks. I get genuinely excited when my Terraform
+            code successfully provisions complex infrastructure or when my CI/CD
+            pipeline automates a previously manual process.
+          </p>
+          <p>
+            I'm looking for a cloud engineering role here in Qatar where my
+            security background becomes an asset—where I can help teams build
+            secure-by-design cloud solutions rather than bolting security on
+            afterward. I want to join an organization where I can contribute
+            immediately with my existing skills while continuing to grow through
+            real-world challenges. This isn't just a career move; it's about
+            applying my problem-solving abilities to a field that energizes me
+            while providing better opportunities for my family.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Cloud &amp; Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skills-category">
+            <div class="skills-header">
+              <i class="fas fa-cloud"></i>
+              <h3>Cloud Platforms</h3>
             </div>
-        </section>
-
-         <section class="section">
-            <h2 class="section-title">Cloud Projects</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h3 class="project-title">SecureVote - Serverless Voting Platform (GCP)</h3>
-                                <p><i>(2025 - Current)</i></p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Google Cloud</span>
-                                    <span class="project-tag">Terraform</span>
-                                    <span class="project-tag">IaC</span>
-                                    <span class="project-tag">Serverless</span>
-                                    <span class="project-tag">Cloud Run</span>
-                                    <span class="project-tag">Cloud SQL</span>
-                                    <span class="project-tag">GitHub Actions</span>
-                                </div>
-                            </div>
-                            <p>
-                                Designing and implementing a secure, serverless voting platform infrastructure on Google Cloud Platform, showcasing multi-environment architecture design and infrastructure automation capabilities using Terraform.
-                            </p>
-                            <h4 class="section-subheading">Key Features &amp; Implementation</h4> <ul class="bullet-list">
-                                <li>Created isolated development/production environments via Terraform modules.</li>
-                                <li>Implemented scalable serverless APIs using Cloud Run services.</li>
-                                <li>Configured secure Cloud SQL instances with private networking (VPC connectors).</li>
-                                <li>Applied least privilege principle through fine-grained IAM configurations.</li>
-                                <li>Developing CI/CD pipeline via GitHub Actions for automated testing &amp; deployment.</li>
-                            </ul>
-                            <h4 class="section-subheading">Architecture Highlights</h4>
-                            <ul class="bullet-list">
-                                <li>Fully serverless design for scalability and cost-efficiency (pay-per-use).</li>
-                                <li>Strict environment isolation using dedicated VPCs and security controls.</li>
-                                <li>Private networking for databases, minimizing public exposure.</li>
-                                <li>Infrastructure as Code (Terraform) for consistent, repeatable deployments.</li>
-                            </ul>
-                            <h4 class="section-subheading">Skills Demonstrated</h4>
-                            <ul class="bullet-list">
-                                <li>GCP Service Integration (Cloud Run, Cloud SQL, VPC, IAM)</li>
-                                <li>Advanced Terraform for IaC</li>
-                                <li>Serverless &amp; Multi-Environment Architecture Design</li>
-                                <li>Secure Cloud Networking</li>
-                                <li>CI/CD Pipeline Development (GitHub Actions)</li>
-                            </ul>
-                            <h4 class="section-subheading">Status: In Progress</h4>
-                            <ul class="bullet-list">
-                                <li>Developing backend vote processing logic &amp; frontend interface.</li>
-                                <li>Implementing enhanced monitoring and observability.</li>
-                            </ul>
-                            <div class="project-link">
-                                <a href="https://github.com/saddavi/securevote-gcp-iac" target="_blank" rel="noopener noreferrer">
-                                    <i class="fab fa-github"></i>
-                                    View Infrastructure Code on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="project-card">
-                            <div class="project-header">
-                                <h3 class="project-title">Cloud Resume Challenge (Azure)</h3>
-                                <p><i>(Completed 2025)</i></p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Azure</span>
-                                    <span class="project-tag">Serverless</span>
-                                    <span class="project-tag">CI/CD</span>
-                                    <span class="project-tag">DevOps</span>
-                                    <span class="project-tag">Azure Functions</span>
-                                    <span class="project-tag">Cosmos DB</span>
-                                    <span class="project-tag">GitHub Actions</span>
-                                </div>
-                            </div>
-                            <p>
-                                Designed and deployed a dynamic, serverless online resume using Azure cloud services. This project involved frontend development, backend API creation, database integration, and automated CI/CD pipelines.
-                            </p>
-                            <h4 class="section-subheading">Key Features &amp; Implementation</h4> <ul class="bullet-list">
-                                <li><strong>Frontend</strong>: Responsive HTML5/CSS3/JS website hosted on Azure Storage (Static Website) with Azure CDN for global delivery &amp; performance.</li>
-                                <li><strong>Backend API</strong>: Python-based Azure Function app to handle visitor counts with proper CORS &amp; error handling.</li>
-                                <li><strong>Database</strong>: Azure CosmosDB (MongoDB API, serverless capacity) for persistent, cost-effective ($&lt;2/month) visitor data storage.</li>
-                                <li><strong>CI/CD</strong>: Automated build/deployment using GitHub Actions for both frontend (incl. CDN purge) and backend code, including HTML validation.</li>
-                                <li><strong>Security</strong>: Configured CORS policies and utilized managed identities where applicable.</li>
-                            </ul>
-                            <h4 class="section-subheading">Outcomes &amp; Metrics</h4> <ul class="bullet-list">
-                                <li>Successfully deployed a production-ready, globally accessible resume platform.</li>
-                                <li>Achieved minimal operating costs through serverless architecture.</li>
-                                <li>Demonstrated practical skills in Azure PaaS (Functions, CosmosDB, Storage, CDN).</li>
-                                <li>Built a maintainable solution with automated workflows via GitHub Actions.</li>
-                            </ul>
-                            <h4 class="section-subheading">Skills Demonstrated</h4>
-                            <ul class="bullet-list">
-                                <li>Azure Service Integration</li>
-                                <li>Serverless Application Architecture</li>
-                                <li>Python Cloud Function Development</li>
-                                <li>NoSQL Database Integration (CosmosDB)</li>
-                                <li>End-to-End CI/CD Pipeline Implementation</li>
-                                <li>Frontend Development (HTML, CSS, JS)</li>
-                                <li>Cloud Cost Optimization</li>
-                            </ul>
-                            <div class="project-link">
-                                <a href="https://www.talharesume.com" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-external-link-alt"></i> Visit Live Project: talharesume.com
-                                </a>
-                            </div>
-                            <div class="project-link">
-                                <a href="https://github.com/saddavi/Talha-CloudResumeChallenge" target="_blank" rel="noopener noreferrer">
-                                    <i class="fab fa-github"></i> View Project Code on GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="skills-content">
+              <span class="skill-item">Azure Functions</span>
+              <span class="skill-item">Azure CosmosDB</span>
+              <span class="skill-item">Azure Storage</span>
+              <span class="skill-item">Azure CDN</span>
+              <span class="skill-item">Azure AD</span>
+              <span class="skill-item">Microsoft Intune</span>
+              <span class="skill-item">Google Cloud (GCP)</span>
+              <span class="skill-item">GCP Cloud Run</span>
+              <span class="skill-item">GCP Cloud SQL</span>
             </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <div class="experience-title-wrapper">
-                                    <h3 class="experience-title">System Support &amp; Network Administrator</h3>
-                                    <div class="experience-company">International School of London (ISL) - Doha</div>
-                                </div>
-                                <div class="experience-date">
-                                    <i class="fas fa-calendar-alt"></i> 11/2014 – Present
-                                </div>
-                            </div>
-                            <div class="experience-categories">
-                                <div class="experience-category">
-                                    <h4><i class="fas fa-cloud"></i> Cloud Adoption &amp; Systems Management</h4>
-                                    <ul class="bullet-list">
-                                        <li>Led migration of MDM from Cisco Meraki to Microsoft Intune (1260+ devices), saving 23K QAR/year &amp; enhancing security.</li>
-                                        <li>Implemented and manage Azure AD &amp; Microsoft 365 services for 1,260+ users.</li>
-                                        <li>Orchestrated transition from on-prem to hybrid cloud storage solutions.</li>
-                                        <li>Administer Windows Server environment, Active Directory, Hyper-V, and VMware.</li>
-                                    </ul>
-                                </div>
-                                <div class="experience-category">
-                                    <h4><i class="fas fa-shield-alt"></i> Cybersecurity &amp; Security Operations</h4>
-                                    <ul class="bullet-list">
-                                        <li>Deployed PRTG &amp; SolarWinds monitoring, reducing incident detection time.</li>
-                                        <li>Established in-house vulnerability management program using Nessus Essentials.</li>
-                                        <li>Strengthened access control via Privileged Access Management (PAM) and Azure AD Conditional Access policies.</li>
-                                        <li>Managed endpoint security solutions and security awareness training.</li>
-                                    </ul>
-                                </div>
-                                <div class="experience-category">
-                                    <h4><i class="fas fa-robot"></i> Automation &amp; Process Improvement</h4>
-                                    <ul class="bullet-list">
-                                        <li>Automated routine admin tasks using PowerShell scripting.</li>
-                                        <li>Developed automated onboarding workflow for 45+ new hires annually.</li>
-                                        <li>Implemented RFC process, improving change management and reducing errors.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <div class="experience-title-wrapper">
-                                    <h3 class="experience-title">Service Delivery Representative</h3>
-                                    <div class="experience-company">Hewlett-Packard Enterprise (HPE)</div>
-                                </div>
-                                <div class="experience-date">
-                                    <i class="fas fa-calendar-alt"></i> 07/2011 – 04/2014
-                                </div>
-                            </div>
-                            <ul class="bullet-list">
-                                <li>Provided on-site cybersecurity incident response coordination for enterprise clients.</li>
-                                <li>Delivered critical technical support for high-profile orgs (e.g., Qatar Foundation).</li>
-                                <li>Implemented IAM methodologies and access control enhancements.</li>
-                                <li>Developed and maintained knowledge base to streamline troubleshooting.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="experience-card">
-                            <div class="experience-header">
-                                <div class="experience-title-wrapper">
-                                    <h3 class="experience-title">Computer Technician</h3>
-                                    <div class="experience-company">Computer Arabia</div>
-                                </div>
-                                <div class="experience-date">
-                                    <i class="fas fa-calendar-alt"></i> 04/2008 – 07/2011
-                                </div>
-                            </div>
-                            <ul class="bullet-list">
-                                <li>Supported enterprise clients including Qatar Petroleum and Vodafone.</li>
-                                <li>Performed proactive system maintenance, monitoring, and security checks.</li>
-                                <li>Provided remote and on-site support for Windows/macOS endpoints and peripherals.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-header">
+              <i class="fas fa-shield-alt"></i>
+              <h3>Security</h3>
             </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Education &amp; Certifications</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>CompTIA Advanced Security Practitioner (CASP+)</h3>
-                    <p class="education-status">In Progress</p>
-                </div>
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Certified Information Systems Security Professional (CISSP)</h3>
-                    <p class="education-details">(ISC)², 2019</p>
-                </div>
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>CompTIA CySA+ (Cybersecurity Analyst)</h3>
-                    <p class="education-details">CompTIA, 2018</p>
-                </div>
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>CompTIA Security Analytics Professional (CSAP)</h3>
-                    <p class="education-details">CompTIA, 2018</p>
-                </div>
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>CompTIA Security+</h3>
-                    <p class="education-details">CompTIA, 2017</p>
-                </div>
-                 <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Advanced Diploma in Software Engineering</h3>
-                    <p class="education-details">Aptech Qatar</p>
-                </div>
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Higher Diploma in Software Engineering</h3>
-                    <p class="education-details">Aptech Qatar</p>
-                </div>
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Diploma in Information System Management</h3>
-                    <p class="education-details">Aptech Qatar</p>
-                </div>
+            <div class="skills-content">
+              <span class="skill-item">Identity &amp; Access Mgmt (IAM)</span>
+              <span class="skill-item">MFA Implementation</span>
+              <span class="skill-item">Privilege Access Mgmt (PAM)</span>
+              <span class="skill-item">SIEM Configuration</span>
+              <span class="skill-item">Endpoint Protection (EPP)</span>
+              <span class="skill-item">Vulnerability Management</span>
+              <span class="skill-item">Network Security</span>
+              <span class="skill-item">CISSP Domains</span>
             </div>
-
-            <h2 class="section-title section-title-spaced">Professional Development</h2>
-            <div class="development-grid">
-                <div class="development-item">
-                    <div class="development-icon"><i class="fas fa-cloud"></i></div>
-                    <div class="development-text">Cloud Resume Challenge (Azure) - Hands-on Project</div>
-                </div>
-                <div class="development-item">
-                    <div class="development-icon"><i class="fab fa-microsoft"></i></div>
-                    <div class="development-text">Azure Fundamentals Training (AZ-900 Concepts)</div>
-                </div>
-                <div class="development-item">
-                    <div class="development-icon"><i class="fas fa-code-branch"></i></div>
-                    <div class="development-text">DevOps Essentials Professional Certificate (IBM)</div>
-                </div>
-                <div class="development-item">
-                    <div class="development-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div class="development-text">Enterprise Defender Training (SANS SEC501 Concepts)</div>
-                </div>
-                <div class="development-item">
-                    <div class="development-icon"><i class="fas fa-code"></i></div>
-                    <div class="development-text">Code Foundations Skill Path (Codecademy)</div>
-                </div>
-                <div class="development-item">
-                    <div class="development-icon"><i class="fas fa-users"></i></div>
-                    <div class="development-text">GISEC Global Security Conference Attendee (Dubai)</div>
-                </div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-header">
+              <i class="fas fa-code"></i>
+              <h3>Programming &amp; IaC</h3>
             </div>
-        </section>
+            <div class="skills-content">
+              <span class="skill-item">PowerShell</span>
+              <span class="skill-item">Python</span>
+              <span class="skill-item">JavaScript (ES6+)</span>
+              <span class="skill-item">Bash Scripting</span>
+              <span class="skill-item">Terraform (IaC)</span>
+              <span class="skill-item">HTML5</span>
+              <span class="skill-item">CSS3</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-header">
+              <i class="fas fa-cogs"></i>
+              <h3>DevOps &amp; Automation</h3>
+            </div>
+            <div class="skills-content">
+              <span class="skill-item">CI/CD Pipelines</span>
+              <span class="skill-item">Infrastructure as Code (IaC)</span>
+              <span class="skill-item">Azure CLI</span>
+              <span class="skill-item">GitHub Actions</span>
+              <span class="skill-item">Git / Version Control</span>
+              <span class="skill-item">Process Automation</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-header">
+              <i class="fas fa-server"></i>
+              <h3>Infrastructure &amp; Systems</h3>
+            </div>
+            <div class="skills-content">
+              <span class="skill-item">Windows Server Admin</span>
+              <span class="skill-item">Active Directory</span>
+              <span class="skill-item">Hyper-V</span>
+              <span class="skill-item">VMware vSphere</span>
+              <span class="skill-item">Network Monitoring</span>
+              <span class="skill-item">Systems Integration</span>
+              <span class="skill-item">MDM (Intune/Meraki)</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <div class="visitor-counter">
-            <p>
-                <i class="fas fa-eye"></i> Website Visits:
-                <span id="visitor-count">Loading...</span> </p>
+      <section class="section">
+        <h2 class="section-title">Cloud Projects</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">
+                    SecureVote - Serverless Voting Platform (GCP)
+                  </h3>
+                  <p><i>(2025 - Current)</i></p>
+                  <div class="project-tags">
+                    <span class="project-tag">Google Cloud</span>
+                    <span class="project-tag">Terraform</span>
+                    <span class="project-tag">IaC</span>
+                    <span class="project-tag">Serverless</span>
+                    <span class="project-tag">Cloud Run</span>
+                    <span class="project-tag">Cloud SQL</span>
+                    <span class="project-tag">Secret Manager</span>
+                    <span class="project-tag">KMS</span>
+                    <span class="project-tag">GitHub Actions</span>
+                  </div>
+                </div>
+                <p>
+                  Designed and implemented a secure, serverless voting platform
+                  infrastructure on Google Cloud Platform with comprehensive
+                  security controls, multi-environment architecture, and CI/CD
+                  automation using modular Terraform.
+                </p>
+                <h4 class="section-subheading">
+                  Key Features &amp; Implementation
+                </h4>
+                <ul class="bullet-list">
+                  <li>
+                    Modular Infrastructure Design: Restructured Terraform into
+                    specialized modules (cloud-run, database, iam, networking,
+                    secrets, storage) for improved maintainability and
+                    deployment flexibility.
+                  </li>
+                  <li>
+                    Enhanced Security Foundation: Implemented Secret Manager
+                    with KMS encryption for credential protection, eliminating
+                    security risks from hardcoded credentials.
+                  </li>
+                  <li>
+                    Comprehensive Audit Controls: Configured audit logging for
+                    security operations, compliance, and forensic analysis
+                    across critical services.
+                  </li>
+                  <li>
+                    Network Isolation: Created environment-specific VPC networks
+                    with granular firewall rules and secure VPC connectors for
+                    private resource access.
+                  </li>
+                  <li>
+                    Multi-Environment Architecture: Established completely
+                    isolated development and production environments with
+                    dedicated resources and configurations.
+                  </li>
+                  <li>
+                    CI/CD Automation: Implemented GitHub Actions workflows with
+                    security validation, environment-specific deployments, and
+                    approval gates.
+                  </li>
+                </ul>
+                <h4 class="section-subheading">Architecture Highlights</h4>
+                <ul class="bullet-list">
+                  <li>
+                    True Zero-Trust Design: All services communicate through
+                    secure, authenticated channels with least-privilege
+                    permissions.
+                  </li>
+                  <li>
+                    Defense-in-Depth Security: Multiple security layers
+                    including network isolation, encryption (in-transit and
+                    at-rest), IAM controls, and audit logging.
+                  </li>
+                  <li>
+                    Cost-Optimized Infrastructure: Implemented resource scaling,
+                    lifecycle policies, and operational scripts to minimize
+                    costs during development.
+                  </li>
+                  <li>
+                    Infrastructure as Code: Complete Terraform implementation
+                    with modular design for consistent, repeatable, and
+                    version-controlled deployments.
+                  </li>
+                  <li>
+                    Private Network Security: Cloud SQL instances accessible
+                    only through private VPC connections, eliminating public
+                    exposure.
+                  </li>
+                </ul>
+                <h4 class="section-subheading">Technical Implementations</h4>
+                <ul class="bullet-list">
+                  <li>
+                    Serverless Components: Cloud Run for containerized APIs,
+                    Cloud Storage for frontend, and managed Cloud SQL.
+                  </li>
+                  <li>
+                    Security Services: Secret Manager, KMS, IAM, VPC Service
+                    Controls, and Audit Logging.
+                  </li>
+                  <li>
+                    Networking: VPC Networks, Serverless VPC Access Connectors,
+                    Private Service Access.
+                  </li>
+                  <li>
+                    Automation: GitHub Actions CI/CD pipeline with
+                    environment-specific workflows and security validations.
+                  </li>
+                  <li>
+                    Resource Management: Custom scripts for cost-effective
+                    resource control during development.
+                  </li>
+                </ul>
+                <h4 class="section-subheading">Skills Demonstrated</h4>
+                <ul class="bullet-list">
+                  <li>
+                    Cloud Security Implementation: Defense-in-depth security
+                    architecture with multiple control layers.
+                  </li>
+                  <li>
+                    Infrastructure Modernization: Transition from monolithic to
+                    modular infrastructure design.
+                  </li>
+                  <li>
+                    DevSecOps Practices: Security integrated throughout the
+                    deployment pipeline.
+                  </li>
+                  <li>
+                    Private Networking: Secure service communication without
+                    public internet exposure.
+                  </li>
+                  <li>
+                    Operational Excellence: Cost optimization with maintained
+                    security and functionality.
+                  </li>
+                </ul>
+                <h4 class="section-subheading">
+                  Status: Security Foundation Complete
+                </h4>
+                <ul class="bullet-list">
+                  <li>
+                    Completed: Modular infrastructure, enhanced security
+                    foundation, audit logging, secure networking, and CI/CD
+                    implementation.
+                  </li>
+                  <li>
+                    In Progress: Implementing application-layer security,
+                    enhancing monitoring and observability.
+                  </li>
+                  <li>
+                    Next Steps: Implementing disaster recovery, advanced threat
+                    detection, and performance optimization.
+                  </li>
+                </ul>
+                <div class="project-link">
+                  <a
+                    href="https://github.com/saddavi/securevote-gcp-iac"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fab fa-github"></i>
+                    View Infrastructure Code on GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">Cloud Resume Challenge (Azure)</h3>
+                  <p><i>(Completed 2025)</i></p>
+                  <div class="project-tags">
+                    <span class="project-tag">Azure</span>
+                    <span class="project-tag">Serverless</span>
+                    <span class="project-tag">CI/CD</span>
+                    <span class="project-tag">DevOps</span>
+                    <span class="project-tag">Azure Functions</span>
+                    <span class="project-tag">Cosmos DB</span>
+                    <span class="project-tag">GitHub Actions</span>
+                  </div>
+                </div>
+                <p>
+                  Designed and deployed a dynamic, serverless online resume
+                  using Azure cloud services. This project involved frontend
+                  development, backend API creation, database integration, and
+                  automated CI/CD pipelines.
+                </p>
+                <h4 class="section-subheading">
+                  Key Features &amp; Implementation
+                </h4>
+                <ul class="bullet-list">
+                  <li>
+                    <strong>Frontend</strong>: Responsive HTML5/CSS3/JS website
+                    hosted on Azure Storage (Static Website) with Azure CDN for
+                    global delivery &amp; performance.
+                  </li>
+                  <li>
+                    <strong>Backend API</strong>: Python-based Azure Function
+                    app to handle visitor counts with proper CORS &amp; error
+                    handling.
+                  </li>
+                  <li>
+                    <strong>Database</strong>: Azure CosmosDB (MongoDB API,
+                    serverless capacity) for persistent, cost-effective
+                    ($&lt;2/month) visitor data storage.
+                  </li>
+                  <li>
+                    <strong>CI/CD</strong>: Automated build/deployment using
+                    GitHub Actions for both frontend (incl. CDN purge) and
+                    backend code, including HTML validation.
+                  </li>
+                  <li>
+                    <strong>Security</strong>: Configured CORS policies and
+                    utilized managed identities where applicable.
+                  </li>
+                </ul>
+                <h4 class="section-subheading">Outcomes &amp; Metrics</h4>
+                <ul class="bullet-list">
+                  <li>
+                    Successfully deployed a production-ready, globally
+                    accessible resume platform.
+                  </li>
+                  <li>
+                    Achieved minimal operating costs through serverless
+                    architecture.
+                  </li>
+                  <li>
+                    Demonstrated practical skills in Azure PaaS (Functions,
+                    CosmosDB, Storage, CDN).
+                  </li>
+                  <li>
+                    Built a maintainable solution with automated workflows via
+                    GitHub Actions.
+                  </li>
+                </ul>
+                <h4 class="section-subheading">Skills Demonstrated</h4>
+                <ul class="bullet-list">
+                  <li>Azure Service Integration</li>
+                  <li>Serverless Application Architecture</li>
+                  <li>Python Cloud Function Development</li>
+                  <li>NoSQL Database Integration (CosmosDB)</li>
+                  <li>End-to-End CI/CD Pipeline Implementation</li>
+                  <li>Frontend Development (HTML, CSS, JS)</li>
+                  <li>Cloud Cost Optimization</li>
+                </ul>
+                <div class="project-link">
+                  <a
+                    href="https://www.talharesume.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fas fa-external-link-alt"></i> Visit Live Project:
+                    talharesume.com
+                  </a>
+                </div>
+                <div class="project-link">
+                  <a
+                    href="https://github.com/saddavi/Talha-CloudResumeChallenge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fab fa-github"></i> View Project Code on GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="experience-card">
+                <div class="experience-header">
+                  <div class="experience-title-wrapper">
+                    <h3 class="experience-title">
+                      System Support &amp; Network Administrator
+                    </h3>
+                    <div class="experience-company">
+                      International School of London (ISL) - Doha
+                    </div>
+                  </div>
+                  <div class="experience-date">
+                    <i class="fas fa-calendar-alt"></i> 11/2014 – Present
+                  </div>
+                </div>
+                <div class="experience-categories">
+                  <div class="experience-category">
+                    <h4>
+                      <i class="fas fa-cloud"></i> Cloud Adoption &amp; Systems
+                      Management
+                    </h4>
+                    <ul class="bullet-list">
+                      <li>
+                        Led migration of MDM from Cisco Meraki to Microsoft
+                        Intune (1260+ devices), saving 23K QAR/year &amp;
+                        enhancing security.
+                      </li>
+                      <li>
+                        Implemented and manage Azure AD &amp; Microsoft 365
+                        services for 1,260+ users.
+                      </li>
+                      <li>
+                        Orchestrated transition from on-prem to hybrid cloud
+                        storage solutions.
+                      </li>
+                      <li>
+                        Administer Windows Server environment, Active Directory,
+                        Hyper-V, and VMware.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="experience-category">
+                    <h4>
+                      <i class="fas fa-shield-alt"></i> Cybersecurity &amp;
+                      Security Operations
+                    </h4>
+                    <ul class="bullet-list">
+                      <li>
+                        Deployed PRTG &amp; SolarWinds monitoring, reducing
+                        incident detection time.
+                      </li>
+                      <li>
+                        Established in-house vulnerability management program
+                        using Nessus Essentials.
+                      </li>
+                      <li>
+                        Strengthened access control via Privileged Access
+                        Management (PAM) and Azure AD Conditional Access
+                        policies.
+                      </li>
+                      <li>
+                        Managed endpoint security solutions and security
+                        awareness training.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="experience-category">
+                    <h4>
+                      <i class="fas fa-robot"></i> Automation &amp; Process
+                      Improvement
+                    </h4>
+                    <ul class="bullet-list">
+                      <li>
+                        Automated routine admin tasks using PowerShell
+                        scripting.
+                      </li>
+                      <li>
+                        Developed automated onboarding workflow for 45+ new
+                        hires annually.
+                      </li>
+                      <li>
+                        Implemented RFC process, improving change management and
+                        reducing errors.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="experience-card">
+                <div class="experience-header">
+                  <div class="experience-title-wrapper">
+                    <h3 class="experience-title">
+                      Service Delivery Representative
+                    </h3>
+                    <div class="experience-company">
+                      Hewlett-Packard Enterprise (HPE)
+                    </div>
+                  </div>
+                  <div class="experience-date">
+                    <i class="fas fa-calendar-alt"></i> 07/2011 – 04/2014
+                  </div>
+                </div>
+                <ul class="bullet-list">
+                  <li>
+                    Provided on-site cybersecurity incident response
+                    coordination for enterprise clients.
+                  </li>
+                  <li>
+                    Delivered critical technical support for high-profile orgs
+                    (e.g., Qatar Foundation).
+                  </li>
+                  <li>
+                    Implemented IAM methodologies and access control
+                    enhancements.
+                  </li>
+                  <li>
+                    Developed and maintained knowledge base to streamline
+                    troubleshooting.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="experience-card">
+                <div class="experience-header">
+                  <div class="experience-title-wrapper">
+                    <h3 class="experience-title">Computer Technician</h3>
+                    <div class="experience-company">Computer Arabia</div>
+                  </div>
+                  <div class="experience-date">
+                    <i class="fas fa-calendar-alt"></i> 04/2008 – 07/2011
+                  </div>
+                </div>
+                <ul class="bullet-list">
+                  <li>
+                    Supported enterprise clients including Qatar Petroleum and
+                    Vodafone.
+                  </li>
+                  <li>
+                    Performed proactive system maintenance, monitoring, and
+                    security checks.
+                  </li>
+                  <li>
+                    Provided remote and on-site support for Windows/macOS
+                    endpoints and peripherals.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Education &amp; Certifications</h2>
+        <div class="education-grid">
+          <div class="education-card">
+            <div class="education-icon"><i class="fas fa-certificate"></i></div>
+            <h3>CompTIA Advanced Security Practitioner (CASP+)</h3>
+            <p class="education-status">In Progress</p>
+          </div>
+          <div class="education-card">
+            <div class="education-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Certified Information Systems Security Professional (CISSP)</h3>
+            <p class="education-details">(ISC)², 2019</p>
+          </div>
+          <div class="education-card">
+            <div class="education-icon"><i class="fas fa-certificate"></i></div>
+            <h3>CompTIA CySA+ (Cybersecurity Analyst)</h3>
+            <p class="education-details">CompTIA, 2018</p>
+          </div>
+          <div class="education-card">
+            <div class="education-icon"><i class="fas fa-certificate"></i></div>
+            <h3>CompTIA Security Analytics Professional (CSAP)</h3>
+            <p class="education-details">CompTIA, 2018</p>
+          </div>
+          <div class="education-card">
+            <div class="education-icon"><i class="fas fa-certificate"></i></div>
+            <h3>CompTIA Security+</h3>
+            <p class="education-details">CompTIA, 2017</p>
+          </div>
+          <div class="education-card">
+            <div class="education-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Advanced Diploma in Software Engineering</h3>
+            <p class="education-details">Aptech Qatar</p>
+          </div>
+          <div class="education-card">
+            <div class="education-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Higher Diploma in Software Engineering</h3>
+            <p class="education-details">Aptech Qatar</p>
+          </div>
+          <div class="education-card">
+            <div class="education-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Diploma in Information System Management</h3>
+            <p class="education-details">Aptech Qatar</p>
+          </div>
         </div>
 
-        <div class="print-container">
-            <button type="button" class="print-button" onclick="window.print()">
-                <i class="fas fa-file-pdf"></i> Save / Print Resume
-            </button>
+        <h2 class="section-title section-title-spaced">
+          Professional Development
+        </h2>
+        <div class="development-grid">
+          <div class="development-item">
+            <div class="development-icon"><i class="fas fa-cloud"></i></div>
+            <div class="development-text">
+              Cloud Resume Challenge (Azure) - Hands-on Project
+            </div>
+          </div>
+          <div class="development-item">
+            <div class="development-icon"><i class="fab fa-microsoft"></i></div>
+            <div class="development-text">
+              Azure Fundamentals Training (AZ-900 Concepts)
+            </div>
+          </div>
+          <div class="development-item">
+            <div class="development-icon">
+              <i class="fas fa-code-branch"></i>
+            </div>
+            <div class="development-text">
+              DevOps Essentials Professional Certificate (IBM)
+            </div>
+          </div>
+          <div class="development-item">
+            <div class="development-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="development-text">
+              Enterprise Defender Training (SANS SEC501 Concepts)
+            </div>
+          </div>
+          <div class="development-item">
+            <div class="development-icon"><i class="fas fa-code"></i></div>
+            <div class="development-text">
+              Code Foundations Skill Path (Codecademy)
+            </div>
+          </div>
+          <div class="development-item">
+            <div class="development-icon"><i class="fas fa-users"></i></div>
+            <div class="development-text">
+              GISEC Global Security Conference Attendee (Dubai)
+            </div>
+          </div>
         </div>
+      </section>
 
-    </div> <script src="js/counter.js"></script>
+      <div class="visitor-counter">
+        <p>
+          <i class="fas fa-eye"></i> Website Visits:
+          <span id="visitor-count">Loading...</span>
+        </p>
+      </div>
+
+      <div class="print-container">
+        <button type="button" class="print-button" onclick="window.print()">
+          <i class="fas fa-file-pdf"></i> Save / Print Resume
+        </button>
+      </div>
+    </div>
+    <script src="js/counter.js"></script>
   </body>
 </html>
