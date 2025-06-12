@@ -1,4 +1,5 @@
 :root {
+  :root {
   --primary-color: #2c3e50;
   --secondary-color: #3498db;
   --accent-color: #1abc9c;
@@ -13,6 +14,8 @@
   --shadow-lg: 0 10px 30px rgba(44, 62, 80, 0.15);
   --border-radius: 8px;
   --transition-speed: 0.3s;
+  --google-green: #34a853;
+}
 }
 
 * {
@@ -377,6 +380,33 @@ body {
 
 .project-link a:hover {
   color: var(--accent-color);
+}
+
+/* Healthcare Project Specific Styles */
+.live-demo-link {
+  color: #4CAF50 !important;
+  font-weight: bold;
+}
+
+.github-repo-link {
+  color: #2196F3 !important;
+  font-weight: bold;
+}
+
+.healthcare-project-highlight {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(76, 175, 80, 0.1);
+  border-left: 4px solid #4CAF50;
+  border-radius: 8px;
+}
+
+.gcp-project-highlight {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(52, 168, 83, 0.1);
+  border-left: 4px solid #34a853;
+  border-radius: 8px;
 }
 
 /* Experience Card */
@@ -748,4 +778,17 @@ body {
   height: 6px;
   background-color: var(--secondary-color);
   border-radius: 50%;
+}
+
+/* Additional styles to replace inline styles */
+.api-link {
+  margin-left: 0.5rem;
+}
+
+.project-highlight-wrapper {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(52, 168, 83, 0.1);
+  border-left: 4px solid var(--google-green);
+  border-radius: 8px;
 }
