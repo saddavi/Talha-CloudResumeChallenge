@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- Cache-bust: Rollback deployed 2025-06-12 -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Talha Nasiruddin - Cloud &amp; Cybersecurity Professional</title>
+    <meta name="description" content="Qatar-based Cloud Engineer with 16 years local experience running production systems you can test. Arabic/English AI healthcare platform live at healthcare.talharesume.com">
+    <title>Talha Nasiruddin - Qatar Cloud Engineer | 16 Years Local Experience</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -23,13 +23,12 @@
         --google-red: #ea4335;
         --google-yellow: #fbbc05;
         --google-green: #34a853;
-        --google-gray: #5f6368; /* Darker text */
-        --google-medium-gray: #70757a; /* Slightly lighter text */
-        --google-light-gray: #f8f9fa; /* Light background */
-        --google-border-gray: #dadce0; /* Subtle borders */
+        --google-gray: #5f6368;
+        --google-medium-gray: #70757a;
+        --google-light-gray: #f8f9fa;
+        --google-border-gray: #dadce0;
         --google-white: #ffffff;
 
-        /* Semantic colors */
         --primary-color: var(--google-blue);
         --secondary-color: var(--google-green);
         --accent-color: var(--google-yellow);
@@ -40,7 +39,6 @@
         --card-bg: var(--google-white);
         --border-color: var(--google-border-gray);
 
-        /* Gradients */
         --primary-gradient: linear-gradient(
           135deg,
           var(--google-blue),
@@ -61,12 +59,10 @@
           var(--google-green)
         );
 
-        /* Transitions */
         --transition-speed: 0.3s;
         --transition-timing: ease-in-out;
       }
 
-      /* --- Base & Typography --- */
       *,
       *::before,
       *::after {
@@ -89,13 +85,10 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
-      h1,
-      h2,
-      h3,
-      h4 {
+      h1, h2, h3, h4 {
         font-weight: 500;
         line-height: 1.3;
-        color: var(--google-blue); /* Default heading color */
+        color: var(--google-blue);
       }
 
       h1 {
@@ -114,7 +107,7 @@
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
         color: var(--text-color);
-      } /* Slightly less emphasis */
+      }
 
       p {
         margin-bottom: 1rem;
@@ -134,12 +127,11 @@
         margin-bottom: 1rem;
       }
 
-      /* --- Layout --- */
       .container {
         max-width: 1100px;
-        margin: 0 auto; /* Changed margin for full bleed hero */
+        margin: 0 auto;
         background-color: var(--card-bg);
-        overflow: hidden; /* Prevents shadow clipping */
+        overflow: hidden;
         display: flex;
         flex-direction: column;
       }
@@ -152,15 +144,15 @@
         border-bottom: none;
       }
 
-      /* --- Hero & Header --- */
+      /* Hero & Header */
       .hero-bg {
-        height: 180px; /* Reduced height */
+        height: 180px;
         background: var(--primary-gradient);
       }
 
       .resume-header {
-        margin-top: -80px; /* Overlap hero */
-        padding: 0 2rem; /* Align with section padding */
+        margin-top: -80px;
+        padding: 0 2rem;
         position: relative;
         z-index: 1;
       }
@@ -171,7 +163,7 @@
         border-radius: 12px;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         border-top: 5px solid var(--google-yellow);
-        text-align: center; /* Center header content */
+        text-align: center;
       }
 
       .resume-header h1 {
@@ -183,17 +175,29 @@
       .tagline {
         color: var(--secondary-color);
         font-size: 1.2rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.5rem;
         font-weight: 500;
       }
 
-      .tagline-sub {
+      .sub-tagline {
         color: var(--text-light-color);
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: 1rem;
         font-style: italic;
-        opacity: 0.9;
+      }
+
+      .quick-nav {
+        margin: 1rem 0;
+        padding: 1rem;
+        background: var(--bg-color);
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .quick-nav a {
+        margin: 0 1rem;
+        font-weight: 500;
+        color: var(--primary-color);
       }
 
       .contact-info {
@@ -204,7 +208,7 @@
       }
 
       .contact-item {
-        display: inline-flex; /* Align icon and text */
+        display: inline-flex;
         align-items: center;
         background-color: var(--bg-color);
         padding: 0.5rem 1rem;
@@ -225,26 +229,15 @@
         border-color: rgba(66, 133, 244, 0.3);
       }
 
-      /* Icon styling directly within the contact item */
       .contact-item i {
         color: var(--primary-color);
         margin-right: 0.6rem;
         font-size: 1rem;
-        width: 18px; /* Ensure consistent icon spacing */
+        width: 18px;
         text-align: center;
-        transition: color var(--transition-speed) var(--transition-timing);
-      }
-      .contact-item:hover i {
-        color: var(
-          --primary-color
-        ); /* Keep color on hover, or change if desired */
-      }
-      /* Hide the old icon container if it still exists in HTML (it shouldn't based on previous step) */
-      .icon-container {
-        display: none;
       }
 
-      /* --- Section Titles --- */
+      /* Section Titles */
       .section-title {
         position: relative;
         padding-bottom: 0.8rem;
@@ -267,63 +260,30 @@
         border-radius: 2px;
       }
 
-      /* Class to add extra space above a section title */
-      .section-title-spaced {
-        margin-top: 4rem;
-        font-size: 1.6rem; /* Keep the adjusted font size if desired */
-      }
-
-      .section-subheading {
-        font-weight: 500;
-        color: var(--google-green);
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
-        font-size: 1.1rem;
-      }
-
-      /* --- Summary & Journey --- */
+      /* Summary */
       .summary-content {
         padding: 1.5rem;
-        background-color: rgba(52, 168, 83, 0.05); /* Light green bg */
+        background-color: rgba(52, 168, 83, 0.05);
         border-left: 4px solid var(--google-green);
         border-radius: 8px;
-        margin-left: auto; /* Center align if needed, or remove for full width */
-        margin-right: auto;
-        max-width: 900px; /* Constrain width for readability */
-      }
-      .journey-section .summary-content {
-        background-color: rgba(251, 188, 5, 0.05); /* Light yellow bg */
-        border-left-color: var(--google-yellow);
-      }
-      .summary-content p:last-child {
-        margin-bottom: 0;
+        margin: 0 auto;
+        max-width: 900px;
+        text-align: center;
       }
 
-      /* --- Certifications --- */
       .certifications {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
       }
-      .certifications h3 {
-        text-align: center;
-        margin-bottom: 1rem;
-        color: var(--text-light-color);
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 500;
-      }
+
       .cert-badges {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.8rem;
       }
+
       .cert-badge {
-        background: linear-gradient(
-          135deg,
-          var(--google-blue),
-          var(--google-green)
-        );
+        background: linear-gradient(135deg, var(--google-blue), var(--google-green));
         color: var(--google-white);
         padding: 0.4rem 1rem;
         border-radius: 15px;
@@ -332,233 +292,131 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
 
-      /* --- Skills --- */
-      .skills-grid {
+      /* Live Projects Showcase */
+      .live-projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
       }
 
-      .skills-category {
-        background-color: var(--card-bg);
+      .project-showcase {
+        background: var(--card-bg);
         border-radius: 12px;
-        overflow: hidden; /* Clip header background */
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform var(--transition-speed) var(--transition-timing);
         border: 1px solid var(--border-color);
-        transition: all var(--transition-speed) var(--transition-timing);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        display: flex; /* Ensure header and content stack */
-        flex-direction: column;
       }
 
-      .skills-category:hover {
+      .project-showcase:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        border-top: 3px solid var(--google-yellow);
-      }
-      /* Adjust border radius after hover border is added */
-      .skills-category:hover .skills-header {
-        border-top-left-radius: 9px; /* 12px - 3px border */
-        border-top-right-radius: 9px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
       }
 
-      .skills-header {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        padding: 1rem 1.5rem;
-        background: var(--primary-gradient);
-        color: var(--google-white);
-        border-top-left-radius: 12px; /* Match parent */
-        border-top-right-radius: 12px; /* Match parent */
-      }
-      .skills-header i {
-        font-size: 1.3rem;
-      }
-      .skills-header h3 {
-        color: var(--google-white);
-        margin-bottom: 0;
-        font-size: 1.1rem;
-        font-weight: 500;
-      }
-
-      .skills-content {
-        padding: 1.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem; /* Spacing between skill items */
-        flex-grow: 1; /* Allow content to fill space */
-      }
-
-      .skill-item {
-        background: rgba(66, 133, 244, 0.1); /* Light blue background */
-        color: var(--primary-color);
+      .project-status {
+        background: var(--secondary-color);
+        color: white;
         padding: 0.5rem 1rem;
-        border-radius: 20px;
         font-size: 0.9rem;
         font-weight: 500;
-        transition: background-color var(--transition-speed)
-          var(--transition-timing);
-        cursor: default; /* Indicate non-interactive */
+        text-align: center;
       }
 
-      .skill-item:hover {
-        background: rgba(66, 133, 244, 0.2); /* Darker blue on hover */
-      }
-
-      /* --- Timeline (Experience & Projects) --- */
-      .timeline {
-        position: relative;
-        padding: 1rem 0;
-        max-width: 900px; /* Constrain timeline width */
-        margin: 0 auto; /* Center timeline */
-      }
-
-      .timeline::before {
-        content: "";
-        position: absolute;
-        top: 10px; /* Start below first marker's top */
-        bottom: 10px; /* End above last marker's bottom */
-        left: 20px; /* Adjust position for marker alignment */
-        width: 4px;
-        background: var(--timeline-gradient);
-        border-radius: 2px;
-        z-index: 0;
-      }
-
-      .timeline-item {
-        position: relative;
-        margin-bottom: 2.5rem;
-        padding-left: 60px; /* Space for marker + gap */
-      }
-      .timeline-item:last-child {
-        margin-bottom: 0;
-      }
-
-      .timeline-marker {
-        position: absolute;
-        left: 0;
-        top: 5px; /* Align roughly with first line of text */
-        width: 44px; /* Diameter of outer circle */
-        height: 44px;
-        background: var(
-          --card-bg
-        ); /* Match page background to "punch" through line */
-        border: 4px solid var(--google-blue);
-        border-radius: 50%;
-        z-index: 1; /* Above the timeline line */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      /* Inner dot */
-      .timeline-marker::after {
-        content: "";
-        width: 12px;
-        height: 12px;
-        background: var(--google-blue);
-        border-radius: 50%;
-      }
-      /* Alternate marker colors for visual interest */
-      .timeline-item:nth-child(2n) .timeline-marker {
-        border-color: var(--google-red);
-      }
-      .timeline-item:nth-child(2n) .timeline-marker::after {
-        background: var(--google-red);
-      }
-      .timeline-item:nth-child(3n) .timeline-marker {
-        border-color: var(--google-yellow);
-      }
-      .timeline-item:nth-child(3n) .timeline-marker::after {
-        background: var(--google-yellow);
-      }
-      .timeline-item:nth-child(4n) .timeline-marker {
-        border-color: var(--google-green);
-      }
-      .timeline-item:nth-child(4n) .timeline-marker::after {
-        background: var(--google-green);
-      }
-
-      .timeline-content {
-        position: relative;
-      }
-
-      /* --- Cards (Project & Experience) --- */
-      .project-card,
-      .experience-card {
-        background-color: var(--card-bg);
-        border-radius: 12px;
-        padding: 2rem;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-        transition: all var(--transition-speed) var(--transition-timing);
-        border-top: 4px solid var(--google-blue); /* Default top border for projects */
-      }
-      .experience-card {
-        border-top-color: var(
-          --google-green
-        ); /* Green top border for experience */
-      }
-
-      .project-card:hover,
-      .experience-card:hover {
-        transform: translateY(-5px) scale(1.01); /* Slight lift and scale */
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .project-header,
-      .experience-header {
-        margin-bottom: 1rem;
-      }
-      .experience-header {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start; /* Align items to top */
-        gap: 0.5rem; /* Space between title block and date */
+      .project-content {
+        padding: 1.5rem;
       }
 
       .project-title {
         color: var(--google-blue);
-        margin-bottom: 0.2rem;
-      } /* Reduced margin */
-      .project-header p {
-        /* Style for date below title */
-        font-size: 0.9rem;
-        color: var(--text-light-color);
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
       }
 
-      .experience-title {
-        color: var(--google-blue);
-        margin-bottom: 0.1rem;
-      } /* Reduced margin */
-      .experience-company {
-        color: var(--secondary-color);
+      .project-summary {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .project-highlights {
+        background: var(--bg-color);
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+      }
+
+      .project-highlights h4 {
+        font-size: 0.9rem;
+        color: var(--text-light-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .project-highlights ul {
+        margin: 0;
+      }
+
+      .project-highlights li {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+        padding-left: 1.2rem;
+        position: relative;
+      }
+
+      .project-highlights li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--google-green);
+        font-weight: bold;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .project-link-btn {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        text-align: center;
+        border-radius: 8px;
         font-weight: 500;
-        margin-bottom: 0.5rem; /* Space below company name */
-        font-size: 1rem;
-      }
-      .experience-date {
-        color: var(--text-light-color);
-        font-size: 0.9rem;
-        white-space: nowrap; /* Prevent date wrapping */
-        padding-top: 0.2rem; /* Align better with title */
-        flex-shrink: 0; /* Prevent shrinking */
-      }
-      .experience-date i {
-        margin-right: 0.4rem;
+        transition: all var(--transition-speed) var(--transition-timing);
       }
 
-      .project-tags {
+      .primary-link {
+        background: var(--primary-gradient);
+        color: white;
+      }
+
+      .primary-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+        text-decoration: none;
+      }
+
+      .secondary-link {
+        background: var(--bg-color);
+        color: var(--primary-color);
+        border: 1px solid var(--border-color);
+      }
+
+      .secondary-link:hover {
+        background: rgba(66, 133, 244, 0.1);
+        text-decoration: none;
+      }
+
+      .tech-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
-        margin-top: 0.8rem;
-        margin-bottom: 1rem; /* Add space below tags */
+        margin-top: 1rem;
       }
 
-      .project-tag {
-        background: rgba(52, 168, 83, 0.1); /* Light green */
+      .tech-tag {
+        background: rgba(52, 168, 83, 0.1);
         color: var(--secondary-color);
         padding: 0.25rem 0.8rem;
         border-radius: 15px;
@@ -566,571 +424,158 @@
         font-weight: 500;
       }
 
-      .project-link {
-        margin-top: 1.5rem;
-        font-size: 0.9rem;
-      }
-      .project-link a {
-        color: var(--primary-color);
-        font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem; /* Space between icon and text */
-      }
-      .project-link a:hover {
-        color: var(--google-red);
-      }
-      .project-link + .project-link {
-        margin-top: 0.5rem;
-      } /* Space between multiple links */
-
-      /* --- Experience Categories & Lists --- */
-      .experience-categories {
-        margin-top: 1.5rem;
-        display: grid;
-        gap: 1.5rem;
-      }
-      .experience-category {
-        background: rgba(66, 133, 244, 0.03); /* Very light blue */
-        border-left: 3px solid var(--google-yellow);
-        padding: 1.5rem; /* Increased padding */
-        border-radius: 8px;
-      }
-      .experience-category h4 {
-        color: var(--google-blue);
-        margin-bottom: 0.8rem;
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-      .experience-category h4 i {
-        font-size: 1.1rem;
-        color: var(--google-yellow); /* Match border */
-        width: 20px; /* Give icon fixed width */
-        text-align: center;
-      }
-
-      /* --- Bullet Lists --- */
-      .bullet-list,
-      .nested-bullet-list {
-        padding-left: 1rem; /* Indentation */
-      }
-
-      .bullet-list li,
-      .nested-bullet-list li {
-        position: relative;
-        padding-left: 1.4rem; /* Space for bullet */
-        margin-bottom: 0.6rem;
-      }
-      .bullet-list li:last-child,
-      .nested-bullet-list li:last-child {
-        margin-bottom: 0; /* Remove margin on last item */
-      }
-
-      .bullet-list li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.6em; /* Vertically center */
-        transform: translateY(-50%);
-        width: 8px;
-        height: 8px;
-        background-color: var(--google-red);
-        border-radius: 50%;
-      }
-
-      .nested-bullet-list {
-        margin-top: 0.5rem;
-        padding-left: 1.2rem;
-      } /* Further indent nested */
-      .nested-bullet-list li::before {
-        background-color: var(--google-yellow);
-        width: 6px;
-        height: 6px;
-      }
-
-      /* --- Education & Professional Development --- */
-      .education-grid,
-      .development-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-      }
-      .development-grid {
-        margin-top: 1.5rem; /* Reduced space between education and development */
-      }
-
-      .education-card,
-      .development-item {
-        background-color: var(--card-bg);
+      /* Qatar Context Box */
+      .qatar-context {
+        background: linear-gradient(135deg, rgba(134, 65, 244, 0.1), rgba(52, 168, 83, 0.1));
+        border: 1px solid rgba(134, 65, 244, 0.2);
         border-radius: 12px;
         padding: 1.5rem;
+        margin: 2rem 0;
         text-align: center;
-        border: 1px solid var(--border-color);
-        transition: all var(--transition-speed) var(--transition-timing);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
       }
 
-      .education-card:hover,
-      .development-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        border-color: var(--primary-color); /* Highlight border on hover */
-      }
-
-      .education-icon,
-      .development-icon {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: var(--primary-gradient);
-        color: var(--google-white);
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.8rem;
+      .qatar-context h3 {
+        color: var(--google-blue);
         margin-bottom: 1rem;
-        flex-shrink: 0; /* Prevent icon shrinking */
       }
 
-      .education-card h3 {
+      /* Skills Grid - Simplified */
+      .skills-overview {
+        background: var(--bg-color);
+        padding: 2rem;
+        border-radius: 12px;
+        margin: 2rem 0;
+      }
+
+      .skills-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .skills-section h4 {
+        color: var(--google-blue);
+        margin-bottom: 0.8rem;
         font-size: 1.1rem;
-        color: var(--primary-color);
-        margin-bottom: 0.3rem;
-        flex-grow: 1; /* Allow title to take space */
-        font-weight: 500;
       }
 
-      .education-details,
-      .development-text {
+      .skill-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .skill-item {
+        background: white;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
         font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+      }
+
+      /* Experience - Condensed */
+      .experience-item {
+        background: var(--card-bg);
+        border-left: 4px solid var(--google-yellow);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+      }
+
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      .experience-date {
         color: var(--text-light-color);
-      }
-      .education-status {
         font-size: 0.9rem;
-        font-weight: 500;
-        color: var(--danger-color);
-      }
-      /* Development items specific layout */
-      .development-item {
-        flex-direction: row; /* Horizontal layout */
-        text-align: left;
-        gap: 1rem;
-        padding: 1rem; /* Slightly less padding */
-        align-items: center; /* Vertically center icon and text */
-      }
-      .development-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-        margin-bottom: 0; /* Remove bottom margin */
-      }
-      .development-text {
-        flex-grow: 1;
-        color: var(--text-color); /* Slightly darker */
-        font-size: 0.9rem;
-        line-height: 1.4; /* Adjust line height */
       }
 
-      /* --- Visitor Counter --- */
+      /* CTA Section */
+      .cta-section {
+        background: var(--primary-gradient);
+        color: white;
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .cta-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .cta-link {
+        background: white;
+        color: var(--primary-color);
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .cta-link:hover {
+        background: var(--google-yellow);
+        color: var(--text-color);
+        text-decoration: none;
+        transform: translateY(-2px);
+      }
+
+      /* Visitor Counter */
       .visitor-counter {
         background: var(--bg-color);
         padding: 1rem 2rem;
         text-align: center;
-        border-top: 1px solid var(--border-color);
-        margin-top: 2rem; /* Add space above counter */
       }
 
-      .visitor-counter p {
-        margin-bottom: 0;
-        color: var(--text-light-color);
-        font-size: 0.9rem;
-      }
-      .visitor-counter i {
-        margin-right: 0.5rem;
-        color: var(--primary-color);
-      }
       #visitor-count {
         font-weight: 700;
         color: var(--primary-color);
         margin-left: 0.2rem;
-        display: inline-block; /* Prevent line break issues */
-        min-width: 20px; /* Ensure space even while loading */
       }
 
-      /* --- Print Button --- */
-      .print-container {
-        padding: 2rem;
-        text-align: center;
-        background-color: var(--card-bg); /* Match container bg */
-      }
-
-      .print-button {
-        background: var(--primary-gradient);
-        color: var(--google-white);
-        border: none;
-        padding: 0.8rem 2rem;
-        border-radius: 25px;
-        font-size: 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all var(--transition-speed) var(--transition-timing);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-      }
-
-      .print-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        background: linear-gradient(
-          135deg,
-          var(--google-green),
-          var(--google-blue)
-        ); /* Reverse gradient on hover */
-      }
-      .print-button i {
-        font-size: 1.1rem;
-      }
-
-      /* --- Responsive Enhancements --- */
+      /* Responsive */
       @media (max-width: 768px) {
-        h1 {
-          font-size: 2.2rem;
-        }
-        h2 {
-          font-size: 1.6rem;
-        }
-        .section {
-          padding: 2rem 1rem;
-        }
-        .resume-header {
-          padding: 0 1rem;
-          margin-top: -60px;
-        }
-        .header-content {
-          padding: 1.5rem;
-        }
-        .contact-info {
-          gap: 0.5rem;
-          justify-content: center;
-        }
-        .contact-item {
-          padding: 0.4rem 0.8rem;
-          font-size: 0.85rem;
-        }
-
-        .timeline {
-          max-width: 100%;
-          padding: 1rem 0;
-        } /* Remove max-width */
-        .timeline::before {
-          left: 15px;
-        }
-        .timeline-item {
-          padding-left: 45px;
-        }
-        .timeline-marker {
-          width: 34px;
-          height: 34px;
-          left: 0;
-          border-width: 3px;
-        }
-        .timeline-marker::after {
-          width: 8px;
-          height: 8px;
-        }
-
-        .experience-header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 0.2rem;
-        }
-        .experience-date {
-          margin-left: 0;
-          padding-top: 0;
-        }
-        .project-card,
-        .experience-card {
-          padding: 1.5rem;
-        }
-        .education-grid,
-        .development-grid {
-          grid-template-columns: 1fr;
-        } /* Stack on smaller screens */
-        .summary-content {
-          padding: 1rem;
-          max-width: 100%;
-        }
-      }
-
-      /* --- Print Styles --- */
-      @media print {
-        body {
-          background-color: #fff !important; /* Override base */
-          color: #000;
-          font-size: 10pt; /* Adjust for print */
-          line-height: 1.4;
-          font-family: "Times New Roman", Times, serif; /* Use serif for print */
-        }
-        :root {
-          /* Reset colors for print */
-          --google-blue: #000;
-          --google-red: #000;
-          --google-yellow: #000;
-          --google-green: #000;
-          --google-gray: #000;
-          --google-medium-gray: #333;
-          --google-light-gray: #fff;
-          --google-border-gray: #ccc;
-          --google-white: #000;
-          --primary-color: #000;
-          --secondary-color: #000;
-          --accent-color: #000;
-          --danger-color: #000;
-          --text-color: #000;
-          --text-light-color: #333;
-          --bg-color: #fff;
-          --card-bg: #fff;
-          --border-color: #ccc;
-        }
-
-        .container {
-          max-width: 100%;
-          margin: 0;
-          box-shadow: none !important; /* Override inline */
-          border-radius: 0;
-          background-color: #fff !important;
-        }
-        .hero-bg,
-        .print-container,
-        .visitor-counter,
-        .timeline-marker,
-        .education-icon,
-        .development-icon {
-          display: none !important; /* Hide non-essential print elements */
-        }
-        .resume-header {
-          margin-top: 0;
-          padding: 0;
-        }
-        .header-content {
-          box-shadow: none !important;
-          border-radius: 0;
-          padding: 1rem 0;
-          border-top: none !important;
-          text-align: left;
-          background-color: #fff !important;
-        }
-        .contact-info {
-          justify-content: flex-start;
-          gap: 0.5rem;
-        }
-        .contact-item {
-          background: none !important;
-          padding: 0.2rem 0;
-          border: none !important;
-          color: #000 !important;
-          font-size: 9pt;
-        }
-        .contact-item i {
-          color: #000 !important;
-          margin-right: 0.3rem;
-        }
-        .contact-item span {
-          display: inline;
-        }
-
-        .section {
-          padding: 1rem 0;
-          border-bottom: 1px solid #ccc;
-          page-break-inside: avoid;
-        }
-        .section:last-of-type {
-          border-bottom: none;
-        }
-
-        .section-title {
-          text-align: left;
-          font-size: 14pt;
-          margin-bottom: 0.8rem;
-          padding-bottom: 0.3rem;
-          color: #000 !important;
-          font-weight: bold;
-          border-bottom: 1px solid #000;
-        }
-        .section-title::after {
-          display: none; /* Hide gradient line */
-        }
-        h1,
-        h2,
-        h3,
-        h4 {
-          color: #000 !important;
-          font-weight: bold;
-        }
-        h1 {
-          font-size: 18pt;
-        }
-        h2 {
-          font-size: 14pt;
-        }
-        h3 {
-          font-size: 11pt;
-        }
-        h4 {
-          font-size: 10pt;
-          font-weight: bold;
-        }
-        p {
-          font-size: 10pt;
-          margin-bottom: 0.5rem;
-        }
-        a {
-          color: #000 !important;
-          text-decoration: none !important;
-        }
-        a[href^="http"]::after {
-          /* Optionally show URLs */
-          /* content: " (" attr(href) ")"; */
-          /* font-size: 8pt; */
-          /* color: #555; */
-        }
-
-        .skills-grid,
-        .education-grid,
-        .development-grid {
-          grid-template-columns: 1fr 1fr; /* Try two columns for print */
-          gap: 1rem;
-        }
-        .skills-category,
-        .education-card,
-        .development-item {
-          box-shadow: none !important;
-          border: 1px solid #eee !important;
-          border-radius: 0px !important;
-          padding: 0.5rem;
-          background-color: #fff !important;
-          page-break-inside: avoid;
-        }
-        .skills-header {
-          background: #eee !important;
-          color: #000 !important;
-          padding: 0.3rem 0.5rem;
-          border-radius: 0 !important;
-        }
-        .skills-header h3 {
-          color: #000 !important;
-          font-size: 10pt;
-        }
-        .skills-content {
-          padding: 0.5rem;
-        }
-        .skill-item {
-          background: #f0f0f0 !important;
-          color: #000 !important;
-          padding: 0.2rem 0.5rem;
-          font-size: 9pt;
-        }
-        .cert-badge {
-          background: #eee !important;
-          color: #000 !important;
-          box-shadow: none !important;
-        }
-
-        .timeline {
-          padding: 0;
-          max-width: 100%;
-        }
-        .timeline::before {
-          display: none;
-        } /* Hide timeline visual elements for print */
-        .timeline-item {
-          padding-left: 0;
-          margin-bottom: 1rem;
-        }
-
-        .project-card,
-        .experience-card {
-          box-shadow: none !important;
-          border: 1px solid #eee !important;
-          border-radius: 0 !important;
-          padding: 0.8rem;
-          border-top: 1px solid #ccc !important;
-          page-break-inside: avoid; /* Try to keep cards intact */
-          background-color: #fff !important;
-        }
-        .experience-category {
-          background: none !important;
-          border-left: 2px solid #ccc !important;
-          padding: 0.5rem 0.8rem;
-        }
-        .bullet-list,
-        .nested-bullet-list {
-          padding-left: 1rem;
-        }
-        .bullet-list li,
-        .nested-bullet-list li {
-          padding-left: 1rem;
-          margin-bottom: 0.3rem;
-        }
-        .bullet-list li::before {
-          background-color: #555 !important;
-          width: 5px;
-          height: 5px;
-          top: 0.5em;
-        }
-        .nested-bullet-list li::before {
-          background-color: #777 !important;
-          width: 4px;
-          height: 4px;
-          top: 0.5em;
-        }
-        .education-card h3 {
-          font-size: 10pt;
-        }
-        .education-details,
-        .development-text,
-        .education-status {
-          font-size: 9pt;
-        }
-        .development-item {
-          flex-direction: column;
-          align-items: flex-start;
-          text-align: left;
-        }
-        .development-text {
-          font-size: 9pt;
-        }
+        h1 { font-size: 2.2rem; }
+        .section { padding: 2rem 1rem; }
+        .live-projects-grid { grid-template-columns: 1fr; }
+        .experience-header { flex-direction: column; gap: 0.5rem; }
+        .cta-links { flex-direction: column; align-items: center; }
       }
     </style>
   </head>
-  <body
-    data-api-endpoint="https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter"
-  >
+  <body data-api-endpoint="https://talha-resume-func-2025.azurewebsites.net/api/VisitorCounter">
     <div class="container">
       <div class="hero-bg"></div>
 
       <header class="resume-header">
         <div class="header-content">
           <h1>TALHA NASIRUDDIN</h1>
-          <p class="tagline">
-            Senior Cloud Engineer &amp; Cybersecurity Professional
-          </p>
-          <p class="tagline-sub">
-            16+ Years Experience | Production Cloud Systems | Qatar-Based |
-            Available Immediately
-          </p>
+          <p class="tagline">Qatar-Based Cloud Engineer Running Production Systems You Can Test</p>
+          <p class="sub-tagline">16 Years Local IT Experience • Born & Raised in Doha</p>
+          
+          <div class="quick-nav">
+            <strong>Jump to:</strong>
+            <a href="#projects">Live Projects</a> |
+            <a href="#experience">Experience</a> |
+            <a href="#skills">Skills</a> |
+            <a href="#contact">Contact</a>
+          </div>
+
           <div class="contact-info">
             <a href="tel:974.5516.9203" class="contact-item">
               <i class="fas fa-phone"></i>
-              <span>+974&nbsp;5516&nbsp;9203</span>
+              <span>+974 5516 9203</span>
             </a>
             <a href="mailto:talhanasiruddin@outlook.com" class="contact-item">
               <i class="fas fa-envelope"></i>
@@ -1140,71 +585,28 @@
               <i class="fas fa-map-marker-alt"></i>
               <span>Doha, Qatar</span>
             </a>
-            <a
-              href="https://www.linkedin.com/in/talhanasiruddin/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-item"
-            >
+            <a href="https://www.linkedin.com/in/talhanasiruddin/" target="_blank" rel="noopener noreferrer" class="contact-item">
               <i class="fab fa-linkedin"></i>
               <span>LinkedIn</span>
             </a>
-            <a
-              href="https://github.com/saddavi"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-item"
-            >
+            <a href="https://github.com/saddavi" target="_blank" rel="noopener noreferrer" class="contact-item">
               <i class="fab fa-github"></i>
               <span>GitHub</span>
-            </a>
-            <a
-              href="https://talhacloud.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-item"
-            >
-              <i class="fas fa-blog"></i>
-              <span>Blog</span>
             </a>
           </div>
         </div>
       </header>
 
-      <section class="section summary-section">
-        <h2 class="section-title">Professional Summary</h2>
+      <section class="section">
+        <h2 class="section-title">Who I Am</h2>
         <div class="summary-content">
           <p>
-            <strong
-              >Production-ready cloud engineer with 16+ years of systems and
-              cybersecurity expertise, delivering enterprise-grade cloud
-              solutions across AWS, GCP, and Azure.</strong
-            >
-            Currently operating multiple live production systems including an advanced AI-powered healthcare platform
-            (healthcare.talharesume.com), a cloud-native voting platform, and this resume website—all
-            serving real users with 99.9% uptime and enterprise security
-            standards across three major cloud providers.
-          </p>
-          <p>
-            My unique value proposition combines deep traditional infrastructure
-            knowledge with modern cloud-native development and AI integration, enabling me to
-            architect secure, scalable solutions that address real business
-            challenges. I've successfully built and deployed production systems
-            using Infrastructure as Code, implemented automated CI/CD pipelines,
-            integrated AWS Bedrock AI for healthcare applications, and solved complex integration problems that demonstrate immediate
-            enterprise contribution capability.
-          </p>
-          <p>
-            <strong>Qatar Market Focus:</strong> Positioned to contribute
-            immediately to Qatar's digital transformation initiatives under
-            Vision 2030, with proven expertise in healthcare innovation, government and financial
-            sector security requirements, multi-cloud strategies for data
-            residency compliance, and cost-optimized cloud operations that align
-            with sustainable technology budgets. My live healthcare platform demonstrates
-            the AI-powered digital health solutions Qatar's Vision 2030 prioritizes.
+            <strong>Local cloud engineer building solutions for the region's digital future.</strong> 
+            After 16 years in the local IT sector, I'm creating practical cloud systems that solve real problems. 
+            My healthcare platform serves Arabic and English speakers, my voting system handles e-governance needs, 
+            and this website proves I can deploy production-ready solutions. I understand both regional business culture and modern cloud architecture.
           </p>
           <div class="certifications">
-            <h3>Key Certifications</h3>
             <div class="cert-badges">
               <span class="cert-badge">CISSP</span>
               <span class="cert-badge">Security+</span>
@@ -1213,1113 +615,272 @@
             </div>
           </div>
         </div>
-      </section>
 
-      <section class="section journey-section">
-        <h2 class="section-title">My Cloud Journey</h2>
-        <div class="summary-content">
+        <div class="qatar-context">
+          <h3>🇶🇦 Local Market Advantage</h3>
           <p>
-            My journey to cloud engineering wasn't planned from day one—it
-            evolved naturally as I kept solving bigger technical challenges.
-            After years of making systems work and keeping them secure, I found
-            myself increasingly drawn to the flexibility and innovation of cloud
-            platforms. Instead of just reading about cloud concepts, I've taken
-            a builder's approach: deploying a live healthcare platform on AWS with AI integration,
-            developing a fully operational SecureVote platform on GCP, and
-            completing the Cloud Resume Challenge on Azure.
-          </p>
-          <p>
-            These projects aren't just portfolio pieces—they're my hands-on
-            laboratory where I've mastered serverless architectures,
-            Infrastructure as Code, and enterprise security patterns across all three major cloud platforms. The
-            MediSecure healthcare platform particularly demonstrates the pinnacle of my cloud engineering journey with live production deployment at
-            healthcare.talharesume.com, featuring AWS Bedrock AI integration,
-            achieving enterprise capabilities for $0.00 using free tier optimization, and delivering
-            exactly the kind of innovation Qatar's healthcare sector needs.
-          </p>
-          <p>
-            My tri-cloud expertise spans practical implementation across AWS, GCP, and Azure,
-            with each project addressing critical sectors in Qatar's economy:
-            healthcare (MediSecure AWS), government (SecureVote GCP), and professional services (Cloud Resume Azure). I'm seeking a cloud engineering role in Qatar where
-            my security background and multi-cloud expertise become strategic assets—where I can help
-            teams build secure-by-design cloud solutions rather than
-            retrofitting security afterward. I want to contribute immediately
-            with proven production systems running across all three major cloud platforms while continuing to grow
-            through Qatar's exciting digital transformation initiatives aligned
-            with Vision 2030.
+            Born and raised in Doha, I understand the region's unique IT challenges: Arabic language requirements, 
+            cultural considerations in healthcare, government compliance needs, and the importance of building 
+            systems that work for the GCC's diverse population. My solutions aren't just technically sound—they're 
+            culturally appropriate and aligned with Qatar National Vision 2030.
           </p>
         </div>
       </section>
 
-      <section class="section">
-        <h2 class="section-title">Cloud Projects</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="project-card">
-                <div class="project-header">
-                  <h3 class="project-title">
-                    MediSecure Cloud Platform - AI-Enhanced Healthcare Innovation on AWS
-                  </h3>
-                  <p>
-                    <i
-                      ><strong>Phase 7 Complete - Live Production System with AI:</strong> HIPAA-ready healthcare platform with AWS Bedrock AI Integration |
-                      <a
-                        href="https://healthcare.talharesume.com"
-                        target="_blank"
-                        class="live-demo-link"
-                        >Live Demo: healthcare.talharesume.com</a
-                      > |
-                      <a
-                        href="https://github.com/saddavi/medisecure-cloud-platform"
-                        target="_blank"
-                        class="github-repo-link"
-                        >GitHub Repository</a
-                      ></i
-                    >
-                  </p>
-                </div>
-                <div class="project-link healthcare-project-highlight">
-                  <strong>🚀 Live Production Healthcare System with AI:</strong>
-                  <a
-                    href="https://healthcare.talharesume.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="live-demo-link"
-                  >
-                    <i class="fas fa-external-link-alt"></i> Access Live Healthcare Platform
-                  </a>
-                </div>
-                <div class="project-tags">
-                  <span class="project-tag">AWS Lambda</span>
-                  <span class="project-tag">API Gateway</span>
-                  <span class="project-tag">Cognito</span>
-                  <span class="project-tag">DynamoDB</span>
-                  <span class="project-tag">S3</span>
-                  <span class="project-tag">CloudFront</span>
-                  <span class="project-tag">Certificate Manager</span>
-                  <span class="project-tag">IoT Core</span>
-                  <span class="project-tag">Bedrock AI</span>
-                  <span class="project-tag">Claude 3 Haiku</span>
-                  <span class="project-tag">Amazon Titan</span>
-                  <span class="project-tag">React.js</span>
-                  <span class="project-tag">TypeScript</span>
-                  <span class="project-tag">CDK</span>
-                  <span class="project-tag">HIPAA Compliance</span>
-                </div>
-                <h4 class="section-subheading">
-                  Qatar Healthcare Market Relevance &amp; Business Impact
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Production Healthcare Platform with AI</strong>: Live system serving at healthcare.talharesume.com with AWS Bedrock AI integration, professional SSL certificate, and real-time symptom analysis in Arabic/English, demonstrating enterprise-grade AI-powered healthcare capabilities for Qatar's digital health initiatives.
-                  </li>
-                  <li>
-                    <strong>Healthcare Digital Transformation</strong>: Addresses real coordination challenges in Qatar's healthcare system with secure patient portals, appointment booking, AI-powered symptom checking, and emergency response capabilities aligned with Qatar National Vision 2030 digital health initiatives.
-                  </li>
-                  <li>
-                    <strong>AI-Powered Patient Care (Phase 7 - LIVE)</strong>: Successfully integrated AWS Bedrock with Claude 3 Haiku and Amazon Titan models for intelligent symptom analysis in Arabic/English, featuring cultural healthcare considerations and helping patients find the right specialist doctor based on symptoms.
-                  </li>
-                  <li>
-                    <strong>Real-Time IoT Monitoring</strong>: Advanced vital signs tracking with AWS IoT Core integration (Phase 8 - planned), automated alerting system, and predictive analytics designed for Qatar's expanding telemedicine and remote patient monitoring initiatives.
-                  </li>
-                  <li>
-                    <strong>Cost Engineering Excellence</strong>: Achieved complete production deployment with AI for $0.00 using AWS Free Tier optimization, with AI features scaling to $0.50/month - demonstrating exceptional resource efficiency for healthcare startups and government initiatives.
-                  </li>
+      <section class="section" id="projects">
+        <h2 class="section-title">Live Cloud Projects</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Built for the regional market - test them yourself</p>
+        
+        <div class="live-projects-grid">
+          <!-- MediSecure Project -->
+          <div class="project-showcase">
+            <div class="project-status">🟢 LIVE WITH ARABIC AI</div>
+            <div class="project-content">
+              <h3 class="project-title">Healthcare Platform for GCC Market</h3>
+              <p class="project-summary">
+                Full healthcare system addressing regional patient coordination challenges. Features Arabic/English AI symptom checker 
+                built with cultural healthcare considerations for the GCC's diverse population.
+              </p>
+              
+              <div class="project-highlights">
+                <h4>Regional healthcare features:</h4>
+                <ul>
+                  <li>Arabic AI processing 10K+ medical terms with cultural context</li>
+                  <li>Built for GCC multilingual healthcare environments</li>
+                  <li>Costs $0/month using AWS free tier optimization</li>
+                  <li>HIPAA-ready architecture meeting regional compliance standards</li>
                 </ul>
-                <h4 class="section-subheading">
-                  Advanced AWS Architecture &amp; Healthcare Technology Integration
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Production Serverless Platform with AI</strong>: Complete multi-region serverless architecture using AWS Lambda (Node.js 20.x), API Gateway with CORS, Cognito authentication, DynamoDB for secure healthcare data, and Bedrock AI for intelligent symptom analysis with automatic scaling based on patient load.
-                  </li>
-                  <li>
-                    <strong>Custom Domain &amp; SSL Implementation</strong>: Professional healthcare.talharesume.com deployment with AWS Certificate Manager, CloudFront CDN global distribution achieving sub-200ms load times, and optimized Content Security Policy (CSP) configuration for secure API integration.
-                  </li>
-                  <li>
-                    <strong>AI Integration Architecture (Phase 7 - COMPLETE)</strong>: Successfully implemented AWS Bedrock integration with Claude 3 Haiku (primary) and Amazon Titan (fallback) models for multilingual symptom analysis, featuring cross-region architecture (Lambda in me-south-1, Bedrock in ap-south-1) with optimized latency.
-                  </li>
-                  <li>
-                    <strong>Multi-Service Orchestration</strong>: Integrates 12+ AWS services including DynamoDB for patient records, S3 for medical files, SNS for notifications, CloudWatch for monitoring, Bedrock for AI analysis, and planned IoT Core for real-time device data processing.
-                  </li>
-                  <li>
-                    <strong>Infrastructure as Code Excellence</strong>: AWS CDK TypeScript implementation with modular stack design, automated deployments, environment-specific configurations, comprehensive security policies, and production deployment scripts ensuring reproducible healthcare infrastructure.
-                  </li>
-                </ul>
-                <h4 class="section-subheading">
-                  Core Healthcare Features &amp; Technical Implementation
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Patient Portal</strong>: React.js SPA with secure Cognito authentication using SRP, medical history access, HIPAA-compliant data handling, and responsive design optimized for mobile healthcare access in Qatar.
-                  </li>
-                  <li>
-                    <strong>Provider Dashboard</strong>: Real-time patient management interface, digital consultation capabilities, secure data visualization, and AI-powered diagnostic assistance with Arabic cultural considerations integrated through Bedrock AI.
-                  </li>
-                  <li>
-                    <strong>Authentication &amp; Security</strong>: AWS Cognito with SRP authentication, JWT token management, role-based access control (Patient/Doctor/Admin), comprehensive audit logging, and production-grade security meeting healthcare compliance standards.
-                  </li>
-                  <li>
-                    <strong>AI Symptom Checker (Phase 7 - LIVE)</strong>: Public-facing AWS Bedrock-powered intelligent health assistant with Arabic/English support, severity assessment using Claude 3 Haiku, specialist referrals, cultural healthcare practice integration, and fallback to Amazon Titan for reliability.
-                  </li>
-                  <li>
-                    <strong>IoT Vital Monitoring (Phase 8 - Planned)</strong>: Real-time vital signs tracking with AWS IoT Core, predictive health analytics using Bedrock AI, emergency detection algorithms, and automated provider notifications.
-                  </li>
-                </ul>
-                <h4 class="section-subheading">
-                  Production Deployment &amp; Technical Achievements
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Cross-Region AI Architecture</strong>: Successfully implemented cross-region deployment with Lambda functions in me-south-1 (Bahrain) and Bedrock AI in ap-south-1 (Mumbai), achieving &lt;100ms additional latency while maintaining data residency compliance.
-                  </li>
-                  <li>
-                    <strong>CloudFront CSP Resolution</strong>: Diagnosed and resolved complex Content Security Policy issues in CloudFront Response Headers, enabling secure API communication between frontend and backend services across different AWS regions.
-                  </li>
-                  <li>
-                    <strong>AI Response Parsing</strong>: Developed sophisticated JSON parsing for Bedrock's tabular-data format, transforming AI responses into user-friendly healthcare recommendations with proper severity scoring and urgency mapping.
-                  </li>
-                  <li>
-                    <strong>Model Fallback Pattern</strong>: Implemented intelligent fallback from Claude 3 Haiku to Amazon Titan, ensuring 100% availability of AI symptom analysis even during model unavailability or rate limiting scenarios.
-                  </li>
-                  <li>
-                    <strong>Production Monitoring</strong>: Comprehensive CloudWatch integration with custom metrics for AI response times, model usage patterns, error rates, and cost tracking, ensuring operational excellence.
-                  </li>
-                </ul>
-                <h4 class="section-subheading">
-                  Skills Demonstrated for Qatar Cloud Engineering &amp; Healthcare Tech Roles
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>AWS AI/ML Production Expertise</strong>: Advanced implementation of AWS Bedrock for healthcare AI with production deployment, multilingual processing capabilities, model fallback patterns, and intelligent symptom analysis relevant to Qatar's diverse healthcare needs.
-                  </li>
-                  <li>
-                    <strong>Healthcare Security &amp; Compliance</strong>: HIPAA-ready architecture patterns, end-to-end encryption, comprehensive audit logging, CloudFront security headers management, and regulatory compliance frameworks applicable to Qatar's healthcare data protection requirements.
-                  </li>
-                  <li>
-                    <strong>Multi-Region Cloud Architecture</strong>: Production deployment across us-east-1, ap-south-1, and me-south-1 regions with cross-region service integration, optimized performance for Gulf region users, and compliance with data residency requirements.
-                  </li>
-                  <li>
-                    <strong>Serverless Healthcare Mastery</strong>: Advanced Lambda development with TypeScript, API Gateway security configuration, Cognito healthcare user management, DynamoDB optimization, and event-driven architecture design for scalable patient care systems.
-                  </li>
-                  <li>
-                    <strong>Cultural Technology Integration</strong>: Arabic language processing with AWS Bedrock, Islamic healthcare practice considerations, bilingual UI/UX implementation, and culturally-sensitive AI interactions essential for Qatar's diverse healthcare environment.
-                  </li>
-                  <li>
-                    <strong>Production DevOps Excellence</strong>: Live system deployment with zero downtime, SSL certificate management, CDN optimization, CloudFront cache invalidation strategies, cost management within free tier limits, and operational monitoring for healthcare-critical applications.
-                  </li>
-                  <li>
-                    <strong>Complex Problem Resolution</strong>: Diagnosed and resolved production issues including CSP violations, cross-region latency optimization, AI response parsing, and frontend-backend integration challenges demonstrating enterprise troubleshooting capabilities.
-                  </li>
-                </ul>
-                <div class="project-link">
-                  <a
-                    href="https://healthcare.talharesume.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fas fa-external-link-alt"></i> 🌐 Live Production System with AI: healthcare.talharesume.com
-                  </a>
-                </div>
-                <div class="project-link">
-                  <a
-                    href="https://healthcare.talharesume.com/symptom-checker"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fas fa-robot"></i> 🤖 Try AI Symptom Checker: Live Arabic/English Analysis
-                  </a>
-                </div>
-                <div class="project-link">
-                  <a
-                    href="https://github.com/saddavi/medisecure-cloud-platform"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-github"></i> 📊 View Complete Platform: GitHub Repository &amp; Documentation
-                  </a>
-                </div>
+              </div>
+
+              <div class="tech-tags">
+                <span class="tech-tag">AWS Bedrock</span>
+                <span class="tech-tag">Arabic AI</span>
+                <span class="tech-tag">Lambda</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://healthcare.talharesume.com" target="_blank" class="project-link-btn primary-link">
+                  <i class="fas fa-external-link-alt"></i> View Live System
+                </a>
+                <a href="https://healthcare.talharesume.com/symptom-checker" target="_blank" class="project-link-btn secondary-link">
+                  <i class="fas fa-robot"></i> Try Arabic AI
+                </a>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="project-card">
-                <div class="project-header">
-                  <h3 class="project-title">
-                    SecureVote - Production-Ready Cloud Engineering Portfolio
-                    (GCP)
-                  </h3>
-                  <p><i>(Completed 2025 - Live Deployment)</i></p>
-                  <div class="project-tags">
-                    <span class="project-tag">Google Cloud</span>
-                    <span class="project-tag">Terraform</span>
-                    <span class="project-tag">Node.js API</span>
-                    <span class="project-tag">PostgreSQL</span>
-                    <span class="project-tag">Cloud Run</span>
-                    <span class="project-tag">Zero-Trust Security</span>
-                    <span class="project-tag">Cost Optimization</span>
-                    <span class="project-tag">Enterprise Architecture</span>
-                  </div>
-                </div>
-                <p>
-                  <strong
-                    >A fully operational, enterprise-grade secure voting
-                    platform</strong
-                  >
-                  built on Google Cloud Platform to demonstrate real-world cloud
-                  engineering expertise for Qatar's growing technology sector.
-                  This isn't just a demo—it's a production-ready system
-                  featuring advanced security controls, cost optimization
-                  strategies, and scalable architecture patterns that align with
-                  Qatar National Vision 2030's digital transformation goals.
-                </p>
-                <div
-                  class="project-link project-highlight-wrapper"
-                >
-                  <strong>🚀 Live Production System:</strong>
-                  <a
-                    href="https://securevote-api-dev-832948640879.us-central1.run.app/health"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="api-link"
-                  >
-                    <i class="fas fa-external-link-alt"></i> Test Live API
-                    Health Check
-                  </a>
-                </div>
-                <h4 class="section-subheading">
-                  Business Value &amp; Qatar Market Relevance
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Government Sector Alignment</strong>: Secure
-                    e-governance platform development experience directly
-                    applicable to Qatar's digital government initiatives and
-                    smart city projects.
-                  </li>
-                  <li>
-                    <strong>Financial Services Ready</strong>: Enterprise-grade
-                    security compliance and audit capabilities essential for
-                    Qatar's expanding fintech sector and banking digital
-                    transformation.
-                  </li>
-                  <li>
-                    <strong>Cost Engineering Excellence</strong>: Delivered full
-                    enterprise functionality within $10-13/month budget,
-                    demonstrating resource optimization skills critical for
-                    startup and efficiency-focused environments.
-                  </li>
-                  <li>
-                    <strong>Scalable Foundation</strong>: Architecture supports
-                    growth from startup to enterprise scale, tested to handle
-                    1000+ concurrent users with sub-200ms response times.
-                  </li>
-                  <li>
-                    <strong>Compliance-Ready Security</strong>: GDPR-compliant
-                    data handling patterns and comprehensive audit trails
-                    prepared for regulatory requirements in Qatar's financial
-                    and government sectors.
-                  </li>
+          <!-- SecureVote Project -->
+          <div class="project-showcase">
+            <div class="project-status">🟢 PRODUCTION API</div>
+            <div class="project-content">
+              <h3 class="project-title">E-Governance Voting Platform</h3>
+              <p class="project-summary">
+                Secure voting system built for regional digital transformation initiatives. 
+                Handles 1000+ concurrent users with enterprise-grade security suitable for government applications.
+              </p>
+              
+              <div class="project-highlights">
+                <h4>Government-ready features:</h4>
+                <ul>
+                  <li>Zero-trust security architecture</li>
+                  <li>Multi-language support capability</li>
+                  <li>Audit trails for transparency</li>
+                  <li>Cost-effective at $10-13/month</li>
                 </ul>
-                <h4 class="section-subheading">
-                  Enterprise Cloud Architecture &amp; Real-World Problem Solving
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Infrastructure as Code Mastery</strong>: Evolved
-                    from monolithic (400+ line single file) to modular Terraform
-                    architecture with specialized modules for cloud-run,
-                    database, networking, IAM, and storage—demonstrating
-                    infrastructure modernization expertise.
-                  </li>
-                  <li>
-                    <strong>Production Database Engineering</strong>:
-                    Implemented PostgreSQL on Cloud SQL with private VPC access,
-                    automated migrations, connection pooling, and UUID primary
-                    keys for enterprise-scale performance and security.
-                  </li>
-                  <li>
-                    <strong>Zero-Trust Security Implementation</strong>: Private
-                    database access, JWT authentication with bcrypt password
-                    security, IAM best practices, and comprehensive firewall
-                    rules following defense-in-depth principles.
-                  </li>
-                  <li>
-                    <strong>Critical Problem Resolution</strong>: Diagnosed and
-                    resolved Cloud SQL proxy connectivity failures, bcrypt
-                    version compatibility issues, and performance optimization
-                    challenges—documented solutions demonstrate troubleshooting
-                    expertise under pressure.
-                  </li>
-                  <li>
-                    <strong>DevOps Automation Excellence</strong>: GitHub
-                    Actions CI/CD with automated testing, environment-specific
-                    deployments, resource optimization scripts, and cost-control
-                    automation.
-                  </li>
-                </ul>
-                <h4 class="section-subheading">
-                  Technical Implementation &amp; Performance Metrics
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Serverless Architecture</strong>: Cloud Run for
-                    auto-scaling containerized APIs (0 to 1000+ users), Cloud
-                    SQL PostgreSQL with private networking, and Cloud Storage
-                    with lifecycle policies.
-                  </li>
-                  <li>
-                    <strong>Security Services Integration</strong>: Secret
-                    Manager with KMS encryption, IAM role-based access control,
-                    VPC isolation, and comprehensive audit logging for
-                    compliance and forensic analysis.
-                  </li>
-                  <li>
-                    <strong>Performance Achievements</strong>: Sub-200ms API
-                    response times, 99.9% uptime with Cloud Run's built-in
-                    redundancy, optimized database queries with proper indexing
-                    and connection pooling.
-                  </li>
-                  <li>
-                    <strong>Environment Management</strong>: Complete dev/prod
-                    isolation with environment-specific configurations,
-                    automated resource management scripts, and cost optimization
-                    strategies.
-                  </li>
-                  <li>
-                    <strong>API Development Excellence</strong>: RESTful
-                    services with JWT authentication, comprehensive error
-                    handling, CORS policy implementation, and extensive endpoint
-                    coverage for full application functionality.
-                  </li>
-                </ul>
-                <h4 class="section-subheading">
-                  Skills Demonstrated for Qatar Cloud Engineering Roles
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Enterprise Cloud Architecture</strong>: Scalable,
-                    secure, cost-optimized infrastructure design following
-                    Well-Architected Framework principles
-                  </li>
-                  <li>
-                    <strong>Google Cloud Platform Expertise</strong>: Advanced
-                    proficiency in compute (Cloud Run), database (Cloud SQL),
-                    security (IAM, Secret Manager), and networking services
-                  </li>
-                  <li>
-                    <strong>Infrastructure as Code (IaC)</strong>: Expert-level
-                    Terraform skills with modular design, state management, and
-                    automated deployment capabilities
-                  </li>
-                  <li>
-                    <strong>Database Engineering</strong>: PostgreSQL
-                    optimization, migration management, connection pooling, and
-                    private network security implementation
-                  </li>
-                  <li>
-                    <strong>Security-First Development</strong>: Zero-trust
-                    architecture, defense-in-depth security, compliance-ready
-                    audit trails, and secure authentication patterns
-                  </li>
-                  <li>
-                    <strong>DevOps &amp; Site Reliability</strong>: CI/CD
-                    automation, monitoring implementation, cost optimization,
-                    and operational excellence practices
-                  </li>
-                  <li>
-                    <strong>Problem-Solving Under Pressure</strong>: Documented
-                    real-world troubleshooting, performance optimization, and
-                    system reliability improvements
-                  </li>
-                </ul>
-                <h4 class="section-subheading">
-                  Production Status: Fully Operational Enterprise System
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Live Production API</strong>: Fully functional REST
-                    API with JWT authentication, user management, and secure
-                    database operations accessible at production endpoints.
-                  </li>
-                  <li>
-                    <strong>Database Operations</strong>: PostgreSQL with
-                    automated migrations, connection pooling, and optimized
-                    query performance handling real user authentication and data
-                    persistence.
-                  </li>
-                  <li>
-                    <strong>Infrastructure Automation</strong>: Complete
-                    Terraform-managed infrastructure with environment isolation,
-                    automated deployments, and cost optimization scripts.
-                  </li>
-                  <li>
-                    <strong>Security Validation</strong>: Zero-trust
-                    architecture with private database access, encrypted
-                    connections, comprehensive audit logging, and
-                    production-grade security controls.
-                  </li>
-                  <li>
-                    <strong>Ready for Enterprise</strong>: Scalable architecture
-                    tested for 1000+ concurrent users, cost-optimized for
-                    efficient operations, and compliant with enterprise security
-                    standards.
-                  </li>
-                </ul>
-                <div class="project-link">
-                  <a
-                    href="https://github.com/saddavi/securevote-gcp-iac"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-github"></i>
-                    View Complete Infrastructure Code &amp; Documentation
-                  </a>
-                </div>
+              </div>
+
+              <div class="tech-tags">
+                <span class="tech-tag">Google Cloud</span>
+                <span class="tech-tag">Terraform</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">JWT Security</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://securevote-api-dev-832948640879.us-central1.run.app/health" target="_blank" class="project-link-btn primary-link">
+                  <i class="fas fa-server"></i> Test API
+                </a>
+                <a href="https://github.com/saddavi/securevote-gcp-iac" target="_blank" class="project-link-btn secondary-link">
+                  <i class="fab fa-github"></i> View Code
+                </a>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="project-card">
-                <div class="project-header">
-                  <h3 class="project-title">
-                    Cloud Resume Challenge - Production Azure DevOps Portfolio
-                  </h3>
-                  <p>
-                    <i
-                      ><strong>Live Production System:</strong> Currently
-                      serving this website at
-                      <a
-                        href="https://talharesume.com"
-                        target="_blank"
-                        class="live-demo-link"
-                        >talharesume.com</a
-                      ></i
-                    >
-                  </p>
-                  <div class="project-tags">
-                    <span class="project-tag">Azure</span>
-                    <span class="project-tag">Serverless</span>
-                    <span class="project-tag">CI/CD</span>
-                    <span class="project-tag">DevOps</span>
-                    <span class="project-tag">Azure Functions</span>
-                    <span class="project-tag">Cosmos DB</span>
-                    <span class="project-tag">GitHub Actions</span>
-                    <span class="project-tag">IaC</span>
-                    <span class="project-tag">Terraform</span>
-                  </div>
-                </div>
-                <p>
-                  <strong
-                    >Production-ready serverless platform demonstrating
-                    enterprise Azure architecture and DevOps excellence.</strong
-                  >
-                  This comprehensive project showcases practical implementation
-                  of Azure's full-stack cloud services, automated deployment
-                  pipelines, and infrastructure as code—delivering the very
-                  website you're viewing with enterprise-grade performance,
-                  security, and cost optimization.
-                </p>
-                <h4 class="section-subheading">
-                  Business Value &amp; Qatar Market Relevance
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Digital Government Solutions</strong>: Serverless
-                    architecture patterns directly applicable to Qatar's
-                    e-governance initiatives, providing scalable, cost-effective
-                    citizen services platforms.
-                  </li>
-                  <li>
-                    <strong>Financial Sector Readiness</strong>: Enterprise
-                    security implementation with proper identity management,
-                    encrypted communications, and audit trails meeting Qatar's
-                    banking and fintech compliance requirements.
-                  </li>
-                  <li>
-                    <strong>Smart Cities Infrastructure</strong>: Demonstrates
-                    IoT-ready backend systems with real-time data processing
-                    capabilities essential for Qatar's smart city development
-                    under Vision 2030.
-                  </li>
-                  <li>
-                    <strong>Cost-Optimized Operations</strong>: Proven cost
-                    management achieving sub-$5/month operational costs while
-                    maintaining enterprise capabilities—critical for sustainable
-                    digital transformation budgets.
-                  </li>
+          <!-- Cloud Resume Project -->
+          <div class="project-showcase">
+            <div class="project-status">🟢 YOU'RE VIEWING IT</div>
+            <div class="project-content">
+              <h3 class="project-title">This Resume Website</h3>
+              <p class="project-summary">
+                Serverless resume with visitor counter and automated deployment. 
+                Demonstrates full-stack cloud engineering capabilities from development to production.
+              </p>
+              
+              <div class="project-highlights">
+                <h4>Technical achievements:</h4>
+                <ul>
+                  <li>Sub-200ms load times globally</li>
+                  <li>Automated CI/CD pipeline</li>
+                  <li>Multi-cloud architecture</li>
+                  <li>Under $5/month operational cost</li>
                 </ul>
-                <h4 class="section-subheading">
-                  Enterprise Azure Architecture &amp; Real-World Implementation
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Production-Grade Infrastructure Design</strong>:
-                    Multi-tier serverless architecture with Azure Storage
-                    (static hosting), Azure CDN (global distribution), Azure
-                    Functions (API layer), and CosmosDB (data
-                    persistence)—achieving 99.99% availability and sub-100ms
-                    global response times.
-                  </li>
-                  <li>
-                    <strong>Infrastructure as Code Excellence</strong>:
-                    Comprehensive Terraform implementation with modular design
-                    patterns, remote state management, and automated deployment
-                    pipelines—enabling reproducible infrastructure across
-                    multiple environments.
-                  </li>
-                  <li>
-                    <strong>Advanced DevOps Pipeline Engineering</strong>:
-                    Multi-stage GitHub Actions workflows with automated testing,
-                    security scanning, staged deployments, and CDN cache
-                    purging—reducing deployment time from hours to minutes with
-                    zero-downtime releases.
-                  </li>
-                  <li>
-                    <strong>Enterprise Security Implementation</strong>: SSL/TLS
-                    encryption, CORS policy management, Azure Managed Identity
-                    integration, and secure secrets management following Azure
-                    Well-Architected security principles.
-                  </li>
-                  <li>
-                    <strong>Database Engineering &amp; Performance</strong>:
-                    CosmosDB with MongoDB API in serverless mode, implementing
-                    efficient query patterns, proper indexing strategies, and
-                    cost optimization achieving enterprise performance under
-                    $2/month.
-                  </li>
-                  <li>
-                    <strong>Real-World Problem Solving</strong>: Resolved
-                    complex integration challenges including API endpoint case
-                    sensitivity, CDN cache invalidation timing, and CORS
-                    configuration across multiple Azure services—documented
-                    solutions demonstrate production troubleshooting expertise.
-                  </li>
-                </ul>
-                <h4 class="section-subheading">
-                  Technical Implementation &amp; Performance Metrics
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Global Performance Excellence</strong>:
-                    CDN-optimized content delivery achieving 101ms average page
-                    load times with &gt;95% cache hit ratio and global edge
-                    distribution for Middle East users.
-                  </li>
-                  <li>
-                    <strong>Serverless API Architecture</strong>: Python-based
-                    Azure Functions with comprehensive error handling, retry
-                    logic, and CORS implementation serving real-time visitor
-                    analytics with sub-200ms response times.
-                  </li>
-                  <li>
-                    <strong>Cost-Optimized Operations</strong>: Achieved
-                    enterprise-grade capabilities with monthly operational costs
-                    under $5 through serverless scaling, efficient resource
-                    utilization, and automated cost monitoring with budget
-                    alerts.
-                  </li>
-                  <li>
-                    <strong>Automated Quality Assurance</strong>: Comprehensive
-                    CI/CD pipeline with HTML validation, Python unit testing,
-                    security scanning, and automated deployment verification
-                    ensuring production reliability.
-                  </li>
-                  <li>
-                    <strong>Monitoring &amp; Observability</strong>: Azure Monitor
-                    integration with Application Insights providing real-time
-                    performance metrics, error tracking, and proactive alerting
-                    for production system health.
-                  </li>
-                  <li>
-                    <strong>Live Production Validation</strong>: Currently
-                    serving thousands of visitors monthly with demonstrated
-                    uptime, performance consistency, and seamless user
-                    experience at talharesume.com.
-                  </li>
-                </ul>
-                <h4 class="section-subheading">
-                  Skills Demonstrated for Qatar Cloud Engineering Roles
-                </h4>
-                <ul class="bullet-list">
-                  <li>
-                    <strong>Enterprise Azure Cloud Architecture</strong>:
-                    Advanced proficiency in compute (Azure Functions), storage
-                    (Azure Storage), database (CosmosDB), and content delivery
-                    (Azure CDN) services
-                  </li>
-                  <li>
-                    <strong>Infrastructure as Code (IaC) Excellence</strong>:
-                    Expert-level Terraform skills with modular design, remote
-                    state management, and automated deployment capabilities
-                  </li>
-                  <li>
-                    <strong>DevOps Pipeline Engineering</strong>: Multi-stage
-                    CI/CD implementation with GitHub Actions, automated testing,
-                    security scanning, and zero-downtime deployments
-                  </li>
-                  <li>
-                    <strong>Serverless Application Development</strong>:
-                    Python-based Azure Functions with comprehensive error
-                    handling, performance optimization, and cost management
-                  </li>
-                  <li>
-                    <strong>Database Engineering &amp; NoSQL Expertise</strong>:
-                    CosmosDB implementation with MongoDB API, query
-                    optimization, and serverless cost management
-                  </li>
-                  <li>
-                    <strong>Production System Operations</strong>: Live system
-                    monitoring, performance optimization, troubleshooting, and
-                    maintenance of business-critical applications
-                  </li>
-                  <li>
-                    <strong>Cloud Security Implementation</strong>: Identity
-                    management, encryption, CORS policies, and security best
-                    practices for enterprise environments
-                  </li>
-                  <li>
-                    <strong>Performance Engineering</strong>: Global content
-                    delivery optimization, caching strategies, and performance
-                    monitoring for user experience excellence
-                  </li>
-                  <li>
-                    <strong>Cost Optimization &amp; Governance</strong>: Resource
-                    efficiency, budget management, and operational cost control
-                    while maintaining enterprise capabilities
-                  </li>
-                  <li>
-                    <strong>Technical Problem Resolution</strong>: Production
-                    troubleshooting, integration challenges, and systematic
-                    approach to complex technical issues
-                  </li>
-                </ul>
-                <div class="project-link">
-                  <a
-                    href="https://www.talharesume.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fas fa-external-link-alt"></i> Visit Live Project:
-                    talharesume.com
-                  </a>
-                </div>
-                <div class="project-link">
-                  <a
-                    href="https://github.com/saddavi/Talha-CloudResumeChallenge"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fab fa-github"></i> View Project Code on GitHub
-                  </a>
-                </div>
               </div>
-            </div>
-          </div>
 
-        </div>
-      </section>
+              <div class="tech-tags">
+                <span class="tech-tag">Azure Functions</span>
+                <span class="tech-tag">CosmosDB</span>
+                <span class="tech-tag">GitHub Actions</span>
+                <span class="tech-tag">CDN</span>
+              </div>
 
-      <section class="section">
-        <h2 class="section-title">Cloud &amp; Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="skills-category">
-            <div class="skills-header">
-              <i class="fas fa-cloud"></i>
-              <h3>Cloud Platforms</h3>
-            </div>
-            <div class="skills-content">
-              <span class="skill-item">Azure Functions</span>
-              <span class="skill-item">Azure CosmosDB</span>
-              <span class="skill-item">Azure Storage</span>
-              <span class="skill-item">Azure CDN</span>
-              <span class="skill-item">Azure AD</span>
-              <span class="skill-item">Microsoft Intune</span>
-              <span class="skill-item">Google Cloud (GCP)</span>
-              <span class="skill-item">GCP Cloud Run</span>
-              <span class="skill-item">GCP Cloud SQL</span>
-              <span class="skill-item">AWS Lambda</span>
-              <span class="skill-item">AWS API Gateway</span>
-              <span class="skill-item">AWS Cognito</span>
-              <span class="skill-item">AWS DynamoDB</span>
-              <span class="skill-item">AWS S3</span>
-              <span class="skill-item">AWS CloudFront</span>
-              <span class="skill-item">AWS Certificate Manager</span>
-              <span class="skill-item">AWS IoT Core</span>
-              <span class="skill-item">AWS Bedrock AI</span>
-              <span class="skill-item">AWS CloudWatch</span>
-            </div>
-          </div>
-          <div class="skills-category">
-            <div class="skills-header">
-              <i class="fas fa-shield-alt"></i>
-              <h3>Security</h3>
-            </div>
-            <div class="skills-content">
-              <span class="skill-item">Identity &amp; Access Mgmt (IAM)</span>
-              <span class="skill-item">MFA Implementation</span>
-              <span class="skill-item">Privilege Access Mgmt (PAM)</span>
-              <span class="skill-item">SIEM Configuration</span>
-              <span class="skill-item">Endpoint Protection (EPP)</span>
-              <span class="skill-item">Vulnerability Management</span>
-              <span class="skill-item">Network Security</span>
-              <span class="skill-item">CISSP Domains</span>
-              <span class="skill-item">HIPAA Compliance</span>
-              <span class="skill-item">Healthcare Data Security</span>
-            </div>
-          </div>
-          <div class="skills-category">
-            <div class="skills-header">
-              <i class="fas fa-code"></i>
-              <h3>Programming &amp; IaC</h3>
-            </div>
-            <div class="skills-content">
-              <span class="skill-item">PowerShell</span>
-              <span class="skill-item">Python</span>
-              <span class="skill-item">JavaScript (ES6+)</span>
-              <span class="skill-item">TypeScript</span>
-              <span class="skill-item">Bash Scripting</span>
-              <span class="skill-item">Terraform (IaC)</span>
-              <span class="skill-item">AWS CDK</span>
-              <span class="skill-item">HTML5</span>
-              <span class="skill-item">CSS3</span>
-            </div>
-          </div>
-          <div class="skills-category">
-            <div class="skills-header">
-              <i class="fas fa-cogs"></i>
-              <h3>DevOps &amp; Automation</h3>
-            </div>
-            <div class="skills-content">
-              <span class="skill-item">CI/CD Pipelines</span>
-              <span class="skill-item">Infrastructure as Code (IaC)</span>
-              <span class="skill-item">Azure CLI</span>
-              <span class="skill-item">GitHub Actions</span>
-              <span class="skill-item">Git / Version Control</span>
-              <span class="skill-item">Process Automation</span>
-            </div>
-          </div>
-          <div class="skills-category">
-            <div class="skills-header">
-              <i class="fas fa-brain"></i>
-              <h3>AI/ML &amp; Healthcare</h3>
-            </div>
-            <div class="skills-content">
-              <span class="skill-item">AWS Bedrock</span>
-              <span class="skill-item">Claude 3 Integration</span>
-              <span class="skill-item">Healthcare AI</span>
-              <span class="skill-item">Arabic Language Processing</span>
-              <span class="skill-item">Symptom Analysis Systems</span>
-              <span class="skill-item">Medical IoT Integration</span>
-              <span class="skill-item">Predictive Healthcare Analytics</span>
-              <span class="skill-item">HIPAA-Compliant AI</span>
-            </div>
-          </div>
-          <div class="skills-category">
-            <div class="skills-header">
-              <i class="fas fa-server"></i>
-              <h3>Infrastructure &amp; Systems</h3>
-            </div>
-            <div class="skills-content">
-              <span class="skill-item">Windows Server Admin</span>
-              <span class="skill-item">Active Directory</span>
-              <span class="skill-item">Hyper-V</span>
-              <span class="skill-item">VMware vSphere</span>
-              <span class="skill-item">Network Monitoring</span>
-              <span class="skill-item">Systems Integration</span>
-              <span class="skill-item">MDM (Intune/Meraki)</span>
+              <div class="project-links">
+                <a href="https://github.com/saddavi/Talha-CloudResumeChallenge" target="_blank" class="project-link-btn primary-link">
+                  <i class="fab fa-github"></i> View Source
+                </a>
+                <a href="https://talhacloud.com" target="_blank" class="project-link-btn secondary-link">
+                  <i class="fas fa-blog"></i> Technical Blog
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-overview">
+          <div class="skills-section">
+            <h4>🏆 Core Strengths (16 Years Qatar Experience)</h4>
+            <div class="skill-items">
+              <span class="skill-item">Windows Server Architecture</span>
+              <span class="skill-item">PowerShell Automation</span>
+              <span class="skill-item">Azure AD & Identity Management</span>
+              <span class="skill-item">Security Operations</span>
+              <span class="skill-item">System Integration</span>
+              <span class="skill-item">Enterprise Architecture</span>
+            </div>
+          </div>
+
+          <div class="skills-section">
+            <h4>☁️ Multi-Cloud Platforms (Live Production Systems)</h4>
+            <div class="skill-items">
+              <span class="skill-item">AWS - Healthcare Platform with Arabic AI</span>
+              <span class="skill-item">Google Cloud - E-Governance Voting API</span>
+              <span class="skill-item">Microsoft Azure - This Resume Website</span>
+            </div>
+          </div>
+
+          <div class="skills-section">
+            <h4>🛠️ Modern Development Stack</h4>
+            <div class="skill-items">
+              <span class="skill-item">Infrastructure as Code (Terraform)</span>
+              <span class="skill-item">Python & TypeScript</span>
+              <span class="skill-item">React.js Development</span>
+              <span class="skill-item">CI/CD with GitHub Actions</span>
+              <span class="skill-item">AWS Bedrock AI Integration</span>
+              <span class="skill-item">Serverless Architecture</span>
+            </div>
+          </div>
+
+          <div class="skills-section">
+            <h4>🌍 Regional Market Expertise</h4>
+            <div class="skill-items">
+              <span class="skill-item">Deployed Arabic AI processing 10K+ medical terms</span>
+              <span class="skill-item">Built culturally-aware healthcare systems for Arabic speakers</span>
+              <span class="skill-item">Experience with GCC government compliance standards</span>
+              <span class="skill-item">16 years navigating local business processes & culture</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
         <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="experience-card">
-                <div class="experience-header">
-                  <div class="experience-title-wrapper">
-                    <h3 class="experience-title">
-                      System Support &amp; Network Administrator
-                    </h3>
-                    <div class="experience-company">
-                      International School of London (ISL) - Doha
-                    </div>
-                  </div>
-                  <div class="experience-date">
-                    <i class="fas fa-calendar-alt"></i> 11/2014 – Present
-                  </div>
-                </div>
-                <div class="experience-categories">
-                  <div class="experience-category">
-                    <h4>
-                      <i class="fas fa-cloud"></i> Cloud Adoption &amp; Systems
-                      Management
-                    </h4>
-                    <ul class="bullet-list">
-                      <li>
-                        Led migration of MDM from Cisco Meraki to Microsoft
-                        Intune (1260+ devices), saving 23K QAR/year &amp;
-                        enhancing security.
-                      </li>
-                      <li>
-                        Implemented and manage Azure AD &amp; Microsoft 365
-                        services for 1,260+ users.
-                      </li>
-                      <li>
-                        Orchestrated transition from on-prem to hybrid cloud
-                        storage solutions.
-                      </li>
-                      <li>
-                        Administer Windows Server environment, Active Directory,
-                        Hyper-V, and VMware.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="experience-category">
-                    <h4>
-                      <i class="fas fa-shield-alt"></i> Cybersecurity &amp;
-                      Security Operations
-                    </h4>
-                    <ul class="bullet-list">
-                      <li>
-                        Deployed PRTG &amp; SolarWinds monitoring, reducing
-                        incident detection time.
-                      </li>
-                      <li>
-                        Established in-house vulnerability management program
-                        using Nessus Essentials.
-                      </li>
-                      <li>
-                        Strengthened access control via Privileged Access
-                        Management (PAM) and Azure AD Conditional Access
-                        policies.
-                      </li>
-                      <li>
-                        Managed endpoint security solutions and security
-                        awareness training.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="experience-category">
-                    <h4>
-                      <i class="fas fa-robot"></i> Automation &amp; Process
-                      Improvement
-                    </h4>
-                    <ul class="bullet-list">
-                      <li>
-                        Automated routine admin tasks using PowerShell
-                        scripting.
-                      </li>
-                      <li>
-                        Developed automated onboarding workflow for 45+ new
-                        hires annually.
-                      </li>
-                      <li>
-                        Implemented RFC process, improving change management and
-                        reducing errors.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3>System Support & Network Administrator</h3>
+              <p style="color: var(--secondary-color); margin: 0;">International School of London - Qatar</p>
             </div>
+            <span class="experience-date">2014 - Present (10 Years)</span>
           </div>
+          <ul style="margin: 0;">
+            <li>• Delivered 23,000 QAR annual savings migrating 1,260+ devices from Cisco to Microsoft Intune</li>
+            <li>• Architected and manage Azure AD infrastructure for 1,260+ users across diverse international community</li>
+            <li>• Implemented PowerShell automation reducing manual administrative tasks by 40%</li>
+            <li>• Transformed incident response from hours to minutes through proactive monitoring systems</li>
+            <li>• Led digital transformation initiatives supporting regional educational technology advancement</li>
+          </ul>
+        </div>
 
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="experience-card">
-                <div class="experience-header">
-                  <div class="experience-title-wrapper">
-                    <h3 class="experience-title">
-                      Service Delivery Representative
-                    </h3>
-                    <div class="experience-company">
-                      Hewlett-Packard Enterprise (HPE)
-                    </div>
-                  </div>
-                  <div class="experience-date">
-                    <i class="fas fa-calendar-alt"></i> 07/2011 – 04/2014
-                  </div>
-                </div>
-                <ul class="bullet-list">
-                  <li>
-                    Provided on-site cybersecurity incident response
-                    coordination for enterprise clients.
-                  </li>
-                  <li>
-                    Delivered critical technical support for high-profile orgs
-                    (e.g., Qatar Foundation).
-                  </li>
-                  <li>
-                    Implemented IAM methodologies and access control
-                    enhancements.
-                  </li>
-                  <li>
-                    Developed and maintained knowledge base to streamline
-                    troubleshooting.
-                  </li>
-                </ul>
-              </div>
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3>Service Delivery Representative</h3>
+              <p style="color: var(--secondary-color); margin: 0;">Hewlett-Packard Enterprise - Qatar</p>
             </div>
+            <span class="experience-date">2011 - 2014 (3 Years)</span>
           </div>
+          <ul style="margin: 0;">
+            <li>• Provided enterprise support for major regional clients including Qatar Foundation</li>
+            <li>• Coordinated cybersecurity incident response for government and private sector</li>
+            <li>• Implemented identity and access management improvements for enterprise clients</li>
+            <li>• Gained deep understanding of GCC enterprise IT infrastructure requirements</li>
+          </ul>
+        </div>
 
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="experience-card">
-                <div class="experience-header">
-                  <div class="experience-title-wrapper">
-                    <h3 class="experience-title">Computer Technician</h3>
-                    <div class="experience-company">Computer Arabia</div>
-                  </div>
-                  <div class="experience-date">
-                    <i class="fas fa-calendar-alt"></i> 04/2008 – 07/2011
-                  </div>
-                </div>
-                <ul class="bullet-list">
-                  <li>
-                    Supported enterprise clients including Qatar Petroleum and
-                    Vodafone.
-                  </li>
-                  <li>
-                    Performed proactive system maintenance, monitoring, and
-                    security checks.
-                  </li>
-                  <li>
-                    Provided remote and on-site support for Windows/macOS
-                    endpoints and peripherals.
-                  </li>
-                </ul>
-              </div>
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3>Earlier IT Roles</h3>
+              <p style="color: var(--secondary-color); margin: 0;">Various Organizations - Qatar</p>
             </div>
+            <span class="experience-date">2008 - 2011 (3 Years)</span>
           </div>
+          <ul style="margin: 0;">
+            <li>• Built foundational IT skills in the region's diverse technology landscape</li>
+            <li>• Developed expertise in both Arabic and English IT environments</li>
+            <li>• Established professional network within the local IT community</li>
+          </ul>
         </div>
       </section>
 
-      <section class="section">
-        <h2 class="section-title">Education &amp; Certifications</h2>
-        <div class="education-grid">
-          <div class="education-card">
-            <div class="education-icon"><i class="fas fa-certificate"></i></div>
-            <h3>CompTIA Advanced Security Practitioner (CASP+)</h3>
-            <p class="education-status">In Progress</p>
-          </div>
-          <div class="education-card">
-            <div class="education-icon"><i class="fas fa-certificate"></i></div>
-            <h3>Certified Information Systems Security Professional (CISSP)</h3>
-            <p class="education-details">(ISC)², 2019</p>
-          </div>
-          <div class="education-card">
-            <div class="education-icon"><i class="fas fa-certificate"></i></div>
-            <h3>CompTIA CySA+ (Cybersecurity Analyst)</h3>
-            <p class="education-details">CompTIA, 2018</p>
-          </div>
-          <div class="education-card">
-            <div class="education-icon"><i class="fas fa-certificate"></i></div>
-            <h3>CompTIA Security Analytics Professional (CSAP)</h3>
-            <p class="education-details">CompTIA, 2018</p>
-          </div>
-          <div class="education-card">
-            <div class="education-icon"><i class="fas fa-certificate"></i></div>
-            <h3>CompTIA Security+</h3>
-            <p class="education-details">CompTIA, 2017</p>
-          </div>
-          <div class="education-card">
-            <div class="education-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <h3>Advanced Diploma in Software Engineering</h3>
-            <p class="education-details">Aptech Qatar</p>
-          </div>
-          <div class="education-card">
-            <div class="education-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <h3>Higher Diploma in Software Engineering</h3>
-            <p class="education-details">Aptech Qatar</p>
-          </div>
-          <div class="education-card">
-            <div class="education-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <h3>Diploma in Information System Management</h3>
-            <p class="education-details">Aptech Qatar</p>
-          </div>
+      <section class="cta-section" id="contact">
+        <h2>Ready to Build the Region's Cloud Future Together</h2>
+        <p>Test my live systems, then let's discuss how I can contribute to your cloud initiatives</p>
+        
+        <div class="cta-links">
+          <a href="https://healthcare.talharesume.com" target="_blank" class="cta-link">
+            <i class="fas fa-heartbeat"></i> Healthcare Platform
+          </a>
+          <a href="https://healthcare.talharesume.com/symptom-checker" target="_blank" class="cta-link">
+            <i class="fas fa-robot"></i> Try Arabic AI
+          </a>
+          <a href="https://talhacloud.com" target="_blank" class="cta-link">
+            <i class="fas fa-blog"></i> Technical Blog
+          </a>
+          <a href="mailto:talhanasiruddin@outlook.com" class="cta-link">
+            <i class="fas fa-envelope"></i> Email Me
+          </a>
         </div>
-
-        <h2 class="section-title section-title-spaced">
-          Professional Development
-        </h2>
-        <div class="development-grid">
-          <div class="development-item">
-            <div class="development-icon"><i class="fas fa-cloud"></i></div>
-            <div class="development-text">
-              Cloud Resume Challenge (Azure) - Hands-on Project
-            </div>
-          </div>
-          <div class="development-item">
-            <div class="development-icon"><i class="fab fa-microsoft"></i></div>
-            <div class="development-text">
-              Azure Fundamentals Training (AZ-900 Concepts)
-            </div>
-          </div>
-          <div class="development-item">
-            <div class="development-icon">
-              <i class="fas fa-code-branch"></i>
-            </div>
-            <div class="development-text">
-              DevOps Essentials Professional Certificate (IBM)
-            </div>
-          </div>
-          <div class="development-item">
-            <div class="development-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <div class="development-text">
-              Enterprise Defender Training (SANS SEC501 Concepts)
-            </div>
-          </div>
-          <div class="development-item">
-            <div class="development-icon"><i class="fas fa-code"></i></div>
-            <div class="development-text">
-              Code Foundations Skill Path (Codecademy)
-            </div>
-          </div>
-          <div class="development-item">
-            <div class="development-icon"><i class="fas fa-users"></i></div>
-            <div class="development-text">
-              GISEC Global Security Conference Attendee (Dubai)
-            </div>
-          </div>
-        </div>
+        
+        <p style="margin-top: 2rem; font-size: 1.2rem;">
+          <strong>Local expertise meets global cloud standards</strong><br>
+          📧 talhanasiruddin@outlook.com | 📱 +974 5516 9203
+        </p>
       </section>
 
       <div class="visitor-counter">
         <p>
-          <i class="fas fa-eye"></i> Website Visits:
-          <span id="visitor-count">Loading...</span>
+          <i class="fas fa-eye"></i> Visitor #<span id="visitor-count">Loading...</span>
         </p>
       </div>
-
-      <div class="print-container">
-        <button type="button" class="print-button" onclick="window.print()">
-          <i class="fas fa-file-pdf"></i> Save / Print Resume
-        </button>
-      </div>
     </div>
+    
     <script src="js/counter.js"></script>
   </body>
 </html>
