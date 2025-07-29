@@ -1,0 +1,49 @@
+title: Talha's Multi-Cloud Engineering Blog
+description: >-
+  Production cloud systems across AWS, GCP, and Azure. 
+  Real implementations for Qatar's digital transformation.
+baseurl: ""
+url: "https://talha-nasiruddin.github.io"
+twitter_username: talha_cloud
+github_username: talha-nasiruddin
+linkedin_username: talha-nasiruddin
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO and social
+author:
+  name: Talha Nasiruddin
+  email: talhanasiruddin@outlook.com
+  twitter: talha_cloud
+
+# Collections for organized content
+collections:
+  aws:
+    output: true
+    permalink: /:collection/:name/
+  gcp:
+    output: true
+    permalink: /:collection/:name/
+  azure:
+    output: true
+    permalink: /:collection/:name/
+
+# Navigation
+header_pages:
+  - aws.md
+  - gcp.md
+  - azure.md
+  - about.md
+
+# Google Analytics (replace with your tracking ID)
+google_analytics: G-XXXXXXXXXX
+
+# Disqus comments (optional)
+disqus:
+  shortname: talha-cloud-blog

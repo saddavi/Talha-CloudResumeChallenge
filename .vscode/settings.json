@@ -5,5 +5,27 @@
   "azureFunctions.projectRuntime": "~4",
   "debug.internalConsoleOptions": "neverOpen",
   "azureFunctions.projectLanguageModel": 2,
-  "azureFunctions.projectSubpath": "backend/api"
+  "azureFunctions.projectSubpath": "backend/api",
+
+  // BlogTo Configuration for Hashnode (Multiple Format Support)
+  "blogto.hashnode.apiKey": "ed948391-526a-4fed-8882-600c04990807",
+  "blogto.hashnode.publicationId": "67e676905db16cf102d02cc6",
+  "blogto.hashnode.domain": "talhacloud.com",
+  "blogto.defaultPlatform": "hashnode",
+  "blogto.autoSave": true,
+  "blogto.confirmation": true,
+
+  // Alternative BlogTo format
+  "BlogTo.hashnode.apiKey": "ed948391-526a-4fed-8882-600c04990807",
+  "BlogTo.hashnode.publicationId": "67e676905db16cf102d02cc6",
+  "BlogTo.platforms.hashnode.apiKey": "ed948391-526a-4fed-8882-600c04990807",
+  "BlogTo.platforms.hashnode.publicationId": "67e676905db16cf102d02cc6",
+
+  // Markdown enhancements for blog writing
+  "markdown.preview.breaks": true,
+  "markdown.preview.linkify": true,
+  "markdownlint.config": {
+    "MD022": false,
+    "MD032": false
+  }
 }

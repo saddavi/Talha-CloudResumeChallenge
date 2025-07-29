@@ -1,0 +1,10 @@
+{
+  "platforms": {
+    "hashnode": {
+      "apiKey": "ed948391-526a-4fed-8882-600c04990807",
+      "publicationId": "67e676905db16cf102d02cc6",
+      "domain": "talhacloud.com"
+    }
+  },
+  "defaultPlatform": "hashnode"
+}

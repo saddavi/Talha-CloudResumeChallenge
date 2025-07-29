@@ -45,6 +45,74 @@ resource "azurerm_cdn_profile" "main" {
   sku                 = "Standard_Microsoft"
 }
 
+# CDN Endpoint
+resource "azurerm_cdn_endpoint" "main" {
+  name                = "cdn-talha-endpoint"
+  profile_name        = azurerm_cdn_profile.main.name
+  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.main.name
+
+  origin {
+    name      = "primary"
+    host_name = azurerm_storage_account.website.primary_web_host
+  }
+
+  origin_host_header             = azurerm_storage_account.website.primary_web_host
+  is_compression_enabled         = true
+  is_http_allowed               = true
+  is_https_allowed              = true
+  querystring_caching_behaviour = "IgnoreQueryString"
+
+  content_types_to_compress = [
+    "text/plain",
+    "text/html",
+    "text/css",
+    "application/xml",
+    "text/javascript",
+    "application/javascript",
+    "application/json"
+  ]
+
+  delivery_rule {
+    name  = "redirect-to-https"
+    order = 1
+
+    request_scheme_condition {
+      operator     = "Equal"
+      match_values = ["HTTP"]
+    }
+
+    url_redirect_action {
+      redirect_type = "Found"
+      protocol      = "Https"
+    }
+  }
+}
+
+# Custom Domain for www
+resource "azurerm_cdn_endpoint_custom_domain" "www" {
+  name            = "www-talharesume-com"
+  cdn_endpoint_id = azurerm_cdn_endpoint.main.id
+  host_name       = "www.talharesume.com"
+
+  cdn_managed_https {
+    certificate_type = "Dedicated"
+    protocol_type    = "ServerNameIndication"
+  }
+}
+
+# Custom Domain for naked domain
+resource "azurerm_cdn_endpoint_custom_domain" "naked" {
+  name            = "talharesume-com"
+  cdn_endpoint_id = azurerm_cdn_endpoint.main.id
+  host_name       = "talharesume.com"
+
+  cdn_managed_https {
+    certificate_type = "Dedicated"
+    protocol_type    = "ServerNameIndication"
+  }
+}
+
 # CosmosDB Account
 resource "azurerm_cosmosdb_account" "main" {
   name                = "talha-resume-db-2025-v3"
@@ -155,4 +223,25 @@ resource "azurerm_linux_function_app" "main" {
     "hidden-link: /app-insights-instrumentation-key" = "74e63443-a5f8-4159-80ae-758e38c0c7de"
     "hidden-link: /app-insights-resource-id"         = "/subscriptions/9af1a87d-1c54-4758-88fd-27d35a7a228c/resourceGroups/rg-cloudresume/providers/microsoft.insights/components/talha-resume-func-2025"
   }
+}
+
+# Outputs
+output "cdn_endpoint_hostname" {
+  value = azurerm_cdn_endpoint.main.fqdn
+}
+
+output "storage_primary_web_endpoint" {
+  value = azurerm_storage_account.website.primary_web_endpoint
+}
+
+output "dns_configuration_instructions" {
+  value = <<EOF
+DNS Configuration Required in Namecheap:
+
+1. Delete existing A record for @ (naked domain)
+2. Add CNAME record for @ pointing to: ${azurerm_cdn_endpoint.main.fqdn}
+3. Update CNAME record for www pointing to: ${azurerm_cdn_endpoint.main.fqdn}
+
+After DNS changes, both http://talharesume.com and https://talharesume.com will work properly.
+EOF
 }

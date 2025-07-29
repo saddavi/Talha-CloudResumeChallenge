@@ -49,6 +49,15 @@ var/
 .installed.cfg
 *.egg
 .venv
+co
+# Blog Content (Private - Not synced to GitHub)
+blog/
+*.md.draft
+*.md.backup
+
+# Local blog configuration
+.blog-config
+blogto-config.json
 venv/
 ENV/
 env.bak/
