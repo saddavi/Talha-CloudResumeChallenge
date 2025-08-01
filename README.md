@@ -18,6 +18,8 @@ Check out the live resume [here](https://www.talharesume.com/).
 
 This project implements the [Cloud Resume Challenge](https://cloudresumechallenge.dev/), showcasing my cloud engineering skills through a **serverless resume platform** built using **Azure services**, **infrastructure as code (IaC)**, and **DevOps best practices**. It demonstrates real-world cloud architecture capabilities by delivering a high-performance, secure, and scalable web application.
 
+**🆕 Recent Updates (August 2025)**: Enhanced security features highlighting enterprise-grade Arabic AI security implementations from my healthcare platform project, showcasing advanced prompt injection protection and production hardening capabilities.
+
 Key features include:
 
 - **Static Website Hosting**: Powered by Azure Storage and CDN with a custom domain
@@ -26,6 +28,7 @@ Key features include:
 - **CI/CD Pipeline**: Automated testing and deployment with GitHub Actions
 - **Infrastructure as Code**: Azure resources provisioned using Terraform
 - **Security Best Practices**: Proper secrets management, CORS configuration, and access controls
+- **Multi-Project Showcase**: Features security-hardened Arabic AI healthcare platform and enterprise voting systems
 
 ---
 
@@ -46,6 +49,7 @@ Key features include:
 | **2025-03-10** | Infrastructure | Terraform implementation     | ✅     | Terraform, Azure Provider, HCL                   | Created initial Terraform configuration for Azure resource provisioning                               |
 | **2025-03-12** | Infrastructure | Modularized Terraform code   | ✅     | Terraform modules, CI integration                | Refactored Terraform into reusable modules for better maintainability                                 |
 | **2025-03-15** | CI/CD          | Terraform pipeline setup     | ✅     | GitHub Actions, Terraform Cloud                  | Implemented automated Terraform plan and apply in the CI/CD pipeline                                  |
+| **2025-08-01** | Frontend       | Security showcase updates    | ✅     | HTML5, Arabic AI Security                        | Updated AWS project section to highlight security-hardened Arabic AI and prompt injection protection |
 | **Current**    | Backend        | Enhanced API features        | 🔄     | Python, Azure Functions                          | Implementing caching and performance optimizations                                                    |
 | **Current**    | CI/CD          | Additional workflows         | 🔄     | GitHub Actions, Azure CLI                        | Creating workflows with staged deployments and automated testing across environments                  |
 
@@ -331,6 +335,7 @@ Terraform execution is integrated into the CI/CD pipeline with the following wor
 
 ## 🔒 Security Implementation
 
+### Core Security Features
 - **SSL/TLS Encryption**: Ensures secure communication between users and the website.
 - **Secure Connection Strings**: Stored as environment variables in Azure Functions.
 - **Error Handling and Retry Logic**: Implemented to handle transient failures gracefully.
@@ -338,6 +343,17 @@ Terraform execution is integrated into the CI/CD pipeline with the following wor
 - **CORS Configuration**: Properly configured to allow only necessary origins.
 - **Principle of Least Privilege**: Storage and Function access policies follow least privilege principles.
 - **Regular Security Audits**: Conducted to identify and mitigate potential vulnerabilities.
+
+### 🆕 Advanced Security Showcase (August 2025)
+This resume now prominently features security expertise demonstrated through my healthcare platform project:
+
+- **AI Security Leadership**: Advanced prompt injection protection for healthcare AI systems
+- **Production Security Hardening**: Zero-downtime security updates and error resolution
+- **Enterprise-Grade Input Sanitization**: Comprehensive validation for medical data processing
+- **Security Documentation Excellence**: Detailed security implementation and testing documentation
+- **Regional Security Expertise**: Qatar-focused healthcare security addressing GCC compliance requirements
+
+These security implementations demonstrate enterprise-ready capabilities essential for Qatar's digital transformation initiatives.
 
 ---
 
