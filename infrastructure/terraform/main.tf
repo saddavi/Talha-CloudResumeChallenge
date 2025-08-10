@@ -237,11 +237,16 @@ output "storage_primary_web_endpoint" {
 output "dns_configuration_instructions" {
   value = <<EOF
 DNS Configuration Required in Namecheap:
+1. For the 'www' subdomain:
+   - Type: CNAME Record
+   - Host: www
+   - Value: ${azurerm_cdn_endpoint.main.fqdn}
 
-1. Delete existing A record for @ (naked domain)
-2. Add CNAME record for @ pointing to: ${azurerm_cdn_endpoint.main.fqdn}
-3. Update CNAME record for www pointing to: ${azurerm_cdn_endpoint.main.fqdn}
+2. For the '@' (naked/root) domain:
+   - Type: ALIAS Record (Namecheap supports this)
+   - Host: @
+   - Value: ${azurerm_cdn_endpoint.main.fqdn}
 
-After DNS changes, both http://talharesume.com and https://talharesume.com will work properly.
+After DNS changes and waiting for propagation, both https://talharesume.com and https://www.talharesume.com will work properly. Using an ALIAS record for the root domain is the correct method for Azure CDN.
 EOF
 }
