@@ -55,6 +55,9 @@ blog/
 *.md.draft
 *.md.backup
 
+# Private Project Documentation
+DOMAIN_REDIRECT_PROJECT_DOCUMENTATION.md
+
 # Local blog configuration
 .blog-config
 blogto-config.json

@@ -4,13 +4,31 @@
 [![Platform](https://img.shields.io/badge/Platform-Azure-blue)](#)  
 [![Infrastructure as Code](https://img.shields.io/badge/IaC-Terraform-purple)](#)  
 [![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub_Actions-green)](#)  
-[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--03--08-orange)](#)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--08--17-orange)](#)
 
 ---
 
 ## 🌐 Live Demo
 
-Check out the live resume [here](https://www.talharesume.com/).
+**Main Resume**: All domain variations work seamlessly:
+- [https://www.talharesume.com/](https://www.talharesume.com/) ✅
+- [https://talharesume.com/](https://talharesume.com/) ✅ (redirects to www)
+- [http://talharesume.com/](http://talharesume.com/) ✅ (auto-upgrades to HTTPS)
+
+**Healthcare Platform**: [https://healthcare.talharesume.com/](https://healthcare.talharesume.com/) ✅
+
+## 🌍 Domain Configuration
+
+**Architecture**: Hybrid multi-CDN setup for optimal performance and cost efficiency:
+
+- **Main Domain**: Cloudflare Free → Azure CDN Classic → Azure Storage
+  - SSL termination via Cloudflare Universal SSL
+  - Apex domain redirect via Cloudflare Page Rules
+  - Zero monthly cost with enterprise-grade performance
+
+- **Healthcare Subdomain**: Direct AWS CloudFront → S3 Storage
+  - Native AWS SSL with security headers
+  - Dedicated infrastructure for healthcare AI platform
 
 ---
 
@@ -18,7 +36,9 @@ Check out the live resume [here](https://www.talharesume.com/).
 
 This project implements the [Cloud Resume Challenge](https://cloudresumechallenge.dev/), showcasing my cloud engineering skills through a **serverless resume platform** built using **Azure services**, **infrastructure as code (IaC)**, and **DevOps best practices**. It demonstrates real-world cloud architecture capabilities by delivering a high-performance, secure, and scalable web application.
 
-**🆕 Recent Updates (August 2025)**: Enhanced security features highlighting enterprise-grade Arabic AI security implementations from my healthcare platform project, showcasing advanced prompt injection protection and production hardening capabilities.
+**🆕 Recent Updates (August 2025)**: 
+- **Domain Infrastructure Overhaul**: Implemented hybrid multi-CDN architecture fixing all domain access patterns (talharesume.com, www.talharesume.com, healthcare subdomain) with zero monthly cost
+- **Security Showcase Enhancement**: Featured enterprise-grade Arabic AI security implementations from healthcare platform, showcasing advanced prompt injection protection and production hardening capabilities
 
 Key features include:
 
@@ -50,6 +70,7 @@ Key features include:
 | **2025-03-12** | Infrastructure | Modularized Terraform code   | ✅     | Terraform modules, CI integration                | Refactored Terraform into reusable modules for better maintainability                                 |
 | **2025-03-15** | CI/CD          | Terraform pipeline setup     | ✅     | GitHub Actions, Terraform Cloud                  | Implemented automated Terraform plan and apply in the CI/CD pipeline                                  |
 | **2025-08-01** | Frontend       | Security showcase updates    | ✅     | HTML5, Arabic AI Security                        | Updated AWS project section to highlight security-hardened Arabic AI and prompt injection protection |
+| **2025-08-16** | Infrastructure | Domain redirect fix project  | ✅     | Cloudflare, Azure CDN, DNS, SSL                  | Fixed all domain access patterns using hybrid multi-CDN architecture with zero monthly cost          |
 | **Current**    | Backend        | Enhanced API features        | 🔄     | Python, Azure Functions                          | Implementing caching and performance optimizations                                                    |
 | **Current**    | CI/CD          | Additional workflows         | 🔄     | GitHub Actions, Azure CLI                        | Creating workflows with staged deployments and automated testing across environments                  |
 

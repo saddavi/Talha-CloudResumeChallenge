@@ -1,89 +1,95 @@
-# CLAUDE.md
+# CLAUDE.md - Domain Redirect Fix Project
 
-This file provides guidance to Claude Code when working with code in this project.
+## PowerShell Pipeline Method (PPM)
+**Problem**: talharesume.com redirect broken - multiple access patterns not working  
+**Goal**: Fix all domain variations → redirect to main site  
+**Method**: Direct execution, no overthinking
 
-## Project Overview
-<!-- Describe your project here - what it does, its main purpose, and key technologies used -->
+## Domain Access Requirements
+All these MUST work:
+- talharesume.com
+- www.talharesume.com  
+- http://talharesume.com
+- https://talharesume.com
+- HTTP://talharesume.com (any case variation)
+
+## Current Stack
+- **Domain**: Namecheap.com
+- **Hosting**: Azure Cloud
+- **CDN**: Cloudflare (recently modified - source of issues)
+
+## PPM Commands
+
+### 1. Diagnose Current State
+```bash
+nslookup talharesume.com
+nslookup www.talharesume.com
+curl -I http://talharesume.com
+curl -I https://talharesume.com
+curl -I https://www.talharesume.com
+```
+
+### 2. Fix DNS/CDN Configuration
+```bash
+# Azure CDN endpoint configuration
+az cdn endpoint show --name [endpoint] --profile-name [profile] --resource-group [rg]
+az cdn custom-domain create --endpoint-name [endpoint] --name www --hostname www.talharesume.com
+```
+
+### 3. Verify Fix
+```bash
+# Test all variations return 200 or proper redirect
+for url in "http://talharesume.com" "https://talharesume.com" "https://www.talharesume.com"; do
+  curl -I "$url"
+done
+```
 
 ## Project Structure
-<!-- Describe the organization of your codebase -->
 ```
-project-root/
-├── src/           # Source code
-├── tests/         # Test files
-├── docs/          # Documentation
-└── ...
+Talha-CloudResumeChallenge/
+├── frontend/           # Static website files
+├── api/               # Azure Functions
+├── infrastructure/    # IaC templates
+└── CLAUDE.md         # This file
 ```
 
-## Development Guidelines
+## Error Conditions
+- 404 errors on domain variations
+- Cloudflare SSL/redirect loops
+- Azure CDN misconfiguration
+- DNS A record issues
 
-### Task Management
-Focus on getting tasks done efficiently. Only use TodoWrite for genuinely complex tasks that require breaking down into multiple steps.
+## Success Criteria
+✓ All domain variations resolve correctly  
+✓ HTTPS enforced automatically  
+✓ www redirects to non-www (or vice versa)  
+✓ No SSL certificate errors
 
-### Code Style
-<!-- Define your preferred code style and conventions -->
-- Use consistent indentation (spaces/tabs)
-- Follow naming conventions for your language
-- Keep functions small and focused
-- Write descriptive comments for complex logic
+## PPM Rules
+- Fix first, optimize later
+- Test immediately after each change
+- One problem = One solution = One commit
+- No documentation until it works
 
-### Testing
-<!-- Describe your testing approach -->
-- Write tests for new features
-- Ensure all tests pass before committing
-- Test edge cases and error conditions
+## Cloudflare Reset Protocol
+If Cloudflare broke everything:
+1. Pause Cloudflare
+2. Test direct Azure access
+3. Re-enable with minimal config
+4. Add redirects incrementally
 
-### Git Workflow
-<!-- Define your git workflow preferences -->
-- Use descriptive commit messages
-- Keep commits atomic and focused
-- Create feature branches for new work
-
-## Key Commands
-<!-- List important commands for development -->
+## Azure CDN Commands
 ```bash
-# Install dependencies
-npm install  # or yarn, pip install, etc.
+# List endpoints
+az cdn endpoint list --profile-name [profile] --resource-group [rg]
 
-# Run tests
-npm test
-
-# Build the project
-npm run build
-
-# Start development server
-npm run dev
+# Show custom domains
+az cdn custom-domain show --endpoint-name [endpoint] --name [domain] --profile-name [profile] --resource-group [rg]
 ```
 
-## Architecture Decisions
-<!-- Document important architectural decisions and patterns used -->
+## Success Output Only
+- "✓ Domain redirect fixed"
+- "✓ All variations working" 
+- "✗ Error: [specific issue]"
 
-## Security Considerations
-<!-- Note any security concerns or sensitive areas -->
-- Never commit secrets or API keys
-- Validate all user inputs
-- Follow security best practices for your framework
-
-## Performance Considerations
-<!-- Note any performance-critical areas -->
-
-## Additional Context
-<!-- Any other important information Claude should know -->
-
-### TodoWrite Tool Usage
-**Default approach**: Just get tasks done. Don't use TodoWrite unless absolutely necessary.
-
-**Only use TodoWrite when**:
-- Task genuinely requires 5+ distinct steps
-- Working across many files simultaneously  
-- User explicitly requests task breakdown
-
-**Never use TodoWrite for**:
-- Single edits or fixes
-- Simple questions/answers
-- Routine coding tasks
-- Any task that can be completed directly
-
-   
----
-*This CLAUDE.md file helps Claude Code understand your project better. Update it as your project evolves!*
+No explanations during execution - just results.
